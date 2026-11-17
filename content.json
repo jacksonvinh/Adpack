@@ -18,7 +18,9 @@
       "Inter",
       "Lora",
       "Playfair Display",
-      "Rubik"
+      "Rubik",
+      "Anton",
+      "Pacifico"
     ]
   },
   "theme": {
@@ -118,8 +120,8 @@
       "eyebrow": "About the service",
       "title": "Everything your product page needs.",
       "items": [
-        "Good visuals and clear words make a product easier to understand at a glance. Choose only what you need: ad images, product descriptions that are ready to paste, and ad copy for your campaigns.",
-        "Every extra item you add lowers the price of your whole order, up to 50% off."
+        "",
+        "<span style=\"font-family: Inter\">Good visuals and clear words make a product easier to understand. Choose what you need: <br>&nbsp; &nbsp;-&nbsp; &nbsp;Ad images<br>&nbsp; &nbsp;-&nbsp; &nbsp;Product descriptions<br>&nbsp; &nbsp;-&nbsp; &nbsp;Ad copy<br></span>"
       ]
     },
     {
@@ -127,7 +129,7 @@
       "name": "How delivery works",
       "enabled": true,
       "eyebrow": "How delivery works",
-      "title": "From your photos to finished work in four steps.",
+      "title": "From your photos to finished work",
       "items": [
         {
           "title": "You choose",
@@ -138,12 +140,95 @@
           "text": "Your product photos and a short note about where you want to use it for."
         },
         {
-          "title": "We create",
-          "text": "We make your items. Takes about [1-3] working days. [2] revision rounds included."
+          "title": "Our team create",
+          "text": "We make your items. Takes about 1-3 working days."
         },
         {
           "title": "You receive",
-          "text": "Final files by [Instagram / email / download link], ready to upload and post."
+          "text": "Final files send to your email with a download link, ready to post."
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "Showcase gallery",
+      "enabled": true,
+      "eyebrow": "Showcase",
+      "title": "Our Finished Work",
+      "intro": "A look at product images we made for other sellers",
+      "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
+      "items": [
+        {
+          "image": "images/Pore-Refining-Serum-Glow.jpg",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">PuremÃ¨re</span>",
+          "alt": "Product image 1",
+          "placeholder": "Product image 1"
+        },
+        {
+          "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">ROSE &amp; BERY</span>",
+          "alt": "Product image 2",
+          "placeholder": "Product image 2"
+        },
+        {
+          "image": "images/Strawberry-Matcha-Latte-Delight.jpg",
+          "caption": "Brew Leaf",
+          "alt": "Product image 3",
+          "placeholder": "Product image 3"
+        },
+        {
+          "image": "images/Cozy-Headphones-and-Coffee-Workspace.png",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Yin Store</span>",
+          "alt": "Product image 4",
+          "placeholder": "Product image 4"
+        }
+      ]
+    },
+    {
+      "type": "transformations",
+      "name": "Before/after sliders",
+      "enabled": true,
+      "title": "Be prepare.",
+      "subtitle": "Our Delivery May Exceed\rYour Expectation",
+      "items": [
+        {
+          "before": {
+            "image": "images/Olive-Green-Tumbler-Snapshot.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Peak-Performance-in-Alpine-Ice.jpg",
+            "alt": "After",
+            "placeholder": "After image"
+          },
+          "caption": ""
+        },
+        {
+          "before": {
+            "image": "images/Glowing-Ring-Light-Workspace.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Cozy-Live-Stream-Ring-Light-Setup.jpg",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": ""
+        },
+        {
+          "before": {
+            "image": "images/PawFeast-Chicken-Salmon-Cat-Food.jpg",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/PawFeast-Nutritious-Meals-for-Happier-Cats.jpg",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": ""
         }
       ]
     },
@@ -177,41 +262,6 @@
         {
           "title": "Pay your way.",
           "text": "PayPal or bank transfer, whichever suits you."
-        }
-      ]
-    },
-    {
-      "type": "gallery",
-      "name": "Showcase gallery",
-      "enabled": true,
-      "eyebrow": "Showcase",
-      "title": "Work from the showroom.",
-      "intro": "A look at product images we made for other sellers",
-      "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
-      "items": [
-        {
-          "image": "images/Pore-Refining-Serum-Glow.jpg",
-          "caption": "Product image 1",
-          "alt": "Product image 1",
-          "placeholder": "Product image 1"
-        },
-        {
-          "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
-          "caption": "Product image 2",
-          "alt": "Product image 2",
-          "placeholder": "Product image 2"
-        },
-        {
-          "image": "images/Strawberry-Matcha-Latte-Delight.jpg",
-          "caption": "Product image 3",
-          "alt": "Product image 3",
-          "placeholder": "Product image 3"
-        },
-        {
-          "image": "images/Cozy-Headphones-and-Coffee-Workspace.png",
-          "caption": "Product image 4",
-          "alt": "Product image 4",
-          "placeholder": "Product image 4"
         }
       ]
     },
@@ -318,7 +368,7 @@
       "type": "transformations",
       "name": "Drag-to-compare examples",
       "enabled": true,
-      "title": "Drag. Watch it transform.",
+      "title": "We Deliver What You Expect",
       "subtitle": "Same product. Slide to see the difference.",
       "_help": "One { } block = one before/after slider.",
       "items": [
@@ -333,7 +383,7 @@
             "alt": "After",
             "placeholder": "After ad image"
           },
-          "caption": "Example 1 · [product type]"
+          "caption": "VELORA - Purifying Shampoo"
         },
         {
           "before": {
@@ -346,7 +396,7 @@
             "alt": "After",
             "placeholder": "After ad image"
           },
-          "caption": "Example 2 · [product type]"
+          "caption": "Robert - Modern Alarm Clock"
         },
         {
           "before": {
@@ -359,7 +409,7 @@
             "alt": "After",
             "placeholder": "After ad image"
           },
-          "caption": "Example 3 · [product type]"
+          "caption": "FreshHome - Odor Eliminator"
         }
       ]
     },
@@ -388,7 +438,7 @@
       "items": [
         {
           "q": "What do I need to send you?",
-          "a": "Your product photos and a short note about what you sell and who it is for. [ADD DETAILS: photo quality, how many angles, etc.]"
+          "a": "Your product photos and a short note about what you need. [ADD DETAILS: use purpose, ratio, etc.]"
         },
         {
           "q": "How does the discount work?",
@@ -396,11 +446,11 @@
         },
         {
           "q": "How long does delivery take?",
-          "a": "About [1-3] working days, depending on how many items you order."
+          "a": "About 1-3 working days, depending on how many items you order."
         },
         {
           "q": "Can I ask for changes?",
-          "a": "[2] rounds of free revisions are included. [ADD DETAILS about extra revisions.]"
+          "a": "2 rounds of free revisions are included. [ADD DETAILS about extra revisions.]"
         },
         {
           "q": "How can I pay?",
@@ -449,13 +499,13 @@
         "link": "https://linktr.ee/jacksonvinh?utm_source=linktree_profile_share&ltsid=004486ec-de8c-414a-997f-4b2363a975ce"
       }
     ],
-    "copyright": "© {year}. All rights reserved."
+    "copyright": "Â© {year}. All rights reserved."
   },
   "checkout": {
     "_help": "The page customers see after pressing Checkout.",
     "title": "Almost there!",
     "subtitle": "Review your order and choose how to pay.",
-    "backLabel": "← Change my order",
+    "backLabel": "â† Change my order",
     "summaryTitle": "Order summary",
     "orderLabel": "Order code",
     "totalLabel": "Total",
