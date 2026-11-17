@@ -292,26 +292,26 @@
           "price": 11.99,
           "extraDiscount": 7,
           "max": 50,
-          "startQty": 2
+          "startQty": 0
         },
         {
           "id": "description",
           "name": "Product descriptions",
           "unit": "product description",
           "description": "Plug-and-play text for your listing",
-          "price": 4.99,
-          "extraDiscount": 4,
+          "price": 8.99,
+          "extraDiscount": 5,
           "max": 50,
-          "startQty": 1
+          "startQty": 0
         },
         {
           "id": "copy",
           "name": "Ad copy",
           "unit": "ad copy",
           "description": "Persuasive captions for your ad campaigns",
-          "price": 9.99,
-          "extraDiscount": 6.5,
-          "max": 50,
+          "price": 59.99,
+          "extraDiscount": 35,
+          "max": 20,
           "startQty": 0
         }
       ],
