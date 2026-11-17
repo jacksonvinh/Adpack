@@ -1,0 +1,508 @@
+{
+  "_START_HERE": [
+    "EASIEST WAY TO EDIT: run start-editor (see README.txt). It opens your website with an edit toolbar - click any text to type, click any image to replace it, and press Save.",
+    "EDITING THIS FILE BY HAND also works. Page sections are listed in 'sections' in the SAME ORDER they appear on the page. Move a block up or down to move the section.",
+    "Every section has  \"enabled\": true/false  (false hides it) and a 'name' (only a label for you).",
+    "Lists (items, services, ...) are made of { } blocks. Copy a block to add one, delete a block to remove one, or add  \"hidden\": true  to switch one off.",
+    "Anything starting with an underscore (like this note) is a comment and is ignored."
+  ],
+  "site": {
+    "title": "Ad Package Shop",
+    "description": "Ad images, product descriptions and ad copy for online sellers.",
+    "logo": "images/jv.png",
+    "favicon": "",
+    "extraFonts": [
+      "Poppins",
+      "DM Sans",
+      "Space Grotesk",
+      "Inter",
+      "Lora",
+      "Playfair Display",
+      "Rubik"
+    ]
+  },
+  "theme": {
+    "_help": "Colors are hex codes. Palette: Electric Studio (+ one yellow 'pop' color for deal stickers).",
+    "colors": {
+      "background": "#F4F6FC",
+      "surface": "#FFFFFF",
+      "text": "#17213A",
+      "mutedText": "#55607A",
+      "accent": "#5267F5",
+      "accentText": "#3F52E0",
+      "accentSoft": "#A9B8FF",
+      "navy": "#17213A",
+      "onNavy": "#FFFFFF",
+      "mutedOnNavy": "#B6BFDA",
+      "onAccent": "#FFFFFF",
+      "pop": "#5cff67",
+      "border": "#DDE2F2",
+      "placeholderBeforeBg": "#D9DEEE",
+      "placeholderBeforeShape": "#B4BBD3",
+      "placeholderBeforeText": "#3F4A66",
+      "placeholderAfterBg": "#A9B8FF",
+      "placeholderAfterShape": "#FFFFFF"
+    },
+    "placeholderColors": [
+      "#C9D3FF",
+      "#A9B8FF",
+      "#DCE3FF",
+      "#B9C5FF"
+    ],
+    "fonts": {
+      "heading": "'Space Grotesk', system-ui, sans-serif",
+      "body": "'Inter', system-ui, sans-serif",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap",
+      "baseSize": "16px",
+      "headingWeight": "700"
+    },
+    "shape": {
+      "cardRadius": "20px",
+      "tileRadius": "16px",
+      "buttonRadius": "999px",
+      "pageWidth": "1200px"
+    }
+  },
+  "nav": {
+    "ctaLabel": "Build my package",
+    "ctaLink": "#pricing"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "name": "Top before/after slider",
+      "enabled": true,
+      "before": {
+        "image": "images/Modern-White-Standing-Desk-in-Sunlit-Office.png",
+        "alt": "Product photo before",
+        "placeholder": "Your original photo"
+      },
+      "after": {
+        "image": "images/Work-Smarter-Ergonomic-Workspace.png",
+        "alt": "Product ad after",
+        "placeholder": "Your styled ad image"
+      },
+      "beforeLabel": "Before",
+      "afterLabel": "After",
+      "startPosition": 50,
+      "sticker": "Drag me!",
+      "handleLabel": "Drag to compare before and after"
+    },
+    {
+      "type": "headline",
+      "name": "Main headline",
+      "enabled": true,
+      "eyebrow": "Ad services for online sellers",
+      "title": "Turn plain product photos into <mark>ads people stop to look at.</mark>",
+      "subtitle": "Pick ad images, product descriptions and ad copy. The more you add, the less everything costs.",
+      "buttonLabel": "Build my package",
+      "buttonLink": "#pricing"
+    },
+    {
+      "type": "marquee",
+      "name": "Moving ticker strip",
+      "enabled": true,
+      "items": [
+        "Mix and match",
+        "Add more, save more",
+        "Up to 50% off",
+        "Ad images",
+        "Product descriptions",
+        "Ad copy that sells"
+      ]
+    },
+    {
+      "type": "text",
+      "name": "About the service",
+      "enabled": true,
+      "eyebrow": "About the service",
+      "title": "Everything your product page needs.",
+      "items": [
+        "Good visuals and clear words make a product easier to understand at a glance. Choose only what you need: ad images, product descriptions that are ready to paste, and ad copy for your campaigns.",
+        "Every extra item you add lowers the price of your whole order, up to 50% off."
+      ]
+    },
+    {
+      "type": "steps",
+      "name": "How delivery works",
+      "enabled": true,
+      "eyebrow": "How delivery works",
+      "title": "From your photos to finished work in four steps.",
+      "items": [
+        {
+          "title": "You choose",
+          "text": "Pick what you need in the package builder and pay."
+        },
+        {
+          "title": "You send",
+          "text": "Your product photos and a short note about where you want to use it for."
+        },
+        {
+          "title": "We create",
+          "text": "We make your items. Takes about [1-3] working days. [2] revision rounds included."
+        },
+        {
+          "title": "You receive",
+          "text": "Final files by [Instagram / email / download link], ready to upload and post."
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "name": "Benefits",
+      "enabled": true,
+      "eyebrow": "What you get",
+      "title": "Less work for you, more to post with.",
+      "items": [
+        {
+          "title": "Consistent look.",
+          "text": "Everything you order shares one style, so your shop feels like one brand."
+        },
+        {
+          "title": "Ready to post.",
+          "text": "Files come sized for the places you sell, no editing needed."
+        },
+        {
+          "title": "Plug-and-play descriptions.",
+          "text": "Product copy you can paste straight into your listing or ad."
+        },
+        {
+          "title": "Saves you time.",
+          "text": "No need to hire a designer and a copywriter separately."
+        },
+        {
+          "title": "Rewarding prices.",
+          "text": "Every extra item lowers the price of your whole order."
+        },
+        {
+          "title": "Pay your way.",
+          "text": "PayPal or bank transfer, whichever suits you."
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "Showcase gallery",
+      "enabled": true,
+      "eyebrow": "Showcase",
+      "title": "Work from the showroom.",
+      "intro": "A look at product images we made for other sellers",
+      "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
+      "items": [
+        {
+          "image": "images/Pore-Refining-Serum-Glow.png",
+          "caption": "Product image 1",
+          "alt": "Product image 1",
+          "placeholder": "Product image 1"
+        },
+        {
+          "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
+          "caption": "Product image 2",
+          "alt": "Product image 2",
+          "placeholder": "Product image 2"
+        },
+        {
+          "image": "images/Strawberry-Matcha-Latte-Delight.png",
+          "caption": "Product image 3",
+          "alt": "Product image 3",
+          "placeholder": "Product image 3"
+        },
+        {
+          "image": "images/Cozy-Headphones-and-Coffee-Workspace.png",
+          "caption": "Product image 4",
+          "alt": "Product image 4",
+          "placeholder": "Product image 4"
+        }
+      ]
+    },
+    {
+      "type": "builder",
+      "name": "Package builder (prices)",
+      "id": "pricing",
+      "enabled": true,
+      "eyebrow": "Build your package",
+      "title": "Pick what you need. Add more, pay less.",
+      "intro": "Every extra item takes a bigger bite out of your WHOLE order. Watch the price drop.",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "checkoutLink": "checkout.html",
+      "_servicesHelp": [
+        "One { } block = one service customers can add.",
+        "price: price of ONE unit, as a plain number (8 or 8.50).",
+        "extraDiscount: how many % this service takes off the WHOLE order each time a customer adds one more. Harder service = bigger number.",
+        "max: most units a customer can order. startQty: how many are pre-selected when the page opens.",
+        "id: any short unique word with no spaces."
+      ],
+      "services": [
+        {
+          "id": "image",
+          "name": "Ad images",
+          "unit": "ad image",
+          "description": "Scroll-stopping product visuals",
+          "price": 8,
+          "extraDiscount": 7,
+          "max": 50,
+          "startQty": 2
+        },
+        {
+          "id": "description",
+          "name": "Product descriptions",
+          "unit": "product description",
+          "description": "Plug-and-play text for your listing",
+          "price": 5,
+          "extraDiscount": 6,
+          "max": 50,
+          "startQty": 1
+        },
+        {
+          "id": "copy",
+          "name": "Ad copy",
+          "unit": "ad copy",
+          "description": "Persuasive captions for your campaigns",
+          "price": 4,
+          "extraDiscount": 6.5,
+          "max": 50,
+          "startQty": 0
+        }
+      ],
+      "_discountHelp": [
+        "HOW THE DISCOUNT WORKS: the most expensive unit in the order is the 'starter' and adds no discount. Every other unit adds its service's extraDiscount % to ONE order-wide discount, which is applied to every item.",
+        "momentum: makes each additional unit worth a little more than the one before (0.05 = each next unit counts 5% more). Set 0 for a flat rate.",
+        "discountCap: the biggest total discount, in %. 50 = never more than half off.",
+        "discountStartsAfterFirstItem: true = the first unit adds nothing. false = every unit adds."
+      ],
+      "discountCap": 50,
+      "momentum": 0.05,
+      "discountStartsAfterFirstItem": true,
+      "milestones": [
+        {
+          "pct": 5,
+          "text": "Nice start!"
+        },
+        {
+          "pct": 10,
+          "text": "Now you're saving!"
+        },
+        {
+          "pct": 20,
+          "text": "Great deal!"
+        },
+        {
+          "pct": 30,
+          "text": "Whoa, that's a lot off!"
+        },
+        {
+          "pct": 40,
+          "text": "Almost maxed out!"
+        },
+        {
+          "pct": 50,
+          "text": "MAX DISCOUNT unlocked!"
+        }
+      ],
+      "labels": {
+        "yourOrder": "Your order",
+        "emptyText": "Add something to see your price.",
+        "regularLabel": "Regular price",
+        "savingsLabel": "You save",
+        "totalLabel": "Total",
+        "checkoutLabel": "Checkout",
+        "each": "each",
+        "off": "OFF",
+        "extraTag": "+{pct}% off your order per extra",
+        "nextHint": "Add 1 more {service} to save {gain}% more!",
+        "maxHint": "You've reached the maximum discount."
+      }
+    },
+    {
+      "type": "transformations",
+      "name": "Drag-to-compare examples",
+      "enabled": true,
+      "title": "Drag. Watch it transform.",
+      "subtitle": "Same product. Slide to see the difference.",
+      "_help": "One { } block = one before/after slider.",
+      "items": [
+        {
+          "before": {
+            "image": "images/Velora-Purifying-Shampoo-Bottle.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Velora-Purifying-Shampoo-Splash.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example 1 · [product type]"
+        },
+        {
+          "before": {
+            "image": "images/A-Better-Morning-Routine-Alarm-Clock.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Modern-Blue-Alarm-Clock-Poster.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example 2 · [product type]"
+        },
+        {
+          "before": {
+            "image": "images/Neon-Green-Gel-Odor-Eliminator-on-Kitchen-Counter.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Fresh-Air-Happy-Home.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example 3 · [product type]"
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "name": "Testimonials",
+      "enabled": true,
+      "eyebrow": "Testimonials",
+      "title": "What sellers say.",
+      "_help": "No testimonials yet, so this section stays hidden on the live page. Add { } blocks to 'items' to show it. rating = 1 to 5.",
+      "_example": {
+        "quote": "Write the customer's words here.",
+        "name": "Customer name",
+        "role": "Shop name",
+        "avatar": "images/avatar-1.jpg",
+        "rating": 5
+      },
+      "items": []
+    },
+    {
+      "type": "faq",
+      "name": "Questions",
+      "enabled": true,
+      "eyebrow": "FAQ",
+      "title": "Questions, answered.",
+      "items": [
+        {
+          "q": "What do I need to send you?",
+          "a": "Your product photos and a short note about what you sell and who it is for. [ADD DETAILS: photo quality, how many angles, etc.]"
+        },
+        {
+          "q": "How does the discount work?",
+          "a": "Every extra item you add takes a bigger percentage off your whole order. Harder services give a bigger discount. The maximum is 50% off."
+        },
+        {
+          "q": "How long does delivery take?",
+          "a": "About [1-3] working days, depending on how many items you order."
+        },
+        {
+          "q": "Can I ask for changes?",
+          "a": "[2] rounds of free revisions are included. [ADD DETAILS about extra revisions.]"
+        },
+        {
+          "q": "How can I pay?",
+          "a": "PayPal or Bank Transfer"
+        },
+        {
+          "q": "What file formats will I receive?",
+          "a": "Images as [JPG / PNG] and text as [DOC / TXT]."
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "Final call to action",
+      "enabled": true,
+      "title": "Your products deserve better ads.",
+      "text": "Build your package in under a minute.",
+      "buttonLabel": "Build my package",
+      "buttonLink": "#pricing"
+    }
+  ],
+  "footer": {
+    "description": "Ad images, product descriptions and ad copy for sellers who want to look good online.",
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+    "_help": "contacts: 'label' is shown before the value. 'link' is optional (e.g. https://zalo.me/..., mailto:you@mail.com). The services list is created automatically from the package builder.",
+    "contacts": [
+      {
+        "label": "Instagram",
+        "value": "@jacksonvinh",
+        "link": "https://www.instagram.com/jacksonvinh/"
+      },
+      {
+        "label": "Email",
+        "value": "jacksonvinh.busines@gmail.com",
+        "link": ""
+      },
+      {
+        "label": "Facebook",
+        "value": "[YOUR PAGE]",
+        "link": ""
+      }
+    ],
+    "copyright": "© {year}. All rights reserved."
+  },
+  "checkout": {
+    "_help": "The page customers see after pressing Checkout.",
+    "title": "Almost there!",
+    "subtitle": "Review your order and choose how to pay.",
+    "backLabel": "← Change my order",
+    "summaryTitle": "Order summary",
+    "orderLabel": "Order code",
+    "totalLabel": "Total",
+    "savingsLabel": "You saved",
+    "emptyTitle": "Your order is empty",
+    "emptyText": "Go back and pick what you need.",
+    "emptyButton": "Build my package",
+    "detailsTitle": "Your details",
+    "nameLabel": "Your name",
+    "emailLabel": "Email (we'll contact you and send your files here)",
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter a valid email address.",
+    "payTitle": "Choose how to pay",
+    "orderForm": {
+      "_help": [
+        "Where each order is emailed to you. Free option: create a form at formspree.io (or web3forms.com), then paste the address here.",
+        "Formspree: endpoint = https://formspree.io/f/xxxxxxxx   (leave accessKey empty).",
+        "Web3Forms: endpoint = https://api.web3forms.com/submit and accessKey = the key they email you.",
+        "subject: the email subject. {order} is replaced by the order code."
+      ],
+      "endpoint": "https://api.web3forms.com/submit",
+      "accessKey": "6077cdfe-4bf3-4cb0-a945-f659a69cef9a",
+      "subject": "New order {order}"
+    },
+    "thanks": {
+      "title": "Thank you! Your order is in.",
+      "text": "We received order {order}. Once your transfer arrives we'll email {email} to get started. Please include {order} in your transfer message."
+    },
+    "paypal": {
+      "_help": "linkTemplate is where the customer is sent. {amount} {currency} {order} are filled in automatically. For PayPal.Me use: https://www.paypal.me/YOURNAME/{amount}{currency}",
+      "enabled": true,
+      "title": "Pay with PayPal",
+      "text": "Fast and secure. Cards accepted. You'll be taken to PayPal to finish.",
+      "buttonLabel": "Pay with PayPal",
+      "linkTemplate": "https://www.paypal.me/jacksonvinh/{amount}{currency}"
+    },
+    "bank": {
+      "_help": "US bank transfer (ACH / wire), amounts in USD. routingNumber is optional: leave it empty to hide that line. Set \"enabled\": false to hide bank transfer.",
+      "enabled": false,
+      "title": "Bank transfer",
+      "text": "Prefer a bank transfer? Use the details below and include your order code.",
+      "confirmLabel": "I've made the transfer",
+      "errorText": "We couldn't send your order. Please try again, or contact us with your order code.",
+      "bankName": "[BANK NAME]",
+      "accountName": "[ACCOUNT HOLDER]",
+      "accountNumber": "[ACCOUNT NUMBER]",
+      "routingNumber": "[ROUTING NUMBER]",
+      "qrImage": ""
+    },
+    "after": {
+      "title": "After you pay",
+      "text": "Send your product photos and your order code to \nhttps://forms.gle/hhFpvR7pRXVvMQs17"
+    }
+  }
+}

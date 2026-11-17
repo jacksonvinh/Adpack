@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Layout only. Texts of this page live in content.json -> "checkout". -->
+</head>
+<body class="checkout-page">
+
+<div class="load-error" id="load-error" role="alert" hidden></div>
+
+<header class="nav container" id="nav">
+  <a class="brand" href="index.html"></a>
+  <a class="btn btn-outline" href="index.html#pricing" data-text="checkout.backLabel"></a>
+</header>
+
+<main class="container checkout">
+
+  <!-- shown when there is nothing in the cart -->
+  <section class="co-empty card" id="co-empty" hidden>
+    <h1 data-text="checkout.emptyTitle"></h1>
+    <p data-text="checkout.emptyText"></p>
+    <a class="btn btn-primary btn-lg" href="index.html#pricing" data-text="checkout.emptyButton"></a>
+  </section>
+
+  <div class="co-grid" id="co-full" hidden>
+    <div class="co-main">
+      <div class="sticker sticker--tilt" id="co-order-badge"></div>
+      <h1 data-text="checkout.title"></h1>
+      <p class="section-intro" data-text="checkout.subtitle"></p>
+
+      <!-- Thank-you message (shown after a bank-transfer order is sent) -->
+      <section class="after card thanks" id="co-thanks" hidden aria-live="polite">
+        <h3 data-text="checkout.thanks.title"></h3>
+        <p id="co-thanks-text"></p>
+      </section>
+
+      <!-- Customer details -->
+      <section class="card details" id="co-details">
+        <h2 class="co-h2 co-h2--first" data-text="checkout.detailsTitle"></h2>
+        <form id="co-form" novalidate>
+          <label class="fld"><span data-text="checkout.nameLabel"></span>
+            <input type="text" name="name" id="f-name" autocomplete="name" required maxlength="120"></label>
+          <label class="fld"><span data-text="checkout.emailLabel"></span>
+            <input type="email" name="email" id="f-email" autocomplete="email" required maxlength="160"></label>
+          <input type="text" name="website" id="f-hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="fld-error" id="f-error" role="alert" hidden></p>
+        </form>
+        <p class="pay-warn" id="inbox-warn" hidden>Order emails are not set up yet, so orders will not reach you. Add your form link in the editor (Settings → Checkout and payment).</p>
+      </section>
+
+      <h2 class="co-h2" data-text="checkout.payTitle"></h2>
+
+      <!-- PayPal -->
+      <section class="pay card" id="pay-paypal" hidden>
+        <h3 data-text="checkout.paypal.title"></h3>
+        <p data-text="checkout.paypal.text"></p>
+        <a class="btn btn-primary btn-lg" id="paypal-btn" data-text="checkout.paypal.buttonLabel" rel="noopener"></a>
+        <p class="pay-warn" id="paypal-warn" hidden>PayPal is not set up yet. Add your PayPal link in the editor (Settings → Payment).</p>
+      </section>
+
+      <!-- Bank transfer -->
+      <section class="pay card" id="pay-bank" hidden>
+        <h3 data-text="checkout.bank.title"></h3>
+        <p data-text="checkout.bank.text"></p>
+        <dl class="bank-list">
+          <div><dt>Bank</dt><dd data-text="checkout.bank.bankName"></dd></div>
+          <div><dt>Account name</dt><dd data-text="checkout.bank.accountName"></dd></div>
+          <div id="bank-routing-row"><dt>Routing number</dt><dd><span data-text="checkout.bank.routingNumber"></span> <button type="button" class="copy" data-copy="routing">Copy</button></dd></div>
+          <div><dt>Account number</dt><dd><span data-text="checkout.bank.accountNumber"></span> <button type="button" class="copy" data-copy="acct">Copy</button></dd></div>
+          <div><dt>Amount</dt><dd><b id="bank-amount"></b> <button type="button" class="copy" data-copy="amount">Copy</button></dd></div>
+          <div><dt>Transfer message</dt><dd><b id="bank-note"></b> <button type="button" class="copy" data-copy="note">Copy</button></dd></div>
+        </dl>
+        <div class="bank-qr" id="bank-qr" hidden></div>
+        <button type="button" class="btn btn-primary" id="bank-confirm" data-text="checkout.bank.confirmLabel"></button>
+        <p class="pay-warn" id="bank-error" hidden></p>
+      </section>
+
+      <section class="after card" id="co-after">
+        <h3 data-text="checkout.after.title"></h3>
+        <p data-text="checkout.after.text"></p>
+      </section>
+    </div>
+
+    <aside class="co-summary card">
+      <h3 data-text="checkout.summaryTitle"></h3>
+      <ul class="receipt" id="co-lines"></ul>
+      <div class="totals">
+        <div class="row" id="co-row-save" hidden><span data-text="checkout.savingsLabel"></span><b id="co-save"></b></div>
+        <div class="row row-total"><span data-text="checkout.totalLabel"></span><b id="co-total"></b></div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-copy" style="margin-top:0;border-top:0;padding-top:0" data-text="footer.copyright"></div>
+  </div>
+</footer>
+
+<template id="tpl-receipt-line">
+  <li class="rc-line">
+    <span class="rc-name"></span><span class="rc-qty"></span>
+    <span class="rc-money"><s class="rc-was"></s><b class="rc-price"></b></span>
+  </li>
+</template>
+
+<script src="js/core.js"></script>
+<script src="js/pricing.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
