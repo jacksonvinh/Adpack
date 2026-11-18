@@ -83,6 +83,19 @@
         <h3 data-text="checkout.after.title"></h3>
         <p data-text="checkout.after.text"></p>
       </section>
+
+      <!-- Video (YouTube, loads only when clicked). Texts + link: content.json -> "checkout.video" -->
+      <section class="video-card card" id="co-video" hidden>
+        <span class="sticker sticker--small video-tag" data-text="checkout.video.tag"></span>
+        <h3 data-text="checkout.video.title"></h3>
+        <p data-text="checkout.video.text"></p>
+        <div class="video-frame" id="video-frame">
+          <button type="button" class="video-play" id="video-play" aria-label="Play video">
+            <img id="video-thumb" alt="" loading="lazy">
+            <span class="video-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></span>
+          </button>
+        </div>
+      </section>
     </div>
 
     <aside class="co-summary card">
