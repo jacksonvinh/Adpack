@@ -1,5 +1,5 @@
 /* ==========================================================================
-   script.js  —  home page: builds the sections, runs the package builder
+   script.js  â€”  home page: builds the sections, runs the package builder
    (prices, discounts, confetti). You normally do NOT need to edit this file.
    ========================================================================== */
 (function () {
