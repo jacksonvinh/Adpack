@@ -370,17 +370,17 @@
         "enabled": true,
         "type": "both",
         "percent": 35,
-        "badge": "website celeration!",
+        "badge": "WEB LAUNCH Celebration!",
         "title": "Extra 35% off your total",
         "text": "Taken off at checkout, on top of your package discount.",
         "endsAt": "2026-11-24T04:59:00.000Z",
         "showSeconds": false,
         "timeText": "Ends in",
-        "slotsTotal": 20,
-        "slotsLeft": 9,
-        "slotsText": "spots left at this price",
+        "slotsTotal": 100,
+        "slotsLeft": 79,
+        "slotsText": "spots left",
         "endedText": "This deal has ended.",
-        "rowLabel": "Flash deal"
+        "rowLabel": ""
       },
       "labels": {
         "yourOrder": "Your order",
