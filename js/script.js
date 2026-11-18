@@ -145,7 +145,7 @@
     r.lines.forEach(function (ln) {
       var li = tpl.content.firstElementChild.cloneNode(true);
       qs('.rc-name', li).textContent = ln.name;
-      qs('.rc-qty', li).textContent = '×' + ln.qty;
+      qs('.rc-qty', li).textContent = '\u00d7' + ln.qty;
       qs('.rc-price', li).textContent = fmt(ln.lineFinal);
       var w = qs('.rc-was', li);
       if (r.pct > 0) w.textContent = fmt(ln.lineRegular); else w.hidden = true;
