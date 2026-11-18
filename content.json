@@ -590,6 +590,15 @@
     "after": {
       "title": "After you pay",
       "text": "Send your product photos and your order code to \nhttps://forms.gle/hhFpvR7pRXVvMQs17"
-    }
+    },
+     "video": {
+  "_help": "YouTube video at the bottom of the checkout page. url = any YouTube link. Set enabled to false to hide it. Leave a text empty to hide that line.",
+  "enabled": true,
+  "url": "https://www.youtube.com/watch?v=XEtuwTEdUAo",
+  "tag": "Watch",
+  "title": "See how it works",
+  "text": "A quick look before you pay.",
+  "playLabel": "Play video"
+ }
   }
 }
