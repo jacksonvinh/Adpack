@@ -10,7 +10,7 @@
     "title": "Ad Package Shop",
     "description": "Ad images, product descriptions and ad copy for online sellers.",
     "logo": "images/jv-1.png",
-    "favicon": "",
+    "favicon": "images/jv-1.png",
     "extraFonts": [
       "Poppins",
       "DM Sans",
