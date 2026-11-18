@@ -1,5 +1,5 @@
 /* ==========================================================================
-   core.js  —  the page engine shared by every page.
+   core.js  â€”  the page engine shared by every page.
    It reads content.json and fills the layout templates in the HTML.
    You normally do NOT need to edit this file.
    ========================================================================== */
