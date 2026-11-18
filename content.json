@@ -295,9 +295,9 @@
       "services": [
         {
           "id": "image",
-          "name": "Ad images",
+          "name": "Product Shots",
           "unit": "ad image",
-          "description": "Ad Image / Website Hero / Product Listing",
+          "description": "Upload to Ads / Website / Product Listing",
           "price": 11.99,
           "extraDiscount": 7,
           "max": 50,
