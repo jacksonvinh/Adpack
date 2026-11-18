@@ -39,7 +39,7 @@
       "onNavy": "#FFFFFF",
       "mutedOnNavy": "#B6BFDA",
       "onAccent": "#FFFFFF",
-      "pop": "#5cff67",
+      "pop": "#7abaff",
       "border": "#DDE2F2",
       "placeholderBeforeBg": "#D9DEEE",
       "placeholderBeforeShape": "#B4BBD3",
@@ -68,8 +68,8 @@
     }
   },
   "nav": {
-    "ctaLabel": "Build my package",
-    "ctaLink": "#pricing"
+    "ctaLabel": "",
+    "ctaLink": ""
   },
   "sections": [
     {
@@ -89,7 +89,7 @@
       "beforeLabel": "Before",
       "afterLabel": "After",
       "startPosition": 50,
-      "sticker": "Drag me!",
+      "sticker": "",
       "handleLabel": "Drag to compare before and after"
     },
     {
@@ -205,7 +205,9 @@
             "alt": "After",
             "placeholder": "After image"
           },
-          "caption": ""
+          "caption": "",
+          "afterLabel": "",
+          "beforeLabel": ""
         },
         {
           "before": {
@@ -218,7 +220,9 @@
             "alt": "After",
             "placeholder": "After ad image"
           },
-          "caption": ""
+          "caption": "",
+          "afterLabel": "",
+          "beforeLabel": ""
         },
         {
           "before": {
@@ -231,7 +235,9 @@
             "alt": "After",
             "placeholder": "After ad image"
           },
-          "caption": ""
+          "caption": "",
+          "afterLabel": "",
+          "beforeLabel": ""
         }
       ]
     },
@@ -353,6 +359,29 @@
           "text": "MAX DISCOUNT unlocked!"
         }
       ],
+      "promo": {
+        "_help": [
+          "FLASH DEAL: an extra % off the WHOLE total, applied AFTER the normal discount (not limited by the max discount).",
+          "type: time (ends at endsAt) | slots (ends when slotsLeft reaches 0) | both (whichever comes first) | always (no end, just a label).",
+          "endsAt: end date/time, e.g. 2026-12-01T23:59:00-05:00 (the -05:00 is your time zone). Easier: Settings > Flash deal in the editor.",
+          "slotsLeft: YOU lower this number when you sell a spot (the site cannot count sales). Keep it true.",
+          "showSeconds: false = the clock shows days/hours/minutes only (updates every 20 s)."
+        ],
+        "enabled": true,
+        "type": "both",
+        "percent": 35,
+        "badge": "website celeration!",
+        "title": "Extra 35% off your total",
+        "text": "Taken off at checkout, on top of your package discount.",
+        "endsAt": "2026-11-24T04:59:00.000Z",
+        "showSeconds": false,
+        "timeText": "Ends in",
+        "slotsTotal": 20,
+        "slotsLeft": 9,
+        "slotsText": "spots left at this price",
+        "endedText": "This deal has ended.",
+        "rowLabel": "Flash deal"
+      },
       "labels": {
         "yourOrder": "Your order",
         "emptyText": "Add something to see your price.",
@@ -372,7 +401,7 @@
       "name": "Drag-to-compare examples",
       "enabled": true,
       "title": "Here some more work of us",
-      "subtitle": "Same product. complete new value.",
+      "subtitle": "Same product. Complete NEW VALUE!",
       "_help": "One { } block = one before/after slider.",
       "items": [
         {
@@ -508,7 +537,7 @@
     "_help": "The page customers see after pressing Checkout.",
     "title": "Almost there!",
     "subtitle": "Review your order and choose how to pay.",
-    "backLabel": "â† Change my order",
+    "backLabel": "Change my order",
     "summaryTitle": "Order summary",
     "orderLabel": "Order code",
     "totalLabel": "Total",
