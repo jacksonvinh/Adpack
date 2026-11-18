@@ -82,6 +82,7 @@
   var prevPct = 0, stickyObserver = null, builderVisible = false, activeBuilder = null;
 
   function initBuilder(root, b) {
+    stopPromo();
     (b.services || []).forEach(function (s) {
       if (s && s.id && cart[s.id] === undefined) cart[s.id] = Math.max(0, Number(s.startQty) || 0);
     });
@@ -157,8 +158,15 @@
     tween(qs('.t-regular', root), r.regularCents, fmt);
     tween(qs('.t-save', root), r.savedCents, fmt);
     tween(qs('.t-total', root), r.totalCents, fmt);
-    qs('.row-regular', root).hidden = r.savedCents <= 0;
+    qs('.row-regular', root).hidden = r.savedCents <= 0 && r.promoCents <= 0;
     qs('.row-save', root).hidden = r.savedCents <= 0;
+    var pr = qs('.row-promo', root);
+    pr.hidden = r.promoCents <= 0;
+    if (r.promoCents > 0) {
+      qs('.t-promo-label', pr).textContent = ((b.promo && b.promo.rowLabel) || 'Flash deal') + ' (-' + r.promo.pct + '%)';
+      tween(qs('.t-promo', pr), -r.promoCents, fmt);
+    }
+    renderPromo(b, root, r.promo);
 
     // sticker + meter
     var st = qs('.pct-sticker', root);
@@ -200,13 +208,74 @@
     updateSticky();
   }
 
+  /* ---------- flash deal strip + countdown ----------
+     One timer, only while the strip is on screen AND the tab is visible, and it only
+     writes the numbers that changed. Costs almost nothing. */
+  var promoTimer = null, promoSeen = true, promoIO = null, promoCtx = null, cdLast = {};
+  function stopPromo() {
+    if (promoTimer) { clearInterval(promoTimer); promoTimer = null; }
+    if (promoIO) { promoIO.disconnect(); promoIO = null; }
+    promoCtx = null; cdLast = {}; promoSeen = true;
+  }
+  function setCd(root, sel, v) { if (cdLast[sel] !== v) { cdLast[sel] = v; qs(sel, root).textContent = v; } }
+  function drawClock(root, ms, secs) {
+    var t = Math.max(0, Math.floor(ms / 1000)), d = Math.floor(t / 86400), h = Math.floor(t % 86400 / 3600), m = Math.floor(t % 3600 / 60), s = t % 60;
+    var z = function (n) { return (n < 10 ? '0' : '') + n; };
+    setCd(root, '.cd-dd b', z(d)); setCd(root, '.cd-h', z(h)); setCd(root, '.cd-m', z(m)); setCd(root, '.cd-s', z(s));
+    qs('.cd-dd', root).hidden = d <= 0;
+    qs('.cd-ss', root).hidden = !secs;
+  }
+  function promoTick() {
+    var c = promoCtx; if (!c || !c.root.isConnected) return stopPromo();
+    var st = P.promoState(c.b);
+    if (!st.active) { stopPromo(); update(c.b, c.root, { silent: true }); return; }   // deal just ended: prices and strip update
+    drawClock(c.root, st.msLeft, st.showSeconds);
+  }
+  function syncPromoTimer() {
+    var run = promoCtx && promoCtx.timed && promoSeen && !document.hidden;
+    if (run && !promoTimer) { promoTick(); if (promoCtx) promoTimer = setInterval(promoTick, promoCtx.secs ? 1000 : 20000); }
+    else if (!run && promoTimer) { clearInterval(promoTimer); promoTimer = null; }
+  }
+  document.addEventListener('visibilitychange', syncPromoTimer);
+
+  function renderPromo(b, root, st) {
+    var box = qs('.promo', root); if (!box) return;
+    var edit = !!S.EDIT, on = st.active, show = on || st.expired || edit;
+    box.hidden = !show;
+    box.classList.toggle('is-off', !on);
+    box.classList.toggle('is-ended', !on && !edit);
+    if (!show) { stopPromo(); return; }
+    qs('.promo-pct b', box).textContent = '+' + st.pct + '%';
+    var clock = qs('.promo-clock', box), slots = qs('.promo-slots', box), ended = qs('.promo-ended', box);
+    clock.hidden = !st.usesTime || (!on && !edit);
+    slots.hidden = !st.usesSlots || (!on && !edit);
+    ended.hidden = !st.expired;
+    if (st.usesTime) drawClock(box, on ? st.msLeft : 0, st.showSeconds);
+    if (st.usesSlots) {
+      qs('.promo-left', box).textContent = st.slotsLeft;
+      var f = st.slotsTotal ? Math.max(0, Math.min(100, st.slotsLeft / st.slotsTotal * 100)) : 0;
+      qs('.promo-bar-fill', box).style.width = f + '%';
+      slots.classList.toggle('low', f <= 25);
+    }
+    // timer bookkeeping
+    cdLast = {};
+    promoCtx = { b: b, root: root, timed: on && st.usesTime && !edit, secs: st.showSeconds };
+    if (promoCtx.timed && 'IntersectionObserver' in window) {
+      if (promoIO) promoIO.disconnect();
+      promoIO = new IntersectionObserver(function (en) { promoSeen = en[0].isIntersecting; syncPromoTimer(); }, { threshold: 0 });
+      promoIO.observe(box);
+    } else if (promoCtx.timed) promoSeen = true;
+    if (st.usesTime && on && edit) drawClock(box, st.msLeft, st.showSeconds);
+    syncPromoTimer();
+  }
+
   function updateSticky() {
     var bar = qs('#sticky-bar'); if (!bar || !last.r) return;
     var r = last.r, b = last.b, sym = b.currencySymbol == null ? '$' : b.currencySymbol;
     qs('#sticky-total').textContent = P.money(r.totalCents, sym);
     var sv = qs('#sticky-save');
-    sv.textContent = r.pct > 0 ? '-' + r.pct + '%' : '';
-    sv.hidden = r.pct <= 0;
+    sv.textContent = r.effPct > 0 ? '-' + r.effPct + '%' : '';
+    sv.hidden = r.effPct <= 0;
     var a = qs('#sticky-btn');
     a.textContent = (b.labels && b.labels.checkoutLabel) || 'Checkout';
     a.setAttribute('href', (b.checkoutLink || 'checkout.html') + '?cart=' + encodeURIComponent(P.encode(cart, b)));

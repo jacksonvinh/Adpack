@@ -437,7 +437,7 @@
     } else if (o.type === 'textarea') { input = el('textarea'); input.rows = 3; input.value = cur == null ? '' : cur; }
     else if (o.type === 'checkbox') { input = el('input'); input.type = 'checkbox'; input.checked = !!cur; wrap.classList.add('inline'); }
     else {
-      input = el('input'); input.type = o.type || 'text'; input.value = cur == null ? '' : cur;
+      input = el('input'); input.type = o.type || 'text'; input.value = o.read ? o.read(cur) : (cur == null ? '' : cur);
       if (o.min != null) input.min = o.min; if (o.max != null) input.max = o.max; if (o.step != null) input.step = o.step;
     }
     wrap.appendChild(input);
@@ -452,8 +452,9 @@
     if (o.hint) { var h = el('span', 'ed-hint'); h.textContent = o.hint; wrap.appendChild(h); }
     return wrap;
   }
+  var openMemo = {};   // keeps a settings group open when the drawer is rebuilt
   function group(title, open) {
-    var d = el('details', 'ed-group'); if (open) d.open = true;
+    var d = el('details', 'ed-group'); if (open || openMemo[title]) d.open = true;
     var s = el('summary'); s.textContent = title; d.appendChild(s);
     return d;
   }
@@ -471,6 +472,7 @@
 
   function renderSettings() {
     var d = qs('#ed-drawer'); if (!d) return;
+    if (d.firstChild) { openMemo = {}; qsa('details.ed-group', d).forEach(function (n) { openMemo[qs('summary', n).textContent] = n.open; }); }
     d.textContent = '';
     var c = S.content;
     c.theme = c.theme || {}; c.theme.colors = c.theme.colors || {}; c.theme.fonts = c.theme.fonts || {}; c.theme.shape = c.theme.shape || {};
@@ -535,6 +537,28 @@
       var am = el('button', '', '+ Add a cheer'); am.type = 'button';
       am.addEventListener('click', function () { b.milestones.push({ pct: 10, text: 'Nice!' }); commit(); renderSettings(); });
       mt.appendChild(am); g.appendChild(mt);
+      d.appendChild(g);
+    }
+
+    // flash deal (extra % off after the normal discount)
+    if (b) {
+      g = group('Flash deal (extra % off)');
+      var po = function () { var bb = S.builder(); bb.promo = bb.promo || {}; return bb.promo; }, liveP = function () { S.updateBuilders(); };
+      var pp = po();
+      g.appendChild(el('p', 'ed-hint', 'An extra % taken off the TOTAL, after the normal discount. The banner texts are edited directly on the page.'));
+      g.appendChild(field({ label: 'Deal is ON', type: 'checkbox', obj: po, path: 'enabled', live: liveP }));
+      g.appendChild(field({ label: 'Extra discount (%)', type: 'number', min: 0, max: 90, step: 1, obj: po, path: 'percent', live: liveP }));
+      g.appendChild(field({ label: 'Deal ends by', type: 'select', options: [['time', 'Time (countdown)'], ['slots', 'Spots running out'], ['both', 'Both (whichever first)'], ['always', 'Never (just a label)']], obj: po, path: 'type', live: function () { liveP(); renderSettings(); } }));
+      if (pp.type === 'time' || pp.type === 'both') {
+        var toLocal = function (v) { var t = Date.parse(v); if (!isFinite(t)) return ''; var d = new Date(t - new Date(t).getTimezoneOffset() * 60000); return d.toISOString().slice(0, 16); };
+        g.appendChild(field({ label: 'Ends at (your time)', type: 'datetime-local', obj: po, path: 'endsAt', read: toLocal, write: function (v) { var t = Date.parse(v); return isFinite(t) ? new Date(t).toISOString() : ''; }, live: liveP, hint: 'Everyone sees the same moment. When it passes, the deal switches off by itself.' }));
+        g.appendChild(field({ label: 'Show seconds in the countdown', type: 'checkbox', obj: po, path: 'showSeconds', live: liveP }));
+      }
+      if (pp.type === 'slots' || pp.type === 'both') {
+        g.appendChild(field({ label: 'Total spots', type: 'number', min: 1, step: 1, obj: po, path: 'slotsTotal', live: liveP }));
+        g.appendChild(field({ label: 'Spots left now', type: 'number', min: 0, step: 1, obj: po, path: 'slotsLeft', live: liveP, hint: 'The site cannot count sales. Lower this yourself when you sell a spot, then save and upload. At 0 the deal ends.' }));
+      }
+      g.appendChild(field({ label: 'Name of the line in the receipt', obj: po, path: 'rowLabel', live: liveP }));
       d.appendChild(g);
     }
 

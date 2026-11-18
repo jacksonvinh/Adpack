@@ -367,7 +367,7 @@ section[id], div[id] { scroll-margin-top: 16px; }
 .co-summary .rc-qty { color: var(--c-muted-text); }
 .co-summary .rc-was { color: var(--c-muted-text); }
 .co-summary .totals { border-top-color: var(--c-accent-soft); }
-.co-summary .totals .row-save b { color: var(--c-accent-text); }
+.co-summary .totals .row-save b, .co-summary .totals .row-promo b { color: var(--c-accent-text); }
 .co-empty { text-align: center; padding: 56px 24px; max-width: 640px; margin: 40px auto; }
 .co-empty p { margin: 12px 0 24px; color: var(--c-muted-text); }
 
@@ -398,3 +398,43 @@ section[id], div[id] { scroll-margin-top: 16px; }
   .marquee-track, .sticker--drag, .pct-sticker.bump { animation: none; }
   .btn, .tile, .meter-fill, .faq-icon, .sticky-bar { transition: none; }
 }
+
+/* ---------- flash deal strip (above the builder) ---------- */
+.promo { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 14px 22px; margin: -8px auto 32px; max-width: 980px; padding: 16px 22px; background: var(--c-pop); color: var(--c-navy); border: var(--line); border-radius: var(--radius-card); box-shadow: var(--hard-sm); transform: rotate(-.6deg); }
+.promo[hidden], .promo [hidden] { display: none !important; }
+.promo-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--c-navy); color: var(--c-pop); border-radius: 999px; font: 800 13px/1 var(--font-heading); letter-spacing: .08em; text-transform: uppercase; }
+.promo-dot { width: 9px; height: 9px; border-radius: 50%; background: #FF4D4D; animation: promo-pulse 1.4s ease-in-out infinite; }
+@keyframes promo-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.7); opacity: .35; } }
+.promo-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.promo-title { font: 800 22px/1.15 var(--font-heading); }
+.promo-sub { font-size: 14px; opacity: .8; }
+.promo-pct b { display: block; padding: 4px 12px; font: 800 34px/1 var(--font-heading); color: var(--c-on-accent); background: var(--c-accent); border: var(--line); border-radius: 12px; transform: rotate(3deg); }
+.promo-clock { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 12px; padding-top: 12px; border-top: 2px dashed rgba(23, 33, 58, .35); }
+.promo-clock-label { font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 13px; }
+.cd { display: inline-flex; gap: 8px; }
+.cd-cell { display: inline-flex; align-items: baseline; gap: 3px; padding: 6px 10px; background: var(--c-navy); color: var(--c-on-navy); border-radius: 10px; }
+.cd-cell b { font: 800 26px/1 var(--font-heading); font-variant-numeric: tabular-nums; min-width: 2ch; text-align: center; }
+.cd-cell i { font-style: normal; font-size: 12px; font-weight: 700; color: var(--c-pop); }
+.promo-slots { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.promo-clock + .promo-slots { padding-top: 0; }
+.promo-slots-text { font-weight: 700; }
+.promo-slots-text b { font: 800 24px/1 var(--font-heading); }
+.promo-bar { flex: 0 1 260px; width: 260px; height: 14px; background: rgba(23, 33, 58, .18); border: 2px solid var(--c-navy); border-radius: 999px; overflow: hidden; }
+.promo-bar-fill { display: block; height: 100%; background: var(--c-navy); border-radius: 999px; transition: width .5s ease; }
+.promo-slots.low .promo-bar-fill { background: #E5262B; }
+.promo-slots.low .promo-slots-text b { color: #C41A1F; }
+.promo-ended { grid-column: 1 / -1; text-align: center; font-weight: 800; }
+.promo.is-off { background: #E8EBF5; box-shadow: none; transform: none; }
+.promo.is-off .promo-dot { animation: none; background: #9AA3BD; }
+.promo.is-ended { grid-template-columns: 1fr; }
+.promo.is-ended .promo-badge, .promo.is-ended .promo-main, .promo.is-ended .promo-pct { display: none; }
+.totals .row-promo b { color: var(--c-pop); }
+@media (max-width: 640px) {
+  .promo { grid-template-columns: minmax(0, 1fr); justify-items: start; transform: none; padding: 14px 16px; margin-top: 0; }
+  .promo-clock, .promo-slots, .promo-ended { justify-self: stretch; }
+  .promo-title { font-size: 19px; }
+  .cd-cell b { font-size: 22px; }
+  .promo-clock { flex-direction: column; gap: 6px; }
+  .promo-bar { width: 100%; flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .promo-dot { animation: none; } .promo-bar-fill { transition: none; } }

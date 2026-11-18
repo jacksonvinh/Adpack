@@ -163,7 +163,7 @@
       "items": [
         {
           "image": "images/Pore-Refining-Serum-Glow.jpg",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">PuremÃ¨re</span>",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Puremère</span>",
           "alt": "Product image 1",
           "placeholder": "Product image 1"
         },
@@ -531,7 +531,7 @@
         "link": "https://linktr.ee/jacksonvinh?utm_source=linktree_profile_share&ltsid=004486ec-de8c-414a-997f-4b2363a975ce"
       }
     ],
-    "copyright": "Â© 2026. All rights reserved."
+    "copyright": "© 2026. All rights reserved."
   },
   "checkout": {
     "_help": "The page customers see after pressing Checkout.",

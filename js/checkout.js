@@ -72,6 +72,11 @@
       qs('#co-row-save').hidden = false;
       qs('#co-save').textContent = fmt(r.savedCents) + ' (' + r.pct + '%)';
     }
+    if (r.promoCents > 0) {
+      qs('#co-row-promo').hidden = false;
+      qs('#co-promo-label').textContent = ((b.promo && b.promo.rowLabel) || 'Flash deal') + ' (-' + r.promo.pct + '%)';
+      qs('#co-promo').textContent = '-' + fmt(r.promoCents);
+    }
     var amount = (r.totalCents / 100).toFixed(2);
 
     /* ----- customer details ----- */
@@ -107,7 +112,7 @@
       var body = {
         subject: String(of.subject || 'New order {order}').replace(/\{order\}/g, code),
         order_code: code, name: fName.value.trim(), email: fEmail.value.trim(), payment_method: method,
-        items: itemsText, discount: r.pct + '%', total: fmt(r.totalCents) + ' ' + cur
+        items: itemsText, discount: r.pct + '%' + (r.promoCents > 0 ? ' + flash deal ' + r.promo.pct + '%' : ''), total: fmt(r.totalCents) + ' ' + cur
       };
       if (!isBlank(of.accessKey)) body.access_key = of.accessKey;
       var req = fetch(of.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body), keepalive: true })

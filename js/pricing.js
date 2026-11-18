@@ -11,6 +11,8 @@
      faster the discount grows.
    - The order-wide discount is capped at "discountCap" (50 by default) and is
      applied to the price of EVERY item in the order.
+   - Optional flash deal ("promo"): an extra % off the total, applied AFTER the
+     discount above (so it is not part of the cap). Ends by time and/or slots.
    ========================================================================== */
 (function () {
   'use strict';
@@ -47,9 +49,29 @@
     return Math.min(cap, Math.round(sum));
   }
 
+  /* ---- flash deal (content.json -> builder.promo) ----
+     Extra % off the TOTAL, applied after the normal discount.
+     type: "time" (ends at endsAt) | "slots" (while slotsLeft > 0) | "both" (whichever ends first) | "always" */
+  function promoState(b, now) {
+    var p = (b && b.promo && typeof b.promo === 'object') ? b.promo : {};
+    now = now == null ? Date.now() : now;
+    var pct = Math.min(100, Math.max(0, num(p.percent, 0)));
+    var type = ['time', 'slots', 'both', 'always'].indexOf(p.type) >= 0 ? p.type : 'always';
+    var usesTime = type === 'time' || type === 'both', usesSlots = type === 'slots' || type === 'both';
+    var end = usesTime && p.endsAt ? Date.parse(p.endsAt) : NaN;
+    var msLeft = usesTime ? (isFinite(end) ? end - now : 0) : null;
+    var slotsLeft = usesSlots ? Math.max(0, Math.floor(num(p.slotsLeft, 0))) : null;
+    var slotsTotal = usesSlots ? Math.max(slotsLeft, Math.floor(num(p.slotsTotal, slotsLeft))) : null;
+    var enabled = p.enabled === true && pct > 0;
+    var expired = (usesTime && !(msLeft > 0)) || (usesSlots && slotsLeft <= 0);
+    return { enabled: enabled, active: enabled && !expired, expired: enabled && expired, pct: pct, type: type,
+             usesTime: usesTime, usesSlots: usesSlots, msLeft: msLeft, slotsLeft: slotsLeft, slotsTotal: slotsTotal,
+             showSeconds: p.showSeconds !== false };
+  }
+
   function unitCents(price, pct) { return Math.round(num(price, 0) * 100 * (1 - pct / 100)); }
 
-  function compute(b, qty) {
+  function compute(b, qty, now) {
     qty = qty || {};
     var pct = pctFor(b, qty);
     var lines = [], units = 0, regular = 0, total = 0;
@@ -74,8 +96,15 @@
     (Array.isArray(b.milestones) ? b.milestones : []).forEach(function (m) {
       if (m && pct >= num(m.pct, 1e9) && (!milestone || num(m.pct, 0) >= num(milestone.pct, 0))) milestone = m;
     });
+    // flash deal: taken off the total AFTER the normal discount
+    var promo = promoState(b, now), promoCents = 0, subtotal = total;
+    if (units > 0 && promo.active) promoCents = Math.round(subtotal * promo.pct / 100);
+    total = subtotal - promoCents;
     return { pct: pct, cap: Math.max(0, num(b.discountCap, 50)), lines: lines, units: units,
-             regularCents: regular, totalCents: total, savedCents: regular - total, hints: hints, milestone: milestone };
+             regularCents: regular, subtotalCents: subtotal, promo: promo, promoCents: promoCents,
+             totalCents: total, savedCents: regular - subtotal, allSavedCents: regular - total,
+             effPct: regular > 0 ? Math.round((1 - total / regular) * 100) : 0,
+             hints: hints, milestone: milestone };
   }
 
   function money(cents, symbol) {
@@ -99,5 +128,5 @@
     return qty;
   }
 
-  window.Pricing = { compute: compute, pctFor: pctFor, unitCents: unitCents, money: money, encode: encode, decode: decode, services: services, clampQty: clampQty };
+  window.Pricing = { compute: compute, promoState: promoState, pctFor: pctFor, unitCents: unitCents, money: money, encode: encode, decode: decode, services: services, clampQty: clampQty };
 })();
