@@ -167,6 +167,28 @@
         <p class="section-intro" data-text="intro" data-ph="Short intro"></p>
       </div>
 
+
+      <!-- Flash deal: extra % off the total. Texts: content.json -> builder.promo. Shown only while the deal is on. -->
+      <div class="promo" hidden>
+        <div class="promo-badge"><i class="promo-dot" aria-hidden="true"></i><span data-text="promo.badge" data-ph="Badge"></span></div>
+        <div class="promo-main">
+          <b class="promo-title" data-text="promo.title" data-ph="Deal title"></b>
+          <span class="promo-sub" data-text="promo.text" data-ph="Short explanation"></span>
+        </div>
+        <div class="promo-pct" aria-hidden="true"><b></b></div>
+        <div class="promo-clock" hidden>
+          <span class="promo-clock-label" data-text="promo.timeText" data-ph="Ends in"></span>
+          <span class="cd" role="timer" aria-label="Time left">
+            <span class="cd-cell cd-dd"><b>00</b><i>d</i></span><span class="cd-cell"><b class="cd-h">00</b><i>h</i></span><span class="cd-cell"><b class="cd-m">00</b><i>m</i></span><span class="cd-cell cd-ss"><b class="cd-s">00</b><i>s</i></span>
+          </span>
+        </div>
+        <div class="promo-slots" hidden>
+          <span class="promo-slots-text"><b class="promo-left"></b> <span data-text="promo.slotsText" data-ph="spots left"></span></span>
+          <span class="promo-bar" aria-hidden="true"><span class="promo-bar-fill"></span></span>
+        </div>
+        <p class="promo-ended" hidden data-text="promo.endedText" data-ph="Deal ended text"></p>
+      </div>
+
       <div class="builder-grid">
         <div class="builder-main card">
           <div class="svc-list" data-list="services" data-add-label="service">
@@ -210,6 +232,7 @@
           <div class="totals">
             <div class="row row-regular"><span data-text="labels.regularLabel" data-fallback="Regular price"></span><s class="t-regular"></s></div>
             <div class="row row-save"><span data-text="labels.savingsLabel" data-fallback="You save"></span><b class="t-save"></b></div>
+            <div class="row row-promo" hidden><span class="t-promo-label"></span><b class="t-promo"></b></div>
             <div class="row row-total"><span data-text="labels.totalLabel" data-fallback="Total"></span><b class="t-total"></b></div>
           </div>
           <a class="btn btn-pop btn-lg b-checkout" href="checkout.html" data-text="labels.checkoutLabel" data-fallback="Checkout"></a>
