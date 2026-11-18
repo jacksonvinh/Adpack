@@ -1,5 +1,5 @@
 /* ==========================================================================
-   checkout.js  â€”  the page customers land on after pressing Checkout.
+   checkout.js  —  the page customers land on after pressing Checkout.
    Texts: content.json -> "checkout". Prices: recomputed from content.json.
 
    Flow: customer enters name + email -> the order is emailed to YOU
@@ -7,7 +7,7 @@
    bank transfer (details on this page).
    ========================================================================== */
 (function () {
-  'use strict';
+  'use strict';a
   var S = window.Site, P = window.Pricing, qs = S.qs, isBlank = S.isBlank;
 
   function orderCode(key) {
@@ -61,7 +61,7 @@
     r.lines.forEach(function (ln) {
       var li = tpl.content.firstElementChild.cloneNode(true);
       qs('.rc-name', li).textContent = ln.name;
-      qs('.rc-qty', li).textContent = 'Ã—' + ln.qty;
+      qs('.rc-qty', li).textContent = '\u00d7' + ln.qty;
       qs('.rc-price', li).textContent = fmt(ln.lineFinal);
       var w = qs('.rc-was', li);
       if (r.pct > 0) w.textContent = fmt(ln.lineRegular); else w.hidden = true;
@@ -138,7 +138,7 @@
           if (!validDetails()) return;
           if (btn.classList.contains('is-busy')) return;
           btn.classList.add('is-busy');
-          var label = btn.textContent; btn.textContent = 'â€¦';
+          var label = btn.textContent; btn.textContent = '\u2026';
           // the customer is never blocked from paying, even if the email service is slow or down
           sendOrder('PayPal').then(function () { window.location.href = url; });
           setTimeout(function () { btn.textContent = label; btn.classList.remove('is-busy'); }, 8000);
@@ -189,7 +189,7 @@
         bankErr.hidden = true;
         if (!validDetails()) return;
         confirmBtn.disabled = true;
-        var label = confirmBtn.textContent; confirmBtn.textContent = 'â€¦';
+        var label = confirmBtn.textContent; confirmBtn.textContent = '\u2026';
         sendOrder('Bank transfer').then(function (res) {
           if (res && res.ok === false) {
             confirmBtn.disabled = false; confirmBtn.textContent = label;
@@ -200,7 +200,7 @@
           var t = (co.thanks && co.thanks.text) || '';
           qs('#co-thanks-text').textContent = t.replace(/\{order\}/g, code).replace(/\{email\}/g, fEmail.value.trim()).replace(/\{name\}/g, fName.value.trim());
           qs('#co-thanks').hidden = false;
-          confirmBtn.textContent = 'âœ“';
+          confirmBtn.textContent = '\u2713';
           qs('#co-thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       });
