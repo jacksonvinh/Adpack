@@ -277,7 +277,7 @@
       var fmt = el.getAttribute('data-format');
       if (fmt === 'stars') {
         var r = Math.max(0, Math.min(5, Math.round(Number(v) || 0)));
-        v = r ? new Array(r + 1).join('★') : '';
+        v = r ? new Array(r + 1).join('\u2605') : '';
         el.hidden = !v; el.textContent = v;
         return;
       }
