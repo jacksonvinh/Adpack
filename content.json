@@ -163,7 +163,7 @@
       "items": [
         {
           "image": "images/Pore-Refining-Serum-Glow.jpg",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Puremère</span>",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Purem�re</span>",
           "alt": "Product image 1",
           "placeholder": "Product image 1"
         },
@@ -297,8 +297,8 @@
           "id": "image",
           "name": "Product Shots",
           "unit": "ad image",
-          "description": "Upload to Ads / Website / Product Listing",
-          "price": 11.99,
+          "description": "For Ads / Website Hero / Product Listing",
+          "price": 21.99,
           "extraDiscount": 7,
           "max": 50,
           "startQty": 0
@@ -307,19 +307,19 @@
           "id": "description",
           "name": "Product descriptions",
           "unit": "product description",
-          "description": "Plug-and-play text for your listing",
-          "price": 8.99,
+          "description": "1-Product Description",
+          "price": 8,
           "extraDiscount": 5,
           "max": 50,
           "startQty": 0
         },
         {
           "id": "copy",
-          "name": "Ad copy",
+          "name": "Meta Advertising Pack",
           "unit": "ad copy",
-          "description": "Persuasive captions for your ad campaigns",
-          "price": 59.99,
-          "extraDiscount": 35,
+          "description": "Ad Caption + 1 Ad Image",
+          "price": 49.99,
+          "extraDiscount": 34,
           "max": 20,
           "startQty": 0
         }
@@ -369,11 +369,11 @@
         ],
         "enabled": true,
         "type": "both",
-        "percent": 35,
+        "percent": 25,
         "badge": "WEB LAUNCH Celebration!",
         "title": "Extra 35% off your total",
         "text": "Taken off at checkout, on top of your package discount.",
-        "endsAt": "2026-11-24T04:59:00.000Z",
+        "endsAt": "2026-11-26T04:59:00.000Z",
         "showSeconds": false,
         "timeText": "Ends in",
         "slotsTotal": 100,
@@ -470,23 +470,23 @@
       "items": [
         {
           "q": "What do I need to send you?",
-          "a": "Your product photos and a short note about what you need. [ADD DETAILS: use case, image ratio, etc.]"
+          "a": "Your product photos and a short note about what you need. \n<i>e.g., where the image will be used, image dimensions, etc.</i>"
         },
         {
           "q": "How does the discount work?",
-          "a": "Every extra item you add takes a bigger percentage off your whole order. Harder services give a bigger discount. The maximum is 50% off."
+          "a": "Each extra item you add takes a bigger percentage off your whole order. The maximum is 50% off."
         },
         {
           "q": "How long does delivery take?",
-          "a": "About 1-3 working days, depending on how many items you order."
+          "a": "About 1-3 working days, depending on the number of items you order."
         },
         {
           "q": "Can I ask for changes?",
-          "a": "2 rounds of free revisions are included. [ADD DETAILS about extra revisions.]"
+          "a": "You receive 2 rounds of free revisions."
         },
         {
           "q": "How can I pay?",
-          "a": "PayPal or Bank Transfer"
+          "a": "PayPal"
         },
         {
           "q": "What file formats will I receive?",
@@ -531,7 +531,7 @@
         "link": "https://linktr.ee/jacksonvinh?utm_source=linktree_profile_share&ltsid=004486ec-de8c-414a-997f-4b2363a975ce"
       }
     ],
-    "copyright": "© 2026. All rights reserved."
+    "copyright": "� 2026. All rights reserved."
   },
   "checkout": {
     "_help": "The page customers see after pressing Checkout.",
@@ -591,14 +591,14 @@
       "title": "After you pay",
       "text": "Send your product photos and your order code to \nhttps://forms.gle/hhFpvR7pRXVvMQs17"
     },
-     "video": {
-  "_help": "YouTube video at the bottom of the checkout page. url = any YouTube link. Set enabled to false to hide it. Leave a text empty to hide that line.",
-  "enabled": true,
-  "url": "https://www.youtube.com/watch?v=XEtuwTEdUAo",
-  "tag": "Watch",
-  "title": "See how it works",
-  "text": "A quick look before you pay.",
-  "playLabel": "Play video"
- }
+    "video": {
+      "_help": "YouTube video at the bottom of the checkout page. url = any YouTube link. Set enabled to false to hide it. Leave a text empty to hide that line.",
+      "enabled": true,
+      "url": "https://www.youtube.com/watch?v=XEtuwTEdUAo",
+      "tag": "Watch",
+      "title": "See how it works",
+      "text": "A quick look before you pay.",
+      "playLabel": "Play video"
+    }
   }
 }
