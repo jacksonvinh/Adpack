@@ -7,8 +7,8 @@
     "Anything starting with an underscore (like this note) is a comment and is ignored."
   ],
   "site": {
-    "title": "Ad Package Shop",
-    "description": "Ad images, product descriptions and ad copy for online sellers.",
+    "title": "Product Ad Studio | Product Images & Copy",
+    "description": "Product advertising images, Facebook and Instagram ad copy, and product descriptions for online sellers. Choose the services you need and build a package that fits your products.",
     "logo": "images/jv-1.png",
     "favicon": "images/jv-1.png",
     "extraFonts": [
@@ -22,7 +22,8 @@
       "Anton",
       "Pacifico",
       "Fredoka",
-      "Bebas Neue"
+      "Bebas Neue",
+      "Montserrat"
     ]
   },
   "theme": {
@@ -96,9 +97,9 @@
       "type": "headline",
       "name": "Main headline",
       "enabled": true,
-      "eyebrow": "Ad services for online sellers",
-      "title": "Turn plain product shots into <mark>ads people stop to look at.</mark>",
-      "subtitle": "Take a product shot. Send it over. <br>Your Shot Will Look ABSOLUTELY IMMACULATE Afterward!",
+      "eyebrow": "Product Advertising &amp; Copywriting",
+      "title": "<span style=\"color: rgb(86, 97, 123); font-family: Montserrat\"><span style=\"font-weight: normal\">Turn </span><span style=\"font-weight: normal\">ordinary product shots&nbsp;into <i>Ads</i><br>that look actually <br></span><span style=\"font-style: italic\">WORTH BUYING</span></span>",
+      "subtitle": "Send us your product photo. Get a professionally designed, ready-to-use advertising image.",
       "buttonLabel": "Build my package",
       "buttonLink": "#pricing"
     },
@@ -107,13 +108,11 @@
       "name": "Moving ticker strip",
       "enabled": true,
       "items": [
-        "Mix and match",
+        "Mix &amp; match services",
         "Add more, % off more",
-        "Up to 50% off",
-        "Ad images",
-        "Product descriptions",
-        "Ad copy that sells",
-        "studio photoshop level"
+        "professional product ads",
+        "ready-to-use product image",
+        "Save more on big orders"
       ]
     },
     {
@@ -121,10 +120,10 @@
       "name": "About the service",
       "enabled": true,
       "eyebrow": "About the service",
-      "title": "Everything your online shop needs.",
+      "title": "<span style=\"font-family: Montserrat\">Your Product Photo Is More Than Just a Picture</span>",
       "items": [
         "",
-        "Worry not your product shot looks like it came from your grandfather's prehistoric book. <br><br>Send it to us, and we will remake that obsolete photo into a fabulous ad creative that companies paid $1,000 for."
+        "Before customers read your product description, they see your product image. Give them more to look at than a bottle against a plain background.<br><br>Send us the product photo you already have. We'll build the scene, lighting, and composition around your product to create a complete advertising image"
       ]
     },
     {
@@ -132,23 +131,23 @@
       "name": "How delivery works",
       "enabled": true,
       "eyebrow": "How delivery works",
-      "title": "From your photos to finished work",
+      "title": "<span style=\"font-family: Montserrat\">From your photos to finished work</span>",
       "items": [
         {
-          "title": "You choose",
-          "text": "Pick what you need in the package builder and pay."
+          "title": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Choose your services</span>",
+          "text": "Upload your product photos and tell us where you plan to use them."
         },
         {
-          "title": "You send",
-          "text": "Your product photos and a short note about where you want to use it for."
+          "title": "Send your product details",
+          "text": "Upload your product photos and tell us where you plan to use them."
         },
         {
-          "title": "Our team create",
-          "text": "We make your items. Takes about 1-3 working days."
+          "title": "We create your content",
+          "text": "We create your order within 1-3 working days."
         },
         {
-          "title": "You receive",
-          "text": "Final files send to your email with a download link, ready to post."
+          "title": "Receive your finished files",
+          "text": "Get your images and copy through a download link, ready to use."
         }
       ]
     },
@@ -156,20 +155,20 @@
       "type": "gallery",
       "name": "Showcase gallery",
       "enabled": true,
-      "eyebrow": "Showcase",
-      "title": "Our Finished Work",
-      "intro": "A look at product images we made for other sellers",
+      "eyebrow": "Gallery",
+      "title": "<span style=\"font-family: Montserrat\">See What a Better Product Presentation Can Look Like</span>",
+      "intro": "",
       "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
       "items": [
         {
           "image": "images/Pore-Refining-Serum-Glow.jpg",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Purem�re</span>",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Puremère</span>",
           "alt": "Product image 1",
           "placeholder": "Product image 1"
         },
         {
           "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">ROSE &amp; BERY</span>",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">ROSE &amp; BERRY</span>",
           "alt": "Product image 2",
           "placeholder": "Product image 2"
         },
@@ -191,8 +190,8 @@
       "type": "transformations",
       "name": "Before/after sliders",
       "enabled": true,
-      "title": "Be prepare.",
-      "subtitle": "Our Delivery May Exceed\rYour Expectation",
+      "title": "<span style=\"font-family: Montserrat\">Same product — A completely different presentation.</span>",
+      "subtitle": "",
       "items": [
         {
           "before": {
@@ -246,31 +245,31 @@
       "name": "Benefits",
       "enabled": true,
       "eyebrow": "What you get",
-      "title": "Less work for you, more to post with.",
+      "title": "<span style=\"font-family: Montserrat\">More Than Just Better-Looking Product Photos</span>",
       "items": [
         {
           "title": "Consistent look.",
-          "text": "Everything you order shares one style, so your shop feels like one brand."
+          "text": "Keep your product images visually consistent across your shop."
         },
         {
-          "title": "Ready to post.",
-          "text": "Files come sized for the places you sell, no editing needed."
+          "title": "Ready-to-Use Image.",
+          "text": "Get images sized for your intended platforms, without having to edit them yourself."
         },
         {
-          "title": "Plug-and-play descriptions.",
-          "text": "Product copy you can paste straight into your listing or ad."
+          "title": "Product Copy Included.",
+          "text": "Get descriptions and advertising captions you can use in your listings and ads."
         },
         {
-          "title": "Saves you time.",
-          "text": "No need to hire a designer and a copywriter separately."
+          "title": "One Place for Your Content.",
+          "text": "Get product images and copy without coordinating separate designers and copywriters."
         },
         {
-          "title": "Rewarding prices.",
-          "text": "Every extra item lowers the price of your whole order."
+          "title": "Lower Prices on Bigger Orders.",
+          "text": "Add more items to unlock bigger order-wide discounts."
         },
         {
-          "title": "Pay your way.",
-          "text": "PayPal or bank transfer, whichever suits you."
+          "title": "Flexible Payment.",
+          "text": "Choose PayPal or bank transfer."
         }
       ]
     },
@@ -281,7 +280,7 @@
       "enabled": true,
       "eyebrow": "Build your package",
       "title": "Pick what you need. Add more, pay less.",
-      "intro": "Every extra item takes a bigger bite out of your WHOLE order",
+      "intro": "The more you order, the more you save across your entire package",
       "currency": "USD",
       "currencySymbol": "$",
       "checkoutLink": "checkout.html",
@@ -294,10 +293,30 @@
       ],
       "services": [
         {
+          "id": "copy",
+          "name": "Facebook &amp; Instagram Ad Package",
+          "unit": "ad copy",
+          "description": "One advertising caption + one advertising image.",
+          "price": 49.99,
+          "extraDiscount": 34,
+          "max": 20,
+          "startQty": 0
+        },
+        {
+          "id": "new-service-r4oo6",
+          "name": "Facebook &amp; Instagram Ad Caption",
+          "unit": "new service",
+          "description": "<br>Give potential customers a reason to stop scrolling and take a closer look. <br><br>Get an advertising caption built around your product's benefits, customer needs, and a clear reason to consider buying.",
+          "price": 34.99,
+          "extraDiscount": 9,
+          "max": 50,
+          "startQty": 0
+        },
+        {
           "id": "image",
-          "name": "Product Shots",
+          "name": "Product Advertising Image",
           "unit": "ad image",
-          "description": "For Ads / Website Hero / Product Listing",
+          "description": "A professionally designed product image for ads, website banners, or product listings.",
           "price": 21.99,
           "extraDiscount": 7,
           "max": 50,
@@ -305,22 +324,12 @@
         },
         {
           "id": "description",
-          "name": "Product descriptions",
+          "name": "Product Description",
           "unit": "product description",
-          "description": "1-Product Description",
+          "description": "<span style=\"color: var(--c-muted-text); font-family: var(--font-body); font-size: var(--base-size)\"><br>Turn product features into reasons customers can understand and appreciate. <br><br>Get a product description that highlights meaningful benefits, explains what makes your product useful, and helps shoppers understand why it may be the right choice for them.<br></span>",
           "price": 8,
           "extraDiscount": 5,
           "max": 50,
-          "startQty": 0
-        },
-        {
-          "id": "copy",
-          "name": "Meta Advertising Pack",
-          "unit": "ad copy",
-          "description": "Ad Caption + 1 Ad Image",
-          "price": 49.99,
-          "extraDiscount": 34,
-          "max": 20,
           "startQty": 0
         }
       ],
@@ -367,17 +376,17 @@
           "slotsLeft: YOU lower this number when you sell a spot (the site cannot count sales). Keep it true.",
           "showSeconds: false = the clock shows days/hours/minutes only (updates every 20 s)."
         ],
-        "enabled": true,
+        "enabled": false,
         "type": "both",
         "percent": 25,
-        "badge": "WEB LAUNCH Celebration!",
-        "title": "Extra 35% off your total",
+        "badge": "FREE",
+        "title": "Extra 25% off your total",
         "text": "Taken off at checkout, on top of your package discount.",
         "endsAt": "2026-11-26T04:59:00.000Z",
         "showSeconds": false,
         "timeText": "Ends in",
         "slotsTotal": 100,
-        "slotsLeft": 79,
+        "slotsLeft": 0,
         "slotsText": "spots left",
         "endedText": "This deal has ended.",
         "rowLabel": ""
@@ -400,8 +409,8 @@
       "type": "transformations",
       "name": "Drag-to-compare examples",
       "enabled": true,
-      "title": "Here some more work of us",
-      "subtitle": "Same product. Complete NEW VALUE!",
+      "title": "See more of the Difference for Yourself.",
+      "subtitle": "Same product. A completely new advertising look.",
       "_help": "One { } block = one before/after slider.",
       "items": [
         {
@@ -486,11 +495,11 @@
         },
         {
           "q": "How can I pay?",
-          "a": "PayPal"
+          "a": "PayPal or Bank Transfer. We recommend PayPal."
         },
         {
           "q": "What file formats will I receive?",
-          "a": "Images as [JPG / PNG] and text as [DOC / TXT]."
+          "a": "Images as JPG / PNG and text as DOC / TXT."
         }
       ]
     },
@@ -498,14 +507,14 @@
       "type": "banner",
       "name": "Final call to action",
       "enabled": true,
-      "title": "Your products deserve better ads.",
-      "text": "Build your package in under a minute.",
+      "title": "Give Your Products a Better First Impression",
+      "text": "Choose the images and copy you need. Build your package in minutes.",
       "buttonLabel": "Build my package",
       "buttonLink": "#pricing"
     }
   ],
   "footer": {
-    "description": "<span style=\"font-weight: bold; font-family: Lora; font-size: large\">SAME PHOTO - NEW VALUE</span>",
+    "description": "<span style=\"font-weight: bold; font-family: Lora; font-size: large\">Same Product- New Value</span>",
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "_help": "contacts: 'label' is shown before the value. 'link' is optional (e.g. https://zalo.me/..., mailto:you@mail.com). The services list is created automatically from the package builder.",
