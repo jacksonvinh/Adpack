@@ -205,8 +205,8 @@
             "placeholder": "After image"
           },
           "caption": "",
-          "afterLabel": "",
-          "beforeLabel": ""
+          "afterLabel": "After",
+          "beforeLabel": "Before"
         },
         {
           "before": {
@@ -215,7 +215,7 @@
             "placeholder": "Before photo"
           },
           "after": {
-            "image": "images/Cozy-Live-Stream-Ring-Light-Setup.jpg",
+            "image": "images/LUMISET-Ring-Light-Tripod-Ad.png",
             "alt": "After",
             "placeholder": "After ad image"
           },
@@ -237,6 +237,45 @@
           "caption": "",
           "afterLabel": "",
           "beforeLabel": ""
+        },
+        {
+          "before": {
+            "image": "images/AirLite-Mini-Fan-Desk-Setup.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Your-Breeze-Your-Way.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example"
+        },
+        {
+          "before": {
+            "image": "images/Teal-Bolterra-Cordless-Drill-Product-Portrait.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Bolterra-20V-Cordless-Drill-Advertisement.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example"
+        },
+        {
+          "before": {
+            "image": "images/Courtline-Basketball-Product-Advertisement.png",
+            "alt": "Before",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Own-the-Court-at-Sunset.png",
+            "alt": "After",
+            "placeholder": "After ad image"
+          },
+          "caption": "Example"
         }
       ]
     },
@@ -376,17 +415,17 @@
           "slotsLeft: YOU lower this number when you sell a spot (the site cannot count sales). Keep it true.",
           "showSeconds: false = the clock shows days/hours/minutes only (updates every 20 s)."
         ],
-        "enabled": false,
-        "type": "both",
-        "percent": 25,
-        "badge": "FREE",
-        "title": "Extra 25% off your total",
-        "text": "Taken off at checkout, on top of your package discount.",
-        "endsAt": "2026-11-26T04:59:00.000Z",
+        "enabled": true,
+        "type": "time",
+        "percent": 15,
+        "badge": "Celebration!",
+        "title": "Extra 15% off your total",
+        "text": "Get 15% off if you let us know what you think once the order arrives :)",
+        "endsAt": "2026-12-04T04:59:00.000Z",
         "showSeconds": false,
         "timeText": "Ends in",
-        "slotsTotal": 100,
-        "slotsLeft": 0,
+        "slotsTotal": 10,
+        "slotsLeft": 10,
         "slotsText": "spots left",
         "endedText": "This deal has ended.",
         "rowLabel": ""
@@ -415,12 +454,12 @@
       "items": [
         {
           "before": {
-            "image": "images/Velora-Purifying-Shampoo-Bottle.png",
+            "image": "images/PureFresh-Citrus-Foaming-Hand-Soap.png",
             "alt": "Before",
             "placeholder": "Before photo"
           },
           "after": {
-            "image": "images/Velora-Purifying-Shampoo-Splash.jpg",
+            "image": "images/PureFresh-Citrus-Foam-Soap-Ad.png",
             "alt": "After",
             "placeholder": "After ad image"
           },
