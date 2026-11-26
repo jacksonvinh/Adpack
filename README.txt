@@ -2,8 +2,9 @@ MY WEBSITE - QUICK GUIDE
 ========================
 
 FILES
-  index.html / checkout.html   page layouts (you don't need to edit them)
-  content.json                 ALL text, prices, discounts, images, colors, fonts, payment info
+  index.html                   main page layout (you don't need to edit it)
+  checkout.html                old checkout links redirect to the package builder
+  content.json                 site text, prices, discounts, images, colors, fonts, inquiry settings
   css/style.css                design (rarely needed)
   css/editor.css, js/editor.js the visual editor (only used while editing)
   js/*.js                      the engine (don't edit)
@@ -59,25 +60,26 @@ FILES
    To add a service: hover the service list and press "+ Add service".
    Harder service = bigger "Extra discount %".
 
-   Checking out sends the customer to checkout.html, which recomputes the total and offers
-   PayPal and/or bank transfer.
+   "Request this package" opens a contact form in the package summary. Sending it emails you
+   the selected services, current prices, total, customer details, and optional note. The website
+   does not collect payment. Review the request and reply to confirm the scope and payment next steps.
 
 
-4) PAYMENT SETUP  (Settings > Checkout and payment)
-   Orders to your inbox: the checkout page asks for name + email, then emails you the order
-             (items, total, payment method, order code). Create a free form at formspree.io
-             (or web3forms.com) and paste its address into "Order inbox: form address".
-             Until you do, the page shows a warning and orders are NOT sent.
-             The customer is never blocked from paying if the email service is down.
-   PayPal  : set "PayPal link" to  https://www.paypal.me/YOURNAME/{amount}{currency}
-             (create your PayPal.Me link at paypal.me). Keep the currency code as USD. The customer is redirected to PayPal with the total filled in.
-   Bank    : US bank transfer in USD. Fill bank name / holder / account number (and routing number if
-             you want it shown). The page shows the exact amount with a unique order code to put in the
-             transfer message.
-   Note    : PayPal.Me cannot carry the order details, so the page tells customers to send their photos
-             and order code to you after paying (edit that message in Settings or on the checkout text).
-   Later you can swap in PayPal's full Checkout buttons or a payment page of your own: just point
-   "PayPal link" at it ({amount}, {currency} and {order} are available).
+3b) FLASH DEAL (extra % off the total)
+   A yellow banner above the calculator. The extra % is taken off the TOTAL after the normal discount
+   (it is not limited by the 50% max). Edit it in Settings > Flash deal (on / %, ends by Time, Spots or
+   Both, end date, spots left); banner texts are edited right on the page.
+   - Time: everyone sees the same end moment; when it passes, the deal and its discount switch off by themselves.
+   - Spots: the site cannot count sales. Lower "Spots left" yourself, save, upload. At 0 the deal ends.
+   - The countdown only runs while it is on screen, so it costs no speed. Untick "Show seconds" for minutes only.
+   Keep the numbers true: fake timers or spots can lose customers' trust.
+
+
+4) PACKAGE REQUEST EMAIL
+   The request form uses the existing Web3Forms endpoint and access key in content.json.
+   If you replace them, update checkout.orderForm.endpoint and checkout.orderForm.accessKey.
+   A successful submission confirms that the request reached the form service; payment is arranged
+   separately after you review and reply to the customer.
 
 
 5) EDITING content.json BY HAND

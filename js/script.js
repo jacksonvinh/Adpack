@@ -1,5 +1,5 @@
 /* ==========================================================================
-   script.js  â€”  home page: builds the sections, runs the package builder
+   script.js  —  home page: builds the sections, runs the package builder
    (prices, discounts, confetti). You normally do NOT need to edit this file.
    ========================================================================== */
 (function () {
@@ -100,9 +100,85 @@
         update(b, root, { fromEl: btn });
         return;
       }
-      var co = e.target.closest('.b-checkout');
-      if (co && co.classList.contains('is-disabled')) e.preventDefault();
+      var co = e.target.closest('.b-request');
+      if (co) {
+        if (co.classList.contains('is-disabled')) return;
+        var requestPanel = qs('#package-request-panel', root);
+        if (requestPanel) {
+          requestPanel.hidden = false;
+          co.hidden = true;
+          var requestStatus = qs('#package-request-status', requestPanel);
+          if (requestStatus) requestStatus.hidden = true;
+          var firstField = qs('[name="name"]', requestPanel);
+          if (firstField) firstField.focus();
+          requestPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+      var cancelRequest = e.target.closest('.request-cancel');
+      if (cancelRequest) {
+        var panel = qs('#package-request-panel', root);
+        if (panel) panel.hidden = true;
+        var requestButton = qs('.b-request', root);
+        if (requestButton) requestButton.hidden = false;
+      }
     });
+    var requestForm = qs('#package-request-form', root);
+    if (requestForm) {
+      requestForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nameField = qs('[name="name"]', requestForm);
+        var emailField = qs('[name="email"]', requestForm);
+        var messageField = qs('[name="message"]', requestForm);
+        var honeypot = qs('[name="website"]', requestForm);
+        var status = qs('#package-request-status', requestForm);
+        var submit = qs('.request-submit', requestForm);
+        var name = nameField.value.trim(), email = emailField.value.trim();
+        status.hidden = true;
+        if (name.length < 2) { nameField.focus(); nameField.setCustomValidity('Please enter your name.'); nameField.reportValidity(); nameField.setCustomValidity(''); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { emailField.focus(); emailField.setCustomValidity('Please enter a valid email address.'); emailField.reportValidity(); emailField.setCustomValidity(''); return; }
+        if (honeypot.value) return;
+        var config = S.content && S.content.checkout && S.content.checkout.orderForm || {};
+        if (!config.endpoint || !config.accessKey) {
+          status.textContent = 'The request form is not connected yet. Please email us using the contact details in the footer.';
+          status.className = 'request-status is-error'; status.hidden = false; return;
+        }
+        var current = P.compute(b, cart), sym = b.currencySymbol == null ? '$' : b.currencySymbol, currency = b.currency || 'USD';
+        var fmtRequest = function (cents) { return P.money(cents, sym); };
+        var reference = 'REQ-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+        var itemLines = current.lines.map(function (line) { return line.name + ' x' + line.qty + ' — ' + fmtRequest(line.lineFinal); }).join('\n');
+        var body = {
+          access_key: config.accessKey,
+          subject: 'Package request ' + reference + ' from ' + name,
+          order_code: reference,
+          name: name,
+          email: email,
+          request_type: 'Package inquiry — no payment collected',
+          items: itemLines,
+          currency: currency,
+          regular_total: fmtRequest(current.regularCents) + ' ' + currency,
+          package_savings: fmtRequest(current.savedCents) + ' ' + currency,
+          promotion_savings: fmtRequest(current.promoCents) + ' ' + currency,
+          requested_total: fmtRequest(current.totalCents) + ' ' + currency,
+          discount: current.pct + '%' + (current.promoCents > 0 ? ' + promotion ' + current.promo.pct + '%' : ''),
+          customer_note: messageField.value.trim()
+        };
+        submit.disabled = true; submit.textContent = 'Sending…';
+        fetch(config.endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
+          .then(function (response) { return response.json().then(function (data) { return { ok: response.ok, data: data }; }); })
+          .then(function (result) {
+            if (!result.ok || result.data.success === false) throw new Error('Request was not accepted');
+            status.textContent = 'Request ' + reference + ' sent. No payment was taken. I’ll review your package and reply to the email you provided.';
+            status.className = 'request-status is-success'; status.hidden = false;
+            requestForm.querySelectorAll('input, textarea, button[type="submit"]').forEach(function (field) { field.disabled = true; });
+            submit.textContent = 'Request sent';
+          })
+          .catch(function () {
+            status.textContent = 'We couldn’t send the request. Please try again, or email us using the contact details in the footer.';
+            status.className = 'request-status is-error'; status.hidden = false;
+            submit.disabled = false; submit.textContent = 'Send request';
+          });
+      });
+    }
     root.addEventListener('change', function (e) { if (e.target.matches('[data-live="builder"]')) update(b, root, { silent: true }); });
     prevPct = P.compute(b, cart).pct;
     update(b, root, { silent: true });
@@ -192,11 +268,11 @@
       }
     }
 
-    // checkout link
-    var co = qs('.b-checkout', root);
-    co.setAttribute('href', (b.checkoutLink || 'checkout.html') + '?cart=' + encodeURIComponent(P.encode(cart, b)));
+    // package inquiry action
+    var co = qs('.b-request', root);
     co.classList.toggle('is-disabled', r.units === 0);
     co.setAttribute('aria-disabled', r.units === 0 ? 'true' : 'false');
+    co.disabled = r.units === 0;
 
     // celebrate
     if (!opts.silent && r.pct > prevPct) {
@@ -277,8 +353,8 @@
     sv.textContent = r.effPct > 0 ? '-' + r.effPct + '%' : '';
     sv.hidden = r.effPct <= 0;
     var a = qs('#sticky-btn');
-    a.textContent = (b.labels && b.labels.checkoutLabel) || 'Checkout';
-    a.setAttribute('href', (b.checkoutLink || 'checkout.html') + '?cart=' + encodeURIComponent(P.encode(cart, b)));
+    a.textContent = (b.labels && b.labels.requestLabel) || 'Request this package';
+    a.setAttribute('href', '#pricing');
     bar.classList.toggle('show', r.units > 0 && !builderVisible && !S.EDIT);
   }
 

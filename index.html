@@ -58,7 +58,7 @@
     <span class="sticky-total" id="sticky-total"></span>
     <span class="sticker sticker--small" id="sticky-save" hidden></span>
   </div>
-  <a class="btn btn-pop" id="sticky-btn" href="checkout.html"></a>
+  <a class="btn btn-pop" id="sticky-btn" href="#pricing"></a>
 </div>
 <canvas id="confetti" aria-hidden="true"></canvas>
 
@@ -78,7 +78,7 @@
 
 <template id="sec-headline">
   <section class="headline">
-    <div class="sticker sticker--tilt" data-text="eyebrow" data-ph="Small label"></div>
+    <div class="eyebrow headline-eyebrow" data-text="eyebrow" data-ph="Small label"></div>
     <h1 data-text="title" data-ph="Main headline"></h1>
     <p data-text="subtitle" data-ph="Sub-headline"></p>
     <a class="btn btn-primary btn-lg" data-text="buttonLabel" data-href="buttonLink" data-ph="Button"></a>
@@ -235,7 +235,22 @@
             <div class="row row-promo" hidden><span class="t-promo-label"></span><b class="t-promo"></b></div>
             <div class="row row-total"><span data-text="labels.totalLabel" data-fallback="Total"></span><b class="t-total"></b></div>
           </div>
-          <a class="btn btn-pop btn-lg b-checkout" href="checkout.html" data-text="labels.checkoutLabel" data-fallback="Checkout"></a>
+          <button type="button" class="btn btn-pop btn-lg b-request" data-text="labels.requestLabel" data-fallback="Request this package"></button>
+          <section class="package-request" id="package-request-panel" hidden aria-labelledby="package-request-title">
+            <h4 id="package-request-title" data-text="labels.requestTitle" data-fallback="Send your package request"></h4>
+            <p class="request-note" data-text="labels.requestNote" data-fallback="No payment now. I’ll review your request and reply to confirm the brief, final details, and next steps."></p>
+            <form id="package-request-form" novalidate>
+              <label class="request-field"><span>Name</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
+              <label class="request-field"><span>Email for my reply</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
+              <label class="request-field"><span>Anything you’d like me to know? (optional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+              <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="request-status" id="package-request-status" role="status" aria-live="polite" hidden></p>
+              <div class="request-actions">
+                <button type="submit" class="btn btn-primary request-submit">Send request</button>
+                <button type="button" class="btn btn-outline request-cancel">Back to package</button>
+              </div>
+            </form>
+          </section>
         </aside>
       </div>
     </div>
@@ -243,7 +258,7 @@
 </template>
 
 <template id="sec-transformations">
-  <div class="band band--navy" data-requires="items">
+  <div class="band band--portfolio" data-requires="items">
     <div class="container">
       <div class="center-head">
         <h2 class="section-title" data-text="title" data-ph="Title"></h2>
