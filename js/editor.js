@@ -19,17 +19,22 @@
 
   /* ---------- section types you can add ---------- */
   var TYPES = {
+    problem: { label: 'Problem / Reframe split', make: function () { return { type: 'problem', name: 'Problem / Reframe', enabled: true, eyebrow: 'The Problem', title: 'Your headline', paragraphs: ['First paragraph.'], listLead: 'Key points:', items: [{ title: 'Point one.', text: 'Explain it.' }], closingNote: 'Closing note.' }; } },
+    directions: { label: 'Creative directions grid', make: function () { return { type: 'directions', name: 'Creative directions', enabled: true, eyebrow: 'Directions', title: 'What do you want your content to do?', intro: 'Choose a direction.', items: [{ title: 'Direction one', lead: 'Short lead.', text: 'Explanation.', fitLabel: 'Good fit when:', fit: 'Ideal scenario.' }], importantLabel: 'Important:', importantNote: '' }; } },
+    'services-overview': { label: 'Services & deliverables cards', make: function () { return { type: 'services-overview', name: 'What We Create', enabled: true, eyebrow: 'What We Create', title: 'Choose only what you need.', items: [{ serviceId: 'image', badge: 'Service', title: 'Service Name', price: '$21.99', unit: 'per unit', lead: 'Summary.', text: 'Details.', usefulTitle: '', usefulItems: [], receiveLabel: 'You receive:', receive: 'Deliverable.', ctaLabel: 'Add Service' }] }; } },
+    'benefits-grid': { label: 'Benefits 6-card grid', make: function () { return { type: 'benefits-grid', name: 'Benefits grid', enabled: true, eyebrow: 'What You Get', title: 'Useful creative assets.', items: [{ title: 'Benefit one', text: 'Describe it.' }, { title: 'Benefit two', text: 'Describe it.' }, { title: 'Benefit three', text: 'Describe it.' }] }; } },
+    'brief-guide': { label: 'Brief checklist (Required vs Optional)', make: function () { return { type: 'brief-guide', name: 'What We Need From You', enabled: true, eyebrow: 'Brief Guide', title: 'A good brief helps us.', intro: 'Send what you have.', requiredTitle: 'For every order:', requiredItems: ['Product photo'], helpfulTitle: 'Helpful additions:', helpfulItems: ['Website link'], closingNote: 'Reassurance note.' }; } },
     text: { label: 'Text block', make: function () { return { type: 'text', name: 'Text block', enabled: true, eyebrow: 'New section', title: 'Your headline', items: ['Write something here.'] }; } },
-    steps: { label: 'Steps', make: function () { return { type: 'steps', name: 'Steps', enabled: true, eyebrow: 'How it works', title: 'Three easy steps.', items: [{ title: 'Step one', text: 'Describe it.' }, { title: 'Step two', text: 'Describe it.' }, { title: 'Step three', text: 'Describe it.' }] }; } },
-    checklist: { label: 'Checklist / benefits', make: function () { return { type: 'checklist', name: 'Benefits', enabled: true, eyebrow: 'Why us', title: 'Good reasons.', items: [{ title: 'Reason one.', text: 'Explain it.' }, { title: 'Reason two.', text: 'Explain it.' }] }; } },
-    gallery: { label: 'Image gallery', make: function () { return { type: 'gallery', name: 'Gallery', enabled: true, eyebrow: 'Gallery', title: 'Our work.', intro: '', items: [{ image: '', caption: '', alt: '', placeholder: 'Image 1' }, { image: '', caption: '', alt: '', placeholder: 'Image 2' }, { image: '', caption: '', alt: '', placeholder: 'Image 3' }, { image: '', caption: '', alt: '', placeholder: 'Image 4' }] }; } },
-    transformations: { label: 'Before/after sliders', make: function () { return { type: 'transformations', name: 'Before/after sliders', enabled: true, title: 'Drag to compare.', subtitle: '', items: [{ before: { image: '', alt: 'Before', placeholder: 'Before photo' }, after: { image: '', alt: 'After', placeholder: 'After image' }, caption: 'Example' }] }; } },
-    testimonials: { label: 'Testimonials', make: function () { return { type: 'testimonials', name: 'Testimonials', enabled: true, eyebrow: 'Testimonials', title: 'What people say.', items: [{ quote: 'Write the customer\'s words here.', name: 'Customer name', role: 'Shop name', avatar: '', rating: 5 }] }; } },
-    faq: { label: 'Questions (FAQ)', make: function () { return { type: 'faq', name: 'Questions', enabled: true, eyebrow: 'FAQ', title: 'Questions, answered.', items: [{ q: 'New question?', a: 'Your answer.' }] }; } },
-    banner: { label: 'Big call-to-action banner', make: function () { return { type: 'banner', name: 'Banner', enabled: true, title: 'Ready to start?', text: 'Say it in one line.', buttonLabel: 'Get started', buttonLink: '#pricing' }; } },
-    headline: { label: 'Big headline', make: function () { return { type: 'headline', name: 'Headline', enabled: true, eyebrow: 'Small label', title: 'Your <mark>big headline</mark>', subtitle: 'A supporting line.', buttonLabel: 'Button', buttonLink: '#pricing' }; } },
+    steps: { label: 'Steps', make: function () { return { type: 'steps', name: 'Steps', enabled: true, eyebrow: 'How it works', title: 'Four easy steps.', items: [{ title: 'Step one', text: 'Describe it.', meta: '' }, { title: 'Step two', text: 'Describe it.', meta: '' }] }; } },
+    checklist: { label: 'Checklist / expectations', make: function () { return { type: 'checklist', name: 'Checklist', enabled: true, eyebrow: 'Expectations', title: 'Clear work. Clear scope.', intro: '', items: [{ title: 'Point one.', text: 'Explain it.' }, { title: 'Point two.', text: 'Explain it.' }] }; } },
+    gallery: { label: 'Portfolio gallery', make: function () { return { type: 'gallery', name: 'Portfolio gallery', enabled: true, eyebrow: 'Portfolio', title: 'Our work.', intro: '', items: [{ image: '', category: 'Category', caption: 'Presentation', alt: '', placeholder: 'Image 1' }, { image: '', category: 'Category', caption: 'Presentation', alt: '', placeholder: 'Image 2' }, { image: '', category: 'Category', caption: 'Presentation', alt: '', placeholder: 'Image 3' }] }; } },
+    transformations: { label: 'Before/after sliders', make: function () { return { type: 'transformations', name: 'Before/after sliders', enabled: true, eyebrow: 'Before & After', title: 'Same product. A different visual approach.', subtitle: 'Drag the divider to inspect the changes.', items: [{ before: { image: '', alt: 'Before', placeholder: 'Before photo' }, after: { image: '', alt: 'After', placeholder: 'After image' }, caption: 'Example', beforeLabel: 'Original photo', afterLabel: 'Designed ad image', handleLabel: 'Drag to compare' }] }; } },
+    testimonials: { label: 'Testimonials', make: function () { return { type: 'testimonials', name: 'Testimonials', enabled: true, eyebrow: 'Testimonials', title: 'Work you can inspect. Feedback you can verify.', items: [{ quote: 'Write the customer\'s words here.', name: 'Customer name', role: 'Shop name', avatar: '', rating: 5 }] }; } },
+    faq: { label: 'Questions (FAQ)', make: function () { return { type: 'faq', name: 'Questions', enabled: true, eyebrow: 'FAQ', title: 'Questions & Answers', items: [{ q: 'New question?', a: 'Your answer.', cat: 'services' }] }; } },
+    banner: { label: 'Big call-to-action banner', make: function () { return { type: 'banner', name: 'Banner', enabled: true, title: 'Give your product a more considered presentation.', text: 'Say it in one line.', buttonLabel: 'Build Your Package', buttonLink: '#pricing', supportingLine: '' }; } },
+    headline: { label: 'Hero split (headline + before/after)', make: function () { return { type: 'headline', name: 'Hero', enabled: true, eyebrow: 'PRODUCT ADVERTISING IMAGES & COPY', title: 'Your headline', subtitle: 'A supporting line.', buttonLabel: 'Build Your Package', buttonLink: '#pricing', secondaryButtonLabel: 'See the Work', secondaryButtonLink: '#our-work', reassurance: '' }; } },
     marquee: { label: 'Moving ticker strip', make: function () { return { type: 'marquee', name: 'Ticker', enabled: true, items: ['First phrase', 'Second phrase', 'Third phrase'] }; } },
-    hero: { label: 'Before/after hero slider', make: function () { return { type: 'hero', name: 'Hero slider', enabled: true, before: { image: '', alt: 'Before', placeholder: 'Before photo' }, after: { image: '', alt: 'After', placeholder: 'After image' }, beforeLabel: 'Before', afterLabel: 'After', startPosition: 50, sticker: 'Drag me!' }; } }
+    hero: { label: 'Standalone before/after slider', make: function () { return { type: 'hero', name: 'Hero slider', enabled: true, before: { image: '', alt: 'Before', placeholder: 'Before photo' }, after: { image: '', alt: 'After', placeholder: 'After image' }, beforeLabel: 'Before', afterLabel: 'After', startPosition: 50, sticker: 'Drag to compare' }; } }
   };
 
   /* ---------- history / dirty / status ---------- */
@@ -254,12 +259,12 @@
         });
       });
     });
-    var brand = qs('.brand');
-    if (brand && !brand._edBound) {
-      brand._edBound = true;
-      brand.addEventListener('click', function (e) {
+    var brandLogo = qs('#brand-logo-wrap');
+    if (brandLogo && !brandLogo._edBound) {
+      brandLogo._edBound = true;
+      brandLogo.addEventListener('click', function (e) {
         if (preview) return;
-        e.preventDefault();
+        e.preventDefault(); e.stopPropagation();
         pickFiles(false).then(function (files) {
           if (!files.length) return;
           return upload(files[0]).then(function (p) { if (p) { (S.content.site = S.content.site || {}).logo = p; rerender(); renderSettings(); } });

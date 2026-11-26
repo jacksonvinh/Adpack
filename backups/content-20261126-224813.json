@@ -1,0 +1,885 @@
+{
+  "_START_HERE": [
+    "EASIEST WAY TO EDIT: run start-editor (see README.txt). It opens your website with an edit toolbar - click any text to type, click any image placeholder to upload your image, and press Save.",
+    "EDITING THIS FILE BY HAND also works. Page sections are listed in 'sections' in the SAME ORDER they appear on the page. Move a block up or down to move the section.",
+    "Every section has \"enabled\": true/false (false hides it) and a 'name' (only a label for you).",
+    "Lists (items, services, ...) are made of { } blocks. Copy a block to add one, delete a block to remove one, or add \"hidden\": true to switch one off.",
+    "Anything starting with an underscore (like this note) is a comment and is ignored."
+  ],
+  "site": {
+    "title": "Product Ad Studio — Product Images & Ad Copy",
+    "description": "Online shoppers can't pick up your product, turn it around, or try it before buying. We turn your existing product photos into designed advertising images, with optional ad captions and product descriptions to help present what you're selling.",
+    "logo": "images/jv-1.png",
+    "favicon": "images/jv-1.png",
+    "extraFonts": [
+      "Poppins",
+      "DM Sans",
+      "Space Grotesk",
+      "Inter",
+      "Lora",
+      "Playfair Display",
+      "Rubik",
+      "Anton",
+      "Pacifico",
+      "Fredoka",
+      "Bebas Neue",
+      "Montserrat"
+    ]
+  },
+  "theme": {
+    "_help": "Colors are hex codes. Palette: Editorial Studio (+ warm amber/gold 'pop' color for key badges and highlights).",
+    "colors": {
+      "background": "#F6F7F9",
+      "surface": "#FFFFFF",
+      "text": "#182238",
+      "mutedText": "#556175",
+      "accent": "#3659D9",
+      "accentText": "#2B47B5",
+      "accentSoft": "#E6ECFC",
+      "navy": "#182238",
+      "onNavy": "#FFFFFF",
+      "mutedOnNavy": "#C8D0DF",
+      "onAccent": "#FFFFFF",
+      "pop": "#F3CF72",
+      "border": "#E1E5EC",
+      "placeholderBeforeBg": "#E8EBF2",
+      "placeholderBeforeShape": "#C5CCD8",
+      "placeholderBeforeText": "#444E63",
+      "placeholderAfterBg": "#DDE6FB",
+      "placeholderAfterShape": "#FFFFFF"
+    },
+    "placeholderColors": [
+      "#DDE6FB",
+      "#E5ECF9",
+      "#E2E8F4",
+      "#D7E2F8",
+      "#E8EEF8",
+      "#DCE5F5"
+    ],
+    "fonts": {
+      "heading": "'Space Grotesk', system-ui, sans-serif",
+      "body": "'Inter', system-ui, sans-serif",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      "baseSize": "16px",
+      "headingWeight": "700"
+    },
+    "shape": {
+      "cardRadius": "18px",
+      "tileRadius": "14px",
+      "buttonRadius": "10px",
+      "pageWidth": "1220px"
+    }
+  },
+  "nav": {
+    "brandName": "Product Ad Studio",
+    "links": [
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Our Work",
+        "href": "#our-work"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "ctaLabel": "Build Your Package",
+    "ctaLink": "#pricing"
+  },
+  "sections": [
+    {
+      "type": "headline",
+      "name": "2. Hero",
+      "enabled": true,
+      "eyebrow": "PRODUCT IMAGES & AD COPY",
+      "title": "Give shoppers more to see.",
+      "subtitle": "Online shoppers can't pick up your product, turn it around, or try it before buying. They make their first judgment from the information and images you provide.",
+      "subtitle2": "We turn your existing product photos into designed advertising images, with optional ad captions and product descriptions to help present what you're selling.",
+      "buttonLabel": "Build Your Package",
+      "buttonLink": "#pricing",
+      "secondaryButtonLabel": "See Our Work",
+      "secondaryButtonLink": "#our-work",
+      "reassurance": "Start with the product photos and information you already have. Choose the creative work you need; we'll handle the agreed deliverables.",
+      "heroImage": {
+        "image": "images/BOLTERRA-Drill-on-a-Workshop-Bench.webp",
+        "alt": "Designed product advertising image created by Product Ad Studio",
+        "placeholder": "IMAGE PLACEHOLDER 01 — HERO VISUAL: Insert a strong, genuine product-advertising image (one product shown in a distinctive, relevant setting, with its shape, packaging, and important details clearly visible)",
+        "badge": "Designed presentation"
+      },
+      "insetImage": {
+        "image": "images/Teal-Bolterra-Cordless-Drill-Product-Portrait.webp",
+        "alt": "Original source product photo",
+        "placeholder": "Optional Inset: Original source photo",
+        "label": "Original source photo"
+      },
+      "visualBadge": "",
+      "visualCaption": ""
+    },
+    {
+      "type": "problem",
+      "name": "3. Why Product Presentation Matters",
+      "enabled": true,
+      "eyebrow": "WHY PRODUCT PRESENTATION MATTERS",
+      "title": "A product photo is often the closest shoppers get to examining what you sell.",
+      "paragraphs": [
+        "In a physical store, someone can pick up a product, look at its finish, check its size, or turn the packaging around.",
+        "Online, they depend on the information and images you provide."
+      ],
+      "listLead": "A basic product photo may identify the item, but it doesn't always answer the questions a shopper has before considering it:",
+      "questions": [
+        "What does the material or finish look like?",
+        "Which details make this product different?",
+        "How is it used?",
+        "What does a particular feature actually do?",
+        "How might it fit into the shopper's home, routine, or work?"
+      ],
+      "afterParagraphs": [
+        "Your product images can help answer those questions.",
+        "A close view can make a detail easier to inspect. A relevant in-use image can show where a product fits. A simple visual explanation can make a feature easier to understand."
+      ],
+      "highlightLine": "That gives shoppers more useful information to consider — and gives you more ways to present the product.",
+      "closingNote": "A designed image cannot guarantee a sale. Its job is to present the product and its relevant details clearly, accurately, and with a visual purpose.",
+      "compareBadge": "Original Photo vs. Designed Presentation",
+      "compareNote": "A genuine comparison using the exact same product.",
+      "compare": {
+        "before": {
+          "image": "images/Matte-Black-Insulated-Bottle.webp",
+          "alt": "Original product photo before design treatment",
+          "placeholder": "IMAGE PLACEHOLDER 02 (Left) — Original photo"
+        },
+        "after": {
+          "image": "images/Matte-Charcoal-Bottle-at-Sunrise.webp",
+          "alt": "Product Ad Studio's designed image using that same product",
+          "placeholder": "IMAGE PLACEHOLDER 02 (Right) — Designed image using the exact same product"
+        },
+        "beforeLabel": "Original photo",
+        "afterLabel": "Designed image",
+        "startPosition": 50,
+        "handleLabel": "Drag to compare"
+      }
+    },
+    {
+      "type": "directions",
+      "name": "4. Different Products Need Different Creative Approaches",
+      "enabled": true,
+      "eyebrow": "DIFFERENT PRODUCTS NEED DIFFERENT CREATIVE APPROACHES",
+      "title": "The image should help communicate what matters about that product.",
+      "intro": "A skincare bottle, a kitchen tool, and a piece of furniture don't need the same scene. The right approach depends on the product and what a potential customer may need to understand or notice.",
+      "intro2": "",
+      "items": [
+        {
+          "title": "Show the details people may want to inspect",
+          "text": "When material, finish, shape, or packaging matters, a closer composition and deliberate lighting can make those details easier to see.",
+          "text2": "",
+          "image": {
+            "image": "images/Condensation-Detail-Water-Bottle.webp",
+            "alt": "Genuine product image where lighting and close composition reveal visible details",
+            "placeholder": "IMAGE PLACEHOLDER 03 — DETAIL-FOCUSED EXAMPLE: Insert a genuine product image where lighting and close composition reveal visible details"
+          },
+          "caption": "Bring important details into view."
+        },
+        {
+          "title": "Show where the product fits",
+          "text": "Some products make more sense when people can see them being used or placed in a relevant setting.",
+          "text2": "A kitchen tool on a counter, a lamp beside a reading chair, or a bag being carried gives more context than an isolated product cutout — when that context accurately represents the product.",
+          "image": {
+            "image": "images/Golden-Hour-Camping-Essentials.webp",
+            "alt": "Truthful, relevant lifestyle or in-use product visual",
+            "placeholder": "IMAGE PLACEHOLDER 04 — PRODUCT-IN-USE EXAMPLE: Insert a truthful, relevant lifestyle or in-use product visual"
+          },
+          "caption": "Show the product in its setting."
+        },
+        {
+          "title": "Make a feature easier to understand",
+          "text": "A standard product photo may show a feature without explaining what it does. A focused composition, detail view, or simple annotation can make the point clearer.",
+          "text2": "",
+          "image": {
+            "image": "images/Double-Wall-Bottle-Cutaway-Explainer.webp",
+            "alt": "Clear product visual, annotated detail, or simple explanatory composition",
+            "placeholder": "IMAGE PLACEHOLDER 05 — FEATURE EXPLANATION EXAMPLE: Insert a clear product visual, annotated detail, or simple explanatory composition"
+          },
+          "caption": "Make the feature easier to understand."
+        },
+        {
+          "title": "Give your product a distinctive visual treatment",
+          "text": "When the same plain product shot is used everywhere, your content can start to look repetitive. A product-appropriate setting, composition, and color treatment can give you another way to present it.",
+          "text2": "",
+          "image": {
+            "image": "images/Floating-Sneaker-Against-Orange-Arch.webp",
+            "alt": "Visually distinctive, brand-appropriate product advertisement",
+            "placeholder": "IMAGE PLACEHOLDER 06 — DISTINCTIVE CREATIVE DIRECTION: Insert a visually distinctive, brand-appropriate product advertisement"
+          },
+          "caption": "Create a visual direction that fits the product."
+        }
+      ],
+      "subItems": [
+        {
+          "title": "Create more than one advertising angle",
+          "text": "Different customers may care about different product qualities. One may focus on convenience; another may care more about appearance, comfort, or a particular feature.",
+          "text2": "Creating different truthful visual and copy directions gives you more than one way to communicate the product in your advertising.",
+          "fitLabel": "Good fit when:",
+          "fit": "You want creative variations to compare, rather than repeatedly using the same image and message.",
+          "note": "We create the creative materials; we don't guarantee which angle will perform best. Results also depend on the offer, audience, price, landing page, campaign setup, and market conditions."
+        },
+        {
+          "title": "Keep your product content more consistent",
+          "text": "When products appear across a store, website, and social channels, unrelated visual styles can make the overall presentation feel disconnected.",
+          "text2": "A shared visual direction can help product images and copy feel like parts of the same business.",
+          "fitLabel": "Good fit when:",
+          "fit": "You have several products or need content for more than one marketing channel.",
+          "note": ""
+        },
+        {
+          "title": "Get help with the creative work",
+          "text": "Planning an image, preparing variations, writing captions, and updating product descriptions all take time.",
+          "text2": "Send us the product information and source materials you have. We'll take care of the creative work included in your order.",
+          "fitLabel": "Good fit when:",
+          "fit": "You want help producing product visuals and copy without handling every part yourself.",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "type": "services-overview",
+      "name": "5. What We Create",
+      "id": "services",
+      "enabled": true,
+      "eyebrow": "WHAT WE CREATE",
+      "title": "Choose the creative assets you need.",
+      "intro": "Order one service on its own or combine services for the same product.",
+      "items": [
+        {
+          "serviceId": "image",
+          "badge": "Visual Creative",
+          "title": "Product Advertising Image",
+          "price": "$21.99",
+          "unit": "per image",
+          "lead": "A designed image built around your product.",
+          "text": "Send us your product photo and tell us where you plan to use it. We'll create an advertising image using a visual concept, composition, and presentation suited to the product and your brief.",
+          "sampleImage": {
+            "image": "images/Premium-Gooseneck-Kettle-Tea-Setup.webp",
+            "alt": "Product Advertising Image service example",
+            "placeholder": "IMAGE PLACEHOLDER 07 — PRODUCT IMAGE SERVICE EXAMPLE: Insert one strong, genuine example where the source photo and finished image can be compared"
+          },
+          "sampleNote": "Example of the Product Advertising Image service.",
+          "usefulTitle": "Useful for:",
+          "usefulItems": [
+            "Facebook and Instagram ads",
+            "Social media posts",
+            "Product pages and listings",
+            "Website banners and promotions"
+          ],
+          "receiveLabel": "You receive:",
+          "receive": "One finished product advertising image in JPG or PNG format.",
+          "ctaLabel": "Add Product Image",
+          "featured": ""
+        },
+        {
+          "serviceId": "caption",
+          "badge": "Ad Copy",
+          "title": "Facebook & Instagram Ad Caption",
+          "price": "$34.99",
+          "unit": "per caption",
+          "lead": "A caption written around your product and the people you're trying to reach.",
+          "text": "We use your product information to write an advertising caption that communicates relevant features and benefits from a customer-focused perspective.",
+          "usefulTitle": "",
+          "usefulItems": [],
+          "receiveLabel": "You receive:",
+          "receive": "One advertising caption in an editable text document.",
+          "ctaLabel": "Add Ad Caption",
+          "featured": ""
+        },
+        {
+          "serviceId": "description",
+          "badge": "Product Copy",
+          "title": "Product Description",
+          "price": "$8.00",
+          "unit": "per description",
+          "lead": "Clear product information, written for shoppers.",
+          "text": "We turn your product information into a description that explains its important features and practical benefits in language shoppers can understand.",
+          "usefulTitle": "",
+          "usefulItems": [],
+          "receiveLabel": "You receive:",
+          "receive": "One product description in DOC or TXT format.",
+          "ctaLabel": "Add Product Description",
+          "featured": ""
+        },
+        {
+          "serviceId": "package",
+          "badge": "Combined Package",
+          "title": "Facebook & Instagram Ad Package",
+          "price": "$49.99",
+          "unit": "package price",
+          "lead": "One product image and one ad caption, created to work together.",
+          "text": "Get one product advertising image paired with one Facebook or Instagram advertising caption.",
+          "usefulTitle": "",
+          "usefulItems": [],
+          "receiveLabel": "You receive:",
+          "receive": "One product advertising image + One Facebook or Instagram advertising caption.",
+          "ctaLabel": "Add Ad Package",
+          "featured": "true"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "6A. Our Work — Main Gallery",
+      "id": "our-work",
+      "enabled": true,
+      "eyebrow": "OUR WORK",
+      "title": "See how the same product can be presented in different ways.",
+      "intro": "Explore genuine examples of product advertising images created in different visual directions.",
+      "items": [
+        {
+          "image": "images/Amber-Skincare-Serum-Spa-Still-Life-2.webp",
+          "category": "Skincare",
+          "caption": "Detail-focused presentation",
+          "alt": "Skincare detail-focused presentation example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Skincare: Detail-focused presentation"
+        },
+        {
+          "image": "",
+          "category": "Beverage",
+          "caption": "Product and setting",
+          "alt": "Beverage product and setting example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Beverage: Product and setting"
+        },
+        {
+          "image": "",
+          "category": "Food",
+          "caption": "Serving suggestion",
+          "alt": "Food serving suggestion example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Food: Serving suggestion"
+        },
+        {
+          "image": "",
+          "category": "Electronics",
+          "caption": "Feature-focused composition",
+          "alt": "Electronics feature-focused composition example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Electronics: Feature-focused composition"
+        },
+        {
+          "image": "",
+          "category": "Home",
+          "caption": "Product in context",
+          "alt": "Home product in context example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Home: Product in context"
+        },
+        {
+          "image": "",
+          "category": "Pet products",
+          "caption": "Everyday-use presentation",
+          "alt": "Pet products everyday-use presentation example",
+          "placeholder": "PORTFOLIO PLACEHOLDER 01 — Pet products: Everyday-use presentation"
+        }
+      ]
+    },
+    {
+      "type": "transformations",
+      "name": "6B. Our Work — Same product. Different presentation.",
+      "enabled": true,
+      "eyebrow": "BEFORE & AFTER",
+      "title": "Same product. Different presentation.",
+      "subtitle": "Drag the divider to compare the original photo with the designed advertising image.",
+      "items": [
+        {
+          "before": {
+            "image": "",
+            "alt": "Original photo of the product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Left) — Original photo"
+          },
+          "after": {
+            "image": "",
+            "alt": "Designed advertising image of the exact same product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Right) — Designed image"
+          },
+          "caption": "Concept example — not client work",
+          "beforeLabel": "Original photo",
+          "afterLabel": "Designed image",
+          "handleLabel": "Drag to compare"
+        },
+        {
+          "before": {
+            "image": "",
+            "alt": "Original photo of the product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Left) — Original photo 2"
+          },
+          "after": {
+            "image": "",
+            "alt": "Designed advertising image of the exact same product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Right) — Designed image 2"
+          },
+          "caption": "Concept example — not client work",
+          "beforeLabel": "Original photo",
+          "afterLabel": "Designed image",
+          "handleLabel": "Drag to compare"
+        },
+        {
+          "before": {
+            "image": "",
+            "alt": "Original photo of the product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Left) — Original photo 3"
+          },
+          "after": {
+            "image": "",
+            "alt": "Designed advertising image of the exact same product",
+            "placeholder": "PORTFOLIO PLACEHOLDER 02 (Right) — Designed image 3"
+          },
+          "caption": "Concept example — not client work",
+          "beforeLabel": "Original photo",
+          "afterLabel": "Designed image",
+          "handleLabel": "Drag to compare"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "name": "7. How It Works",
+      "id": "how-it-works",
+      "enabled": true,
+      "eyebrow": "HOW IT WORKS",
+      "title": "From your product photos to finished creative assets.",
+      "items": [
+        {
+          "title": "Choose what you need",
+          "text": "Select a product advertising image, an ad caption, a product description, or the combined ad package.",
+          "meta": ""
+        },
+        {
+          "title": "Send your product information",
+          "text": "Provide your product photos and a short description of what you need. You can also share your website, product details, intended audience, brand references, and where you plan to use the content.",
+          "meta": ""
+        },
+        {
+          "title": "We create your order",
+          "text": "We develop the agreed images and/or copy using the product information and direction you provide.",
+          "meta": "Typical delivery: 1–3 working days, depending on order size."
+        },
+        {
+          "title": "Review your files",
+          "text": "Receive your finished work through a download link. If something needs adjusting within the agreed brief, you can request revisions.",
+          "meta": "Included: 2 rounds of revisions."
+        }
+      ],
+      "processBadge": "Process Overview",
+      "processCaption": "Product photo → creative work → finished files.",
+      "processImage": {
+        "image": "",
+        "alt": "Visual showing product photo to creative work to finished files",
+        "placeholder": "IMAGE PLACEHOLDER 08 — PROCESS VISUAL: Insert a simple three- or four-step visual showing product photo → creative work → finished files"
+      }
+    },
+    {
+      "type": "brief-guide",
+      "name": "8. What We Need From You",
+      "enabled": true,
+      "eyebrow": "WHAT WE NEED FROM YOU",
+      "title": "You don't need a complicated brief.",
+      "intro": "Start with what you already have.",
+      "requiredTitle": "For every order:",
+      "requiredItems": [
+        "A clear product photo or the source images you want us to use",
+        "Product name and a short explanation of what it is",
+        "The service or services you selected",
+        "Where you plan to use the finished content"
+      ],
+      "helpfulTitle": "Helpful additions:",
+      "helpfulItems": [
+        "Your website or product listing",
+        "Target customer, if you have one in mind",
+        "Main product features and benefits",
+        "Brand colors, fonts, or visual references",
+        "Examples of styles you like",
+        "Required image dimensions or platform specifications",
+        "Words, claims, or visual details that must be included or avoided"
+      ],
+      "closingNote": "If you're unsure about the creative direction, tell us about the product and what you want customers to understand. We can use that as a starting point."
+    },
+    {
+      "type": "builder",
+      "name": "9. Pricing & Package Builder",
+      "id": "pricing",
+      "enabled": true,
+      "eyebrow": "Pricing",
+      "title": "Choose what you need. See your total before checkout.",
+      "intro": "You can order individual services or combine eligible items in the package builder.",
+      "discountMessage": "Add eligible services to your order and the package builder will calculate the available discount, up to 50% off.",
+      "pricingDisclosure": "Your calculated discount and final total are shown above before checkout.",
+      "currency": "USD",
+      "currencySymbol": "$",
+      "checkoutLink": "checkout.html",
+      "services": [
+        {
+          "id": "image",
+          "name": "Product Advertising Image",
+          "unit": "product image",
+          "description": "A designed image built around your product using a visual concept, composition, and presentation suited to the product and your brief.",
+          "deliverable": "You receive: One finished product advertising image in JPG or PNG format.",
+          "price": 21.99,
+          "extraDiscount": 7,
+          "max": 50,
+          "startQty": 0
+        },
+        {
+          "id": "caption",
+          "name": "Facebook & Instagram Ad Caption",
+          "unit": "ad caption",
+          "description": "A caption written around your product and the people you're trying to reach, communicating relevant features and benefits from a customer-focused perspective.",
+          "deliverable": "You receive: One advertising caption in an editable text document.",
+          "price": 34.99,
+          "extraDiscount": 9,
+          "max": 50,
+          "startQty": 0
+        },
+        {
+          "id": "description",
+          "name": "Product Description",
+          "unit": "product description",
+          "description": "Clear product information written for shoppers, explaining important features and practical benefits in language shoppers can understand.",
+          "deliverable": "You receive: One product description in DOC or TXT format.",
+          "price": 8,
+          "extraDiscount": 5,
+          "max": 50,
+          "startQty": 0
+        },
+        {
+          "id": "package",
+          "name": "Facebook & Instagram Ad Package",
+          "unit": "ad package",
+          "description": "One product image and one ad caption, created to work together.",
+          "deliverable": "You receive: One product advertising image + One Facebook or Instagram advertising caption.",
+          "price": 49.99,
+          "extraDiscount": 34,
+          "max": 20,
+          "startQty": 0
+        }
+      ],
+      "discountCap": 50,
+      "momentum": 0.05,
+      "discountStartsAfterFirstItem": true,
+      "milestones": [
+        {
+          "pct": 5,
+          "text": "Multi-item discount applied"
+        },
+        {
+          "pct": 15,
+          "text": "Package savings unlocked"
+        },
+        {
+          "pct": 30,
+          "text": "Strong package savings"
+        },
+        {
+          "pct": 50,
+          "text": "Maximum 50% discount reached"
+        }
+      ],
+      "promo": {
+        "enabled": false,
+        "type": "time",
+        "percent": 15,
+        "badge": "Special Offer",
+        "title": "Extra 15% off your total",
+        "text": "Limited-time promotional discount.",
+        "endsAt": "2026-12-04T04:59:00Z",
+        "showSeconds": false,
+        "timeText": "Ends in",
+        "slotsTotal": 10,
+        "slotsLeft": 10,
+        "slotsText": "spots left",
+        "endedText": "This deal has ended.",
+        "rowLabel": "Promo"
+      },
+      "labels": {
+        "yourOrder": "Build Your Package",
+        "emptyText": "Add a service to start building your package.",
+        "regularLabel": "Regular price",
+        "savingsLabel": "You save",
+        "totalLabel": "Total",
+        "each": "each",
+        "off": "OFF",
+        "extraTag": "+{pct}% order discount per extra item",
+        "nextHint": "Add 1 more {service} to save {gain}% more across your order.",
+        "maxHint": "Maximum 50% package discount applied.",
+        "requestLabel": "Continue to Checkout",
+        "requestTitle": "Complete your package order request",
+        "requestNote": "Review your selected services and total above. Enter your contact details below — we will review your brief and reply with payment instructions (PayPal or bank transfer) and next steps."
+      }
+    },
+    {
+      "type": "checklist",
+      "name": "10. Clear Expectations",
+      "enabled": true,
+      "eyebrow": "CLEAR EXPECTATIONS",
+      "title": "Know what you're ordering.",
+      "intro": "",
+      "trustImage": {
+        "image": "",
+        "alt": "Genuine portfolio sample or real production work",
+        "placeholder": "IMAGE PLACEHOLDER 09 — REAL WORK / TRUST VISUAL: Insert a genuine portfolio sample, real production screenshot, or customer-approved work"
+      },
+      "trustCaption": "Real work & production transparency.",
+      "items": [
+        {
+          "title": "Your product remains the focus.",
+          "text": "We aim to present your actual product accurately, not replace it with something misleading."
+        },
+        {
+          "title": "The work follows your brief.",
+          "text": "Your product details, intended audience, and usage help guide the creative direction."
+        },
+        {
+          "title": "You know what is included.",
+          "text": "Each service lists its deliverable, and your selected order shows the items you've chosen."
+        },
+        {
+          "title": "You can request revisions.",
+          "text": "Two rounds of revisions are included, subject to the agreed brief and revision policy."
+        },
+        {
+          "title": "We don't promise sales results.",
+          "text": "We create images and copy. Results also depend on the product, price, offer, audience, competition, landing page, and campaign setup."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "11. FAQ",
+      "id": "faq",
+      "enabled": true,
+      "eyebrow": "FAQ",
+      "title": "Frequently Asked Questions",
+      "intro": "Answers to common questions about ordering, briefs, files, revisions, and payment.",
+      "items": [
+        {
+          "q": "What do I need to send you?",
+          "a": "Send your product photos and a short description of what you need. It also helps to include your product details, website or product listing, intended platform, target customer, and any brand references.",
+          "cat": "brief"
+        },
+        {
+          "q": "Can I order only one service?",
+          "a": "Yes. You can order a product advertising image, an advertising caption, or a product description individually. You can also choose the combined ad package or build a larger order.",
+          "cat": "services"
+        },
+        {
+          "q": "What is included in the Facebook & Instagram Ad Package?",
+          "a": "The package includes one product advertising image and one advertising caption.",
+          "cat": "services"
+        },
+        {
+          "q": "How does the discount work?",
+          "a": "The package builder calculates the discount based on the eligible items in your order. The available discount can increase as you add items, up to a maximum of 50%. Your final price and savings are displayed before checkout.",
+          "cat": "pricing"
+        },
+        {
+          "q": "How long does delivery take?",
+          "a": "Typical delivery is 1–3 working days, depending on the number of items and the complexity of the order.",
+          "cat": "delivery"
+        },
+        {
+          "q": "Can I request changes?",
+          "a": "Yes. Two rounds of revisions are included. Revisions should relate to the original agreed brief. A substantially different concept or new scope of work may require a separate order.",
+          "cat": "delivery"
+        },
+        {
+          "q": "What file formats will I receive?",
+          "a": "Images are delivered as JPG or PNG. Written content is delivered as DOC or TXT.",
+          "cat": "brief"
+        },
+        {
+          "q": "Can you make images for my specific platform?",
+          "a": "Tell us where you intend to use the image and provide any required dimensions or specifications. We'll take that information into account when preparing the deliverable.",
+          "cat": "brief"
+        },
+        {
+          "q": "Will the images increase my sales or ad performance?",
+          "a": "We can't guarantee that. Advertising results depend on many factors beyond the creative itself, including the product, price, offer, audience, competition, landing page, and campaign setup.\n\nOur job is to create product visuals and copy that communicate the product clearly and give you creative material to use.",
+          "cat": "pricing"
+        },
+        {
+          "q": "Do I need to provide an advertising concept?",
+          "a": "No. If you already have a direction, share it with us. If not, tell us about the product and what you want shoppers to notice or understand. We can develop a suitable creative direction within the agreed scope.",
+          "cat": "brief"
+        },
+        {
+          "q": "Can you follow my existing brand style?",
+          "a": "Share your website, brand guidelines, or visual references. We can use them to guide the work. Please identify any elements that must remain consistent.",
+          "cat": "brief"
+        },
+        {
+          "q": "How can I pay?",
+          "a": "Current payment methods listed are PayPal and bank transfer.",
+          "cat": "pricing"
+        },
+        {
+          "q": "What if my product photo is low quality?",
+          "a": "Send the photo before ordering if you're unsure. The quality and detail of the source material can affect what's possible. We'll let you know if the image is unsuitable or if better source material is needed.",
+          "cat": "brief"
+        },
+        {
+          "q": "Do you work with every type of product?",
+          "a": "Send us the product category and a link or photo so we can assess whether it's a suitable fit. We should confirm suitability before accepting an order involving specialist knowledge, regulated claims, or visual details we cannot reliably reproduce.",
+          "cat": "services"
+        }
+      ]
+    },
+    {
+      "type": "banner",
+      "name": "12. Final Call to Action",
+      "enabled": true,
+      "title": "Choose the creative work your product needs.",
+      "text": "Start with one product image or caption, or combine services for the same product.",
+      "buttonLabel": "Build Your Package",
+      "buttonLink": "#pricing",
+      "supportingLine": "Choose your services, review your total, and see what you'll receive before checkout.",
+      "bannerImage": {
+        "image": "",
+        "alt": "Product advertising visual reinforcing service quality and range",
+        "placeholder": "IMAGE PLACEHOLDER 10 — FINAL CTA VISUAL: Insert a strong product-advertising image that reinforces the quality and range of the service"
+      }
+    }
+  ],
+  "footer": {
+    "brandName": "Product Ad Studio",
+    "description": "Product advertising images and copy for businesses that want to present their products clearly and professionally.",
+    "contactCtaLabel": "Ask a Question",
+    "contactCtaLink": "mailto:jacksonvinh.business@gmail.com",
+    "navTitle": "Links",
+    "navLinks": [
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Our Work",
+        "href": "#our-work"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Pricing",
+        "href": "#pricing"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+    "contacts": [
+      {
+        "label": "Email",
+        "value": "jacksonvinh.business@gmail.com",
+        "link": "mailto:jacksonvinh.business@gmail.com"
+      },
+      {
+        "label": "Instagram",
+        "value": "@jacksonvinh",
+        "link": "https://www.instagram.com/jacksonvinh/"
+      },
+      {
+        "label": "Facebook",
+        "value": "Jackson Vinh",
+        "link": "https://www.facebook.com/profile.php?id=61579650405381"
+      },
+      {
+        "label": "Linktree",
+        "value": "jacksonvinh",
+        "link": "https://linktr.ee/jacksonvinh"
+      }
+    ],
+    "policies": [
+      {
+        "label": "Terms of Service",
+        "href": "#faq"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "#faq"
+      },
+      {
+        "label": "Refund / Cancellation Policy",
+        "href": "#faq"
+      }
+    ],
+    "copyright": "© 2026 Product Ad Studio. All rights reserved."
+  },
+  "checkout": {
+    "_help": "Settings for the package request submission.",
+    "title": "Complete Your Order",
+    "subtitle": "Review your order and choose how to pay.",
+    "backLabel": "Change my order",
+    "summaryTitle": "Order summary",
+    "orderLabel": "Order code",
+    "totalLabel": "Total",
+    "savingsLabel": "You saved",
+    "emptyTitle": "Your order is empty",
+    "emptyText": "Add a service to start building your package.",
+    "emptyButton": "Build Your Package",
+    "detailsTitle": "Your details",
+    "nameLabel": "Your name",
+    "emailLabel": "Email (we'll contact you and send your files here)",
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter a valid email address.",
+    "payTitle": "Payment is arranged after we confirm your request.",
+    "orderForm": {
+      "endpoint": "https://api.web3forms.com/submit",
+      "accessKey": "6077cdfe-4bf3-4cb0-a945-f659a69cef9a",
+      "subject": "New order {order}"
+    },
+    "thanks": {
+      "title": "Your package request was sent.",
+      "text": "Your request has been sent. No payment was taken. We will review the package details and reply to the email you provided."
+    },
+    "paypal": {
+      "enabled": false,
+      "title": "Pay with PayPal",
+      "text": "Fast and secure. Cards accepted. You'll be taken to PayPal to finish.",
+      "buttonLabel": "Pay with PayPal",
+      "linkTemplate": "https://www.paypal.me/jacksonvinh/{amount}{currency}"
+    },
+    "bank": {
+      "enabled": false,
+      "title": "Bank transfer",
+      "text": "Prefer a bank transfer? Use the details below and include your order code.",
+      "confirmLabel": "I've made the transfer",
+      "errorText": "We couldn't send your order. Please try again, or contact us with your order code.",
+      "bankName": "Asia Commercial Bank (ACB)",
+      "accountName": "Tran Le Vinh",
+      "accountNumber": "15818971",
+      "routingNumber": "",
+      "qrImage": ""
+    },
+    "after": {
+      "title": "After you pay",
+      "text": "The package request form collects your selected services and contact details together."
+    },
+    "video": {
+      "enabled": false,
+      "url": "",
+      "tag": "Watch",
+      "title": "See how it works",
+      "text": "A quick look before you pay.",
+      "playLabel": "Play video"
+    }
+  }
+}

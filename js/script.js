@@ -1,6 +1,7 @@
 /* ==========================================================================
    script.js  —  home page: builds the sections, runs the package builder
-   (prices, discounts, confetti). You normally do NOT need to edit this file.
+   (prices, discounts, confetti), quick-add service buttons, FAQ filters,
+   and responsive navigation.
    ========================================================================== */
 (function () {
   'use strict';
@@ -16,21 +17,77 @@
 
   /* ---------- brand / logo ---------- */
   function renderBrand(site) {
-    var a = qs('.brand');
-    a.textContent = '';
+    var wrap = qs('#brand-logo-wrap');
+    if (!wrap) return;
+    wrap.textContent = '';
     var has = !isBlank(site && site.logo);
-    a.hidden = !has && !S.EDIT;
+    wrap.hidden = !has && !S.EDIT;
     if (has) {
       var img = new Image();
-      img.className = 'brand-logo'; img.alt = 'Logo'; img.draggable = false;
-      img.onerror = function () { img.remove(); addPh(); };
+      img.className = 'brand-logo'; img.alt = ''; img.draggable = false;
+      img.onerror = function () { img.remove(); if (S.EDIT) addPh(); else wrap.hidden = true; };
       img.src = site.logo;
-      a.appendChild(img);
+      wrap.appendChild(img);
     } else if (S.EDIT) addPh();
     function addPh() {
       var ph = document.createElement('span');
-      ph.className = 'brand-ph'; ph.textContent = 'Click to add your logo';
-      a.appendChild(ph);
+      ph.className = 'brand-ph'; ph.textContent = '+ Logo';
+      wrap.appendChild(ph);
+    }
+  }
+
+  /* ---------- mobile navigation & scroll-spy ---------- */
+  var spyObserver = null;
+  function setupNavigation() {
+    var toggle = qs('#nav-toggle');
+    var menu = qs('#nav-menu');
+    if (toggle && menu && !toggle._bound) {
+      toggle._bound = true;
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
+      }
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+        menu.classList.toggle('is-open', !open);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a[href]')) closeMenu();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      if (spyObserver) spyObserver.disconnect();
+      var navLinks = qsa('.nav-link[href^="#"]');
+      var targets = [];
+      navLinks.forEach(function (link) {
+        var id = link.getAttribute('href').slice(1);
+        var target = id ? document.getElementById(id) : null;
+        if (target) targets.push({ id: id, el: target, link: link });
+      });
+      if (targets.length) {
+        spyObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.id;
+              navLinks.forEach(function (l) {
+                var match = l.getAttribute('href') === '#' + id;
+                l.classList.toggle('is-active', match);
+                if (match) l.setAttribute('aria-current', 'location');
+                else l.removeAttribute('aria-current');
+              });
+            }
+          });
+        }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+        targets.forEach(function (t) { spyObserver.observe(t.el); });
+      }
     }
   }
 
@@ -47,7 +104,6 @@
       var a = Math.random() * Math.PI * 2, sp = 4 + Math.random() * 9;
       parts.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 5, r: 4 + Math.random() * 6, c: colors[i % colors.length], rot: Math.random() * 6, vr: (Math.random() - 0.5) * 0.4, life: 1 });
     }
-    var raf = null;
     (function frame() {
       ctx.clearRect(0, 0, cv.width, cv.height);
       var alive = false;
@@ -60,12 +116,13 @@
         ctx.strokeStyle = '#17213A'; ctx.lineWidth = 1; ctx.strokeRect(-p.r, -p.r / 2, p.r * 2, p.r);
         ctx.restore();
       });
-      if (alive) raf = requestAnimationFrame(frame); else ctx.clearRect(0, 0, cv.width, cv.height);
+      if (alive) requestAnimationFrame(frame); else ctx.clearRect(0, 0, cv.width, cv.height);
     })();
   }
 
   /* ---------- count-up numbers ---------- */
   function tween(el, toCents, fmt) {
+    if (!el) return;
     var from = Number(el._cents); if (isNaN(from)) from = toCents;
     el._cents = toCents;
     if (reduceMotion || S.EDIT || from === toCents) { el.textContent = fmt(toCents); return; }
@@ -167,7 +224,7 @@
           .then(function (response) { return response.json().then(function (data) { return { ok: response.ok, data: data }; }); })
           .then(function (result) {
             if (!result.ok || result.data.success === false) throw new Error('Request was not accepted');
-            status.textContent = 'Request ' + reference + ' sent. No payment was taken. I’ll review your package and reply to the email you provided.';
+            status.textContent = 'Request ' + reference + ' sent. No payment was taken. We will review your package and reply to the email you provided.';
             status.className = 'request-status is-success'; status.hidden = false;
             requestForm.querySelectorAll('input, textarea, button[type="submit"]').forEach(function (field) { field.disabled = true; });
             submit.textContent = 'Request sent';
@@ -175,7 +232,7 @@
           .catch(function () {
             status.textContent = 'We couldn’t send the request. Please try again, or email us using the contact details in the footer.';
             status.className = 'request-status is-error'; status.hidden = false;
-            submit.disabled = false; submit.textContent = 'Send request';
+            submit.disabled = false; submit.textContent = 'Submit Order Request';
           });
       });
     }
@@ -228,7 +285,7 @@
       list.appendChild(li);
     });
     qs('.receipt-empty', root).hidden = r.units > 0;
-    qs('.receipt-empty', root).textContent = L.emptyText || '';
+    qs('.receipt-empty', root).textContent = L.emptyText || 'Add a service to start building your package.';
 
     // totals
     tween(qs('.t-regular', root), r.regularCents, fmt);
@@ -278,15 +335,13 @@
     if (!opts.silent && r.pct > prevPct) {
       var box = (opts.fromEl || qs('.pct-sticker', root)).getBoundingClientRect();
       var crossed = Math.floor(r.pct / 10) > Math.floor(prevPct / 10) || (r.pct >= r.cap && prevPct < r.cap);
-      burst(box.left + box.width / 2, box.top + box.height / 2, crossed ? 140 : 36);
+      burst(box.left + box.width / 2, box.top + box.height / 2, crossed ? 120 : 30);
     }
     prevPct = r.pct;
     updateSticky();
   }
 
-  /* ---------- flash deal strip + countdown ----------
-     One timer, only while the strip is on screen AND the tab is visible, and it only
-     writes the numbers that changed. Costs almost nothing. */
+  /* ---------- flash deal strip + countdown ---------- */
   var promoTimer = null, promoSeen = true, promoIO = null, promoCtx = null, cdLast = {};
   function stopPromo() {
     if (promoTimer) { clearInterval(promoTimer); promoTimer = null; }
@@ -304,7 +359,7 @@
   function promoTick() {
     var c = promoCtx; if (!c || !c.root.isConnected) return stopPromo();
     var st = P.promoState(c.b);
-    if (!st.active) { stopPromo(); update(c.b, c.root, { silent: true }); return; }   // deal just ended: prices and strip update
+    if (!st.active) { stopPromo(); update(c.b, c.root, { silent: true }); return; }
     drawClock(c.root, st.msLeft, st.showSeconds);
   }
   function syncPromoTimer() {
@@ -333,7 +388,6 @@
       qs('.promo-bar-fill', box).style.width = f + '%';
       slots.classList.toggle('low', f <= 25);
     }
-    // timer bookkeeping
     cdLast = {};
     promoCtx = { b: b, root: root, timed: on && st.usesTime && !edit, secs: st.showSeconds };
     if (promoCtx.timed && 'IntersectionObserver' in window) {
@@ -350,10 +404,10 @@
     var r = last.r, b = last.b, sym = b.currencySymbol == null ? '$' : b.currencySymbol;
     qs('#sticky-total').textContent = P.money(r.totalCents, sym);
     var sv = qs('#sticky-save');
-    sv.textContent = r.effPct > 0 ? '-' + r.effPct + '%' : '';
+    sv.textContent = r.effPct > 0 ? '-' + r.effPct + '% OFF' : '';
     sv.hidden = r.effPct <= 0;
     var a = qs('#sticky-btn');
-    a.textContent = (b.labels && b.labels.requestLabel) || 'Request this package';
+    a.textContent = (b.labels && b.labels.requestLabel) || 'Continue to Checkout';
     a.setAttribute('href', '#pricing');
     bar.classList.toggle('show', r.units > 0 && !builderVisible && !S.EDIT);
   }
@@ -366,7 +420,6 @@
     if (!kids.length) return;
     var itemsW = track.scrollWidth || 1, cw = root.clientWidth || window.innerWidth;
     var repeats = Math.max(1, Math.ceil(cw / itemsW));
-    // first half = the items repeated until it is wider than the screen; second half = identical copy (seamless loop)
     var half = kids.slice();
     for (var r = 1; r < repeats; r++) kids.forEach(function (k) { var c = k.cloneNode(true); track.appendChild(c); half.push(c); });
     half.forEach(function (k) { var c = k.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); });
@@ -406,10 +459,74 @@
     S.bind(qs('#footer'), c, {});
     renderBrand(c.site);
     renderSections(c);
+    setupNavigation();
     S.relayout();
     S.afterRender.forEach(function (fn) { try { fn(); } catch (e) { console.error(e); } });
     window.scrollTo(0, y);
   };
+
+  /* ---------- Quick-Add service buttons (Section 5 -> Package Builder) ---------- */
+  function editingNow() { return S.EDIT && !document.body.classList.contains('ed-preview'); }
+
+  document.addEventListener('click', function (e) {
+    if (editingNow()) return;
+
+    // 1. Quick-add service button from "What We Create" section
+    var quickBtn = e.target.closest('[data-quick-add]');
+    if (quickBtn) {
+      var sid = quickBtn.getAttribute('data-quick-add');
+      var b = S.builder();
+      if (b && sid) {
+        var s = P.services(b).find(function (x) { return String(x.id) === String(sid); });
+        if (!s && P.services(b).length) s = P.services(b)[0];
+        if (s) {
+          cart[s.id] = P.clampQty(s, (Number(cart[s.id]) || 0) + 1);
+          saveCart();
+          if (activeBuilder && activeBuilder.isConnected) {
+            update(b, activeBuilder, { fromEl: quickBtn });
+          }
+          var origLabel = quickBtn._origLabel || quickBtn.textContent;
+          quickBtn._origLabel = origLabel;
+          quickBtn.textContent = 'Added to package \u2713';
+          quickBtn.classList.add('is-added');
+          clearTimeout(quickBtn._resetTimer);
+          quickBtn._resetTimer = setTimeout(function () {
+            quickBtn.textContent = origLabel;
+            quickBtn.classList.remove('is-added');
+          }, 1800);
+
+          var pricingEl = document.getElementById('pricing');
+          if (pricingEl) {
+            setTimeout(function () {
+              pricingEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 220);
+          }
+        }
+      }
+      return;
+    }
+
+    // 2. FAQ category filter tabs
+    var filterBtn = e.target.closest('[data-faq-cat]');
+    if (filterBtn) {
+      var cat = filterBtn.getAttribute('data-faq-cat');
+      var wrap = filterBtn.closest('.faq-wrap');
+      if (wrap) {
+        qsa('[data-faq-cat]', wrap).forEach(function (b) {
+          b.classList.toggle('is-active', b === filterBtn);
+        });
+        qsa('.faq-item', wrap).forEach(function (item) {
+          var itemCat = item.getAttribute('data-cat') || 'all';
+          item.hidden = (cat !== 'all' && itemCat !== cat);
+        });
+      }
+      return;
+    }
+
+    // 3. FAQ accordion toggle
+    var q = e.target.closest('.faq-q');
+    if (q) toggleFaq(q);
+  });
 
   /* ---------- FAQ accordion ---------- */
   function toggleFaq(q) {
@@ -417,11 +534,6 @@
     q.setAttribute('aria-expanded', open ? 'false' : 'true');
     q.parentElement.querySelector('.faq-a').hidden = open;
   }
-  function editingNow() { return S.EDIT && !document.body.classList.contains('ed-preview'); }
-  document.addEventListener('click', function (e) {
-    if (editingNow()) return;
-    var q = e.target.closest('.faq-q'); if (q) toggleFaq(q);
-  });
   document.addEventListener('keydown', function (e) {
     if (editingNow()) return;
     var q = e.target.closest && e.target.closest('.faq-q');

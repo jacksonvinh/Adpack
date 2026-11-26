@@ -1,5 +1,5 @@
 /* ==========================================================================
-   checkout.js  â€”  the page customers land on after pressing Checkout.
+   checkout.js  —  the page customers land on after pressing Checkout.
    Texts: content.json -> "checkout". Prices: recomputed from content.json.
 
    Flow: customer enters name + email -> the order is emailed to YOU

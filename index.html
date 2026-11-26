@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Loading…</title>
-  <meta name="description" content="">
+  <title>Product Ad Studio — Product Images &amp; Ad Copy</title>
+  <meta name="description" content="We turn your existing product photos into designed advertising images and create copy to go with them.">
   <link rel="stylesheet" href="css/style.css">
   <!--
     This file holds the LAYOUT only. You normally do NOT need to edit it.
@@ -14,33 +14,70 @@
 </head>
 <body>
 
+<a class="skip-link" href="#top">Skip to main content</a>
 <div class="load-error" id="load-error" role="alert" hidden></div>
 
-<!-- NAV -->
-<header class="nav container" id="nav">
-  <a class="brand" href="#top"></a>
-  <a class="btn btn-primary" data-text="nav.ctaLabel" data-href="nav.ctaLink"></a>
+<!-- 1. NAVIGATION -->
+<header class="site-header" id="site-header">
+  <div class="nav container" id="nav">
+    <a class="brand" href="#top" aria-label="Product Ad Studio home">
+      <span class="brand-logo-wrap" id="brand-logo-wrap"></span>
+      <span class="brand-name" data-text="nav.brandName" data-fallback="Product Ad Studio"></span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Primary navigation" data-list="nav.links" data-add-label="nav link">
+        <template data-default='{"label":"Section","href":"#top"}'>
+          <a class="nav-link" data-text="label" data-href="href"></a>
+        </template>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary nav-cta" data-text="nav.ctaLabel" data-href="nav.ctaLink"></a>
+      </div>
+    </div>
+  </div>
 </header>
 
 <main id="top">
   <div id="sections"></div>
 </main>
 
-<!-- FOOTER -->
+<!-- 13. FOOTER -->
 <footer class="footer" id="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
+        <div class="footer-brand" data-text="footer.brandName" data-fallback="Product Ad Studio"></div>
         <p data-text="footer.description"></p>
+        <div class="footer-cta-wrap" data-show-if="footer.contactCtaLabel">
+          <a class="btn btn-outline btn-sm footer-ask-btn" data-text="footer.contactCtaLabel" data-href="footer.contactCtaLink"></a>
+        </div>
       </div>
+
+      <div class="footer-col">
+        <div class="footer-title" data-text="footer.navTitle" data-fallback="Links"></div>
+        <div class="footer-links" data-list="footer.navLinks" data-add-label="footer link">
+          <template data-default='{"label":"Link","href":"#top"}'>
+            <a data-text="label" data-href="href"></a>
+          </template>
+        </div>
+      </div>
+
       <div class="footer-col" data-show-if="$services">
-        <div class="footer-title" data-text="footer.servicesTitle"></div>
+        <div class="footer-title" data-text="footer.servicesTitle" data-fallback="Services"></div>
         <div class="footer-links" data-list="$services" data-readonly>
           <template><a href="#pricing" data-text="name"></a></template>
         </div>
       </div>
-      <div class="footer-col">
-        <div class="footer-title" data-text="footer.contactTitle"></div>
+
+      <div class="footer-col" id="contact">
+        <div class="footer-title" data-text="footer.contactTitle" data-fallback="Contact"></div>
         <div class="footer-links" data-list="footer.contacts" data-add-label="contact">
           <template data-default='{"label":"Label","value":"Value","link":""}'>
             <div><span class="lbl" data-text="label"></span><a data-text="value" data-href="link"></a></div>
@@ -48,13 +85,22 @@
         </div>
       </div>
     </div>
-    <div class="footer-copy" data-text="footer.copyright"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy" data-text="footer.copyright"></div>
+      <div class="footer-policies" data-list="footer.policies" data-add-label="policy link">
+        <template data-default='{"label":"Policy","href":"#"}'>
+          <a class="footer-policy-link" data-text="label" data-href="href"></a>
+        </template>
+      </div>
+    </div>
   </div>
 </footer>
 
 <!-- Sticky "your total" bar (appears while the builder is off-screen) -->
 <div class="sticky-bar" id="sticky-bar" aria-live="polite">
   <div class="sticky-info">
+    <span class="sticky-label">Your Package:</span>
     <span class="sticky-total" id="sticky-total"></span>
     <span class="sticker sticker--small" id="sticky-save" hidden></span>
   </div>
@@ -67,6 +113,52 @@
      SECTION TEMPLATES  (one per section "type" used in content.json)
      ====================================================================== -->
 
+<!-- 2. HERO (Split layout with copy + CTAs + reassurance on left, IMAGE PLACEHOLDER 01 on right) -->
+<template id="sec-headline">
+  <section class="hero-section container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow headline-eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+        <h1 data-text="title" data-ph="Main headline"></h1>
+        <p class="hero-lead" data-text="subtitle" data-ph="Sub-headline"></p>
+        <p class="hero-lead hero-lead--secondary" data-show-if="subtitle2" data-text="subtitle2" data-ph="Second sub-headline"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" data-text="buttonLabel" data-href="buttonLink" data-ph="Primary CTA"></a>
+          <a class="btn btn-outline btn-lg" data-show-if="secondaryButtonLabel" data-text="secondaryButtonLabel" data-href="secondaryButtonLink" data-ph="Secondary CTA"></a>
+        </div>
+        <div class="hero-reassurance" data-show-if="reassurance">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <span data-text="reassurance" data-ph="Short reassurance line"></span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Supports single Hero Visual (IMAGE PLACEHOLDER 01) with optional source photo inset -->
+        <div class="hero-showcase" data-show-if="heroImage">
+          <div class="hero-main-media">
+            <div data-img="heroImage"></div>
+            <span class="chip chip--dark hero-media-chip" data-show-if="heroImage.badge" data-text="heroImage.badge"></span>
+          </div>
+          <div class="hero-inset-card" data-show-if="insetImage">
+            <div class="hero-inset-media">
+              <div data-img="insetImage"></div>
+            </div>
+            <span class="hero-inset-label" data-text="insetImage.label" data-fallback="Source photo"></span>
+          </div>
+        </div>
+        <!-- Also supports compare slider if configured -->
+        <div class="hero-frame" data-show-if="compare">
+          <div class="compare" data-compare="compare"></div>
+        </div>
+        <div class="hero-visual-caption" data-show-if="visualCaption">
+          <span class="badge-pill" data-text="visualBadge" data-fallback="Placeholder 01"></span>
+          <span data-text="visualCaption" data-ph="Visual note"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <template id="sec-hero">
   <section class="hero container">
     <div class="hero-frame">
@@ -76,80 +168,218 @@
   </section>
 </template>
 
-<template id="sec-headline">
-  <section class="headline">
-    <div class="eyebrow headline-eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-    <h1 data-text="title" data-ph="Main headline"></h1>
-    <p data-text="subtitle" data-ph="Sub-headline"></p>
-    <a class="btn btn-primary btn-lg" data-text="buttonLabel" data-href="buttonLink" data-ph="Button"></a>
-  </section>
-</template>
-
-<template id="sec-marquee">
-  <div class="marquee" data-requires="items">
-    <div class="marquee-track" data-list="items" data-add-label="ticker phrase">
-      <template data-default='"New phrase"'><span class="marquee-item" data-text="."></span></template>
-    </div>
-  </div>
-</template>
-
-<template id="sec-text">
-  <section class="container split">
-    <div class="split-head">
-      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-      <h2 data-text="title" data-ph="Title"></h2>
-    </div>
-    <div class="split-body about-text" data-list="items" data-add-label="paragraph">
-      <template data-default='"New paragraph."'><p data-text="."></p></template>
-    </div>
-  </section>
-</template>
-
-<template id="sec-steps">
-  <div class="band band--surface" data-requires="items">
+<!-- 3. WHY PRODUCT PRESENTATION MATTERS (+ IMAGE PLACEHOLDER 02: Original Photo vs Designed Presentation) -->
+<template id="sec-problem">
+  <section class="band band--surface problem-section">
     <div class="container">
-      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-      <h2 class="section-title" data-text="title" data-ph="Title"></h2>
-      <div class="steps" data-list="items" data-layout="center" data-min="230" data-max="4" data-add-label="step">
-        <template data-default='{"title":"New step","text":"Describe this step."}'>
-          <div class="step">
-            <div class="step-num" data-index></div>
-            <h3 data-text="title"></h3>
-            <p data-text="text"></p>
+      <div class="problem-grid">
+        <div class="problem-intro">
+          <div class="eyebrow" data-text="eyebrow" data-ph="Eyebrow"></div>
+          <h2 class="section-title" data-text="title" data-ph="Section title"></h2>
+          <div class="problem-prose" data-list="paragraphs" data-add-label="paragraph">
+            <template data-default='"New paragraph."'>
+              <p data-text="."></p>
+            </template>
           </div>
+          <p class="problem-list-lead" data-show-if="listLead" data-text="listLead" data-ph="List lead"></p>
+        </div>
+
+        <div class="problem-points-wrap">
+          <!-- Shopper questions list (v2.1) -->
+          <div class="problem-questions" data-show-if="questions" data-list="questions" data-add-label="shopper question">
+            <template data-default='"What does the material or finish look like?"'>
+              <div class="problem-question-item">
+                <span class="problem-q-mark" aria-hidden="true">?</span>
+                <span class="problem-q-text" data-text="." data-ph="Shopper question"></span>
+              </div>
+            </template>
+          </div>
+
+          <!-- Follow-up resolution paragraphs (v2.1) -->
+          <div class="problem-resolution" data-show-if="afterParagraphs">
+            <div class="problem-after-prose" data-list="afterParagraphs" data-add-label="paragraph">
+              <template data-default='"Follow-up paragraph."'>
+                <p data-text="."></p>
+              </template>
+            </div>
+            <p class="problem-highlight-line" data-show-if="highlightLine" data-text="highlightLine" data-ph="Highlight takeaway"></p>
+          </div>
+
+          <div class="reframe-callout" data-show-if="closingNote">
+            <div class="reframe-callout-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <p data-text="closingNote" data-ph="Closing note"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE PLACEHOLDER 02 — ORIGINAL PHOTO VS DESIGNED PRESENTATION -->
+      <div class="problem-compare-block" data-show-if="compare">
+        <div class="problem-compare-head">
+          <span class="badge-pill" data-show-if="compareBadge" data-text="compareBadge"></span>
+          <span class="problem-compare-note" data-show-if="compareNote" data-text="compareNote"></span>
+        </div>
+        <div class="compare problem-compare-slider" data-compare="compare"></div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 4. DIFFERENT PRODUCTS NEED DIFFERENT CREATIVE APPROACHES (4 visual cards + 3 strategic cards) -->
+<template id="sec-directions">
+  <section class="band directions-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Eyebrow"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-text="intro" data-ph="Intro"></p>
+        <p class="section-intro section-intro--sub" data-show-if="intro2" data-text="intro2" data-ph="Secondary intro"></p>
+      </div>
+
+      <div class="directions-grid directions-grid--visual" data-list="items" data-ph-cycle data-add-label="visual approach">
+        <template data-default='{"title":"Visual approach","text":"Describe this presentation approach.","text2":"","image":{"image":"","alt":"","placeholder":"Image placeholder"},"caption":"Caption text"}'>
+          <article class="direction-card direction-card--visual">
+            <div class="direction-media-slot" data-show-if="image">
+              <div data-img="image"></div>
+            </div>
+            <div class="direction-card-content">
+              <div class="direction-card-top">
+                <span class="direction-index" data-index></span>
+                <h3 data-text="title" data-ph="Direction title"></h3>
+              </div>
+              <p class="direction-text" data-text="text" data-ph="Description"></p>
+              <p class="direction-text direction-text--more" data-show-if="text2" data-text="text2" data-ph="Second paragraph"></p>
+              <div class="direction-caption-bar" data-show-if="caption">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                <span data-text="caption" data-ph="Image caption"></span>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+
+      <!-- 3 Additional Strategic Creative Approaches (v2.1) -->
+      <div class="directions-grid directions-grid--secondary" data-show-if="subItems" data-list="subItems" data-add-label="creative reason">
+        <template data-default='{"title":"Creative approach","text":"First paragraph.","text2":"","fitLabel":"Good fit when:","fit":"When this fits best.","note":""}'>
+          <article class="direction-card">
+            <div class="direction-card-top">
+              <h3 data-text="title" data-ph="Title"></h3>
+            </div>
+            <p class="direction-text" data-text="text" data-ph="First paragraph"></p>
+            <p class="direction-text direction-text--more" data-show-if="text2" data-text="text2" data-ph="Second paragraph"></p>
+            <div class="direction-fit" data-show-if="fit">
+              <strong data-text="fitLabel" data-fallback="Good fit when:"></strong>
+              <span data-text="fit" data-ph="Good fit criteria"></span>
+            </div>
+            <p class="direction-note" data-show-if="note" data-text="note" data-ph="Note"></p>
+          </article>
+        </template>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 5. WHAT WE CREATE (Service Deliverable Cards + IMAGE PLACEHOLDER 07 on Product Image service) -->
+<template id="sec-services-overview">
+  <section class="band band--surface services-overview-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Eyebrow"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-show-if="intro" data-text="intro" data-ph="Intro"></p>
+      </div>
+
+      <div class="deliverables-grid" data-list="items" data-add-label="service card">
+        <template data-default='{"serviceId":"image","badge":"","title":"Service Name","price":"$21.99","unit":"per image","lead":"Short summary.","text":"Full explanation.","usefulTitle":"","usefulItems":[],"receiveLabel":"You receive:","receive":"Deliverable details.","ctaLabel":"Add Service"}'>
+          <article class="deliverable-card" data-attr="data-featured:featured">
+            <div class="deliverable-head">
+              <div>
+                <span class="deliverable-badge" data-show-if="badge" data-text="badge"></span>
+                <h3 data-text="title" data-ph="Service title"></h3>
+              </div>
+              <div class="deliverable-price-box">
+                <span class="deliverable-price" data-text="price" data-ph="$0.00"></span>
+                <span class="deliverable-unit" data-show-if="unit" data-text="unit" data-ph="per unit"></span>
+              </div>
+            </div>
+
+            <p class="deliverable-lead" data-text="lead" data-ph="Lead sentence"></p>
+            <p class="deliverable-desc" data-text="text" data-ph="Description"></p>
+            <p class="deliverable-desc" data-show-if="text2" data-text="text2" data-ph="Additional description"></p>
+
+            <!-- Optional service sample image (IMAGE PLACEHOLDER 07) -->
+            <div class="deliverable-sample" data-show-if="sampleImage">
+              <div class="deliverable-sample-media">
+                <div data-img="sampleImage"></div>
+              </div>
+              <div class="deliverable-sample-note" data-show-if="sampleNote" data-text="sampleNote"></div>
+            </div>
+
+            <div class="deliverable-useful" data-show-if="usefulItems">
+              <div class="deliverable-subhead" data-text="usefulTitle" data-fallback="Useful for:"></div>
+              <ul class="deliverable-list" data-list="usefulItems" data-add-label="use case">
+                <template data-default='"New use case"'>
+                  <li data-text="."></li>
+                </template>
+              </ul>
+            </div>
+
+            <div class="deliverable-receive">
+              <strong data-text="receiveLabel" data-fallback="You receive:"></strong>
+              <span data-text="receive" data-ph="What the customer receives"></span>
+            </div>
+
+            <div class="deliverable-footer">
+              <button type="button" class="btn btn-primary deliverable-cta" data-attr="data-quick-add:serviceId" data-text="ctaLabel" data-ph="Button label"></button>
+            </div>
+          </article>
+        </template>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 6A. OUR WORK — MAIN GALLERY (PORTFOLIO PLACEHOLDER 01) -->
+<template id="sec-gallery">
+  <div class="band gallery-section" data-requires="items">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-text="intro" data-ph="Short intro"></p>
+        <p class="portfolio-note" data-show-if="note" data-text="note"></p>
+      </div>
+      <div class="portfolio-grid" data-list="items" data-ph-cycle data-add-label="portfolio item">
+        <template data-default='{"image":"","category":"Category","caption":"Presentation approach","alt":"","placeholder":"Portfolio image placeholder"}'>
+          <figure class="portfolio-tile">
+            <div class="portfolio-media-wrap">
+              <div data-img="."></div>
+            </div>
+            <figcaption class="portfolio-caption">
+              <strong data-show-if="category" data-text="category" data-ph="Category"></strong>
+              <span data-text="caption" data-ph="Caption"></span>
+            </figcaption>
+          </figure>
         </template>
       </div>
     </div>
   </div>
 </template>
 
-<template id="sec-checklist">
-  <section class="container split" data-requires="items">
-    <div class="split-head">
-      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-      <h2 data-text="title" data-ph="Title"></h2>
-    </div>
-    <div class="split-body benefit-list" data-list="items" data-add-label="point">
-      <template data-default='{"title":"New point.","text":"Explain why it matters."}'>
-        <div class="benefit">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
-          <div><b data-text="title"></b> <span data-text="text"></span></div>
-        </div>
-      </template>
-    </div>
-  </section>
-</template>
-
-<template id="sec-gallery">
-  <div class="band band--surface" data-requires="items">
+<!-- 6B. OUR WORK — BEFORE / AFTER SLIDER (PORTFOLIO PLACEHOLDER 02) -->
+<template id="sec-transformations">
+  <div class="band band--portfolio" data-requires="items">
     <div class="container">
-      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-      <h2 class="section-title" data-text="title" data-ph="Title"></h2>
-      <p class="section-intro" data-text="intro" data-ph="Short intro"></p>
-      <div class="gallery" data-list="items" data-layout="span" data-min="190" data-max="4" data-ph-cycle data-add-label="image">
-        <template data-default='{"image":"","caption":"","alt":"","placeholder":"New image"}'>
-          <figure class="tile">
-            <div data-img="."></div>
+      <div class="section-head">
+        <div class="eyebrow" data-show-if="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-show-if="subtitle" data-text="subtitle" data-ph="Short intro"></p>
+      </div>
+      <div class="transforms" data-list="items" data-layout="center" data-min="280" data-max="3" data-ph-cycle data-add-label="slider">
+        <template data-default='{"before":{"image":"","alt":"Original photo","placeholder":"Original photo"},"after":{"image":"","alt":"Designed image","placeholder":"Designed image"},"caption":"Concept example — not client work","beforeLabel":"Original photo","afterLabel":"Designed image","handleLabel":"Drag to compare"}'>
+          <figure class="trans">
+            <div class="compare compare--tall" data-compare="."></div>
             <figcaption data-text="caption" data-ph="Caption"></figcaption>
           </figure>
         </template>
@@ -158,6 +388,90 @@
   </div>
 </template>
 
+<!-- 7. HOW IT WORKS (+ IMAGE PLACEHOLDER 08 — PROCESS VISUAL) -->
+<template id="sec-steps">
+  <div class="band steps-section" data-requires="items">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-show-if="intro" data-text="intro" data-ph="Intro"></p>
+      </div>
+      <div class="steps-grid" data-list="items" data-add-label="step">
+        <template data-default='{"title":"New step","text":"Describe this step.","meta":""}'>
+          <div class="step">
+            <div class="step-num" data-index></div>
+            <h3 data-text="title" data-ph="Step title"></h3>
+            <p data-text="text" data-ph="Step explanation"></p>
+            <div class="step-meta" data-show-if="meta" data-text="meta" data-ph="Delivery or revision detail"></div>
+          </div>
+        </template>
+      </div>
+
+      <!-- IMAGE PLACEHOLDER 08 — PROCESS VISUAL -->
+      <div class="process-visual-block" data-show-if="processImage">
+        <div class="process-visual-head">
+          <span class="badge-pill" data-show-if="processBadge" data-text="processBadge"></span>
+          <span class="process-visual-caption" data-show-if="processCaption" data-text="processCaption"></span>
+        </div>
+        <div class="process-visual-media">
+          <div data-img="processImage"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- 8. WHAT WE NEED FROM YOU (Brief Guide: For every order vs Helpful additions) -->
+<template id="sec-brief-guide">
+  <section class="band band--surface brief-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Eyebrow"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-text="intro" data-ph="Intro"></p>
+      </div>
+
+      <div class="brief-columns">
+        <div class="brief-card brief-card--required">
+          <div class="brief-card-head">
+            <span class="brief-badge brief-badge--primary">Essential</span>
+            <h3 data-text="requiredTitle" data-fallback="For every order:"></h3>
+          </div>
+          <ul class="brief-list" data-list="requiredItems" data-add-label="required item">
+            <template data-default='"Required item"'>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+                <span data-text="."></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <div class="brief-card brief-card--helpful">
+          <div class="brief-card-head">
+            <span class="brief-badge">Optional</span>
+            <h3 data-text="helpfulTitle" data-fallback="Helpful additions:"></h3>
+          </div>
+          <ul class="brief-list brief-list--helpful" data-list="helpfulItems" data-add-label="helpful item">
+            <template data-default='"Helpful item"'>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                <span data-text="."></span>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+
+      <div class="brief-reassurance" data-show-if="closingNote">
+        <p data-text="closingNote" data-ph="Reassurance note"></p>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- 9. PRICING & PACKAGE BUILDER -->
 <template id="sec-builder">
   <section class="band band--blue builder">
     <div class="container">
@@ -165,8 +479,11 @@
         <div class="sticker sticker--tilt" data-text="eyebrow" data-ph="Small label"></div>
         <h2 class="section-title" data-text="title" data-ph="Title"></h2>
         <p class="section-intro" data-text="intro" data-ph="Short intro"></p>
+        <div class="builder-discount-banner" data-show-if="discountMessage">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <span data-text="discountMessage" data-ph="Discount message"></span>
+        </div>
       </div>
-
 
       <!-- Flash deal: extra % off the total. Texts: content.json -> builder.promo. Shown only while the deal is on. -->
       <div class="promo" hidden>
@@ -192,11 +509,12 @@
       <div class="builder-grid">
         <div class="builder-main card">
           <div class="svc-list" data-list="services" data-add-label="service">
-            <template data-default='{"id":"new-service","name":"New service","unit":"new service","description":"Describe this service.","price":5,"extraDiscount":5,"max":20,"startQty":0}'>
+            <template data-default='{"id":"new-service","name":"New service","unit":"new service","description":"Describe this service.","deliverable":"","price":5,"extraDiscount":5,"max":20,"startQty":0}'>
               <div class="svc" data-attr="data-sid:id">
                 <div class="svc-info">
                   <h3 data-text="name" data-ph="Service name"></h3>
                   <p data-text="description" data-ph="Short description"></p>
+                  <p class="svc-deliverable" data-show-if="deliverable" data-text="deliverable" data-ph="Deliverable format"></p>
                   <span class="svc-tag"></span>
                   <div class="svc-edit ed-only" data-editor-ui>
                     <label>Price <input type="number" step="0.01" min="0" data-num="price" data-live="builder"></label>
@@ -222,7 +540,7 @@
 
         <aside class="builder-summary">
           <div class="pct-sticker" hidden><span class="pct-num"></span><span class="pct-off" data-text="labels.off" data-fallback="OFF"></span></div>
-          <h3 data-text="labels.yourOrder" data-fallback="Your order"></h3>
+          <h3 data-text="labels.yourOrder" data-fallback="Build Your Package"></h3>
           <p class="receipt-empty"></p>
           <ul class="receipt"></ul>
           <div class="meter" aria-hidden="true"><div class="meter-fill"></div></div>
@@ -235,18 +553,20 @@
             <div class="row row-promo" hidden><span class="t-promo-label"></span><b class="t-promo"></b></div>
             <div class="row row-total"><span data-text="labels.totalLabel" data-fallback="Total"></span><b class="t-total"></b></div>
           </div>
-          <button type="button" class="btn btn-pop btn-lg b-request" data-text="labels.requestLabel" data-fallback="Request this package"></button>
+          <button type="button" class="btn btn-pop btn-lg b-request" data-text="labels.requestLabel" data-fallback="Build Your Package"></button>
+          <p class="builder-disclosure" data-show-if="pricingDisclosure" data-text="pricingDisclosure" data-ph="Pricing disclosure"></p>
+
           <section class="package-request" id="package-request-panel" hidden aria-labelledby="package-request-title">
-            <h4 id="package-request-title" data-text="labels.requestTitle" data-fallback="Send your package request"></h4>
-            <p class="request-note" data-text="labels.requestNote" data-fallback="No payment now. I’ll review your request and reply to confirm the brief, final details, and next steps."></p>
+            <h4 id="package-request-title" data-text="labels.requestTitle" data-fallback="Complete your order request"></h4>
+            <p class="request-note" data-text="labels.requestNote" data-fallback="Review your selected package above. Send your details and brief to proceed — we will confirm your materials and share payment details (PayPal or bank transfer)."></p>
             <form id="package-request-form" novalidate>
-              <label class="request-field"><span>Name</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
-              <label class="request-field"><span>Email for my reply</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
-              <label class="request-field"><span>Anything you’d like me to know? (optional)</span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+              <label class="request-field"><span>Your name</span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
+              <label class="request-field"><span>Email address</span><input type="email" name="email" autocomplete="email" required maxlength="160"></label>
+              <label class="request-field"><span>Product name, platform, or brief notes (optional)</span><textarea name="message" rows="3" maxlength="2000" placeholder="Tell us what you are selling, where you plan to use the content, or share a link to your product listing."></textarea></label>
               <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
               <p class="request-status" id="package-request-status" role="status" aria-live="polite" hidden></p>
               <div class="request-actions">
-                <button type="submit" class="btn btn-primary request-submit">Send request</button>
+                <button type="submit" class="btn btn-primary request-submit">Submit Order Request</button>
                 <button type="button" class="btn btn-outline request-cancel">Back to package</button>
               </div>
             </form>
@@ -257,23 +577,125 @@
   </section>
 </template>
 
-<template id="sec-transformations">
-  <div class="band band--portfolio" data-requires="items">
-    <div class="container">
-      <div class="center-head">
-        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
-        <p class="section-intro" data-text="subtitle" data-ph="Short intro"></p>
+<!-- 10. CLEAR EXPECTATIONS (+ IMAGE PLACEHOLDER 09 — REAL WORK / TRUST VISUAL) -->
+<template id="sec-checklist">
+  <section class="container split" data-requires="items">
+    <div class="split-head">
+      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+      <h2 data-text="title" data-ph="Title"></h2>
+      <p class="split-intro" data-show-if="intro" data-text="intro" data-ph="Intro"></p>
+      <div class="trust-visual-slot" data-show-if="trustImage">
+        <div class="trust-visual-media">
+          <div data-img="trustImage"></div>
+        </div>
+        <div class="trust-visual-caption" data-show-if="trustCaption" data-text="trustCaption"></div>
       </div>
-      <div class="transforms" data-list="items" data-layout="center" data-min="260" data-max="3" data-ph-cycle data-add-label="slider">
-        <template data-default='{"before":{"image":"","alt":"Before","placeholder":"Before photo"},"after":{"image":"","alt":"After","placeholder":"After ad image"},"caption":"Example"}'>
-          <figure class="trans">
-            <div class="compare compare--tall" data-compare="."></div>
-            <figcaption data-text="caption" data-ph="Caption"></figcaption>
-          </figure>
+    </div>
+    <div class="split-body benefit-list" data-list="items" data-add-label="point">
+      <template data-default='{"title":"New point.","text":"Explain why it matters."}'>
+        <div class="benefit">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          <div><b data-text="title"></b> <span data-text="text"></span></div>
+        </div>
+      </template>
+    </div>
+  </section>
+</template>
+
+<!-- 11. FAQ (With category filter pills for long-copy scannability) -->
+<template id="sec-faq">
+  <section class="faq-wrap" data-requires="items">
+    <div class="faq-header">
+      <div>
+        <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-show-if="intro" data-text="intro" data-ph="Short intro"></p>
+      </div>
+      <div class="faq-controls" data-editor-hide>
+        <div class="faq-filters" role="tablist" aria-label="Filter questions by topic">
+          <button type="button" class="faq-filter is-active" data-faq-cat="all">All Questions</button>
+          <button type="button" class="faq-filter" data-faq-cat="services">Services &amp; Scope</button>
+          <button type="button" class="faq-filter" data-faq-cat="brief">Brief &amp; Files</button>
+          <button type="button" class="faq-filter" data-faq-cat="delivery">Delivery &amp; Revisions</button>
+          <button type="button" class="faq-filter" data-faq-cat="pricing">Pricing &amp; Results</button>
+        </div>
+      </div>
+    </div>
+    <div class="faq" data-list="items" data-add-label="question">
+      <template data-default='{"q":"New question?","a":"Your answer.","cat":"services"}'>
+        <div class="faq-item" data-attr="data-cat:cat">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            <span data-text="q" data-ph="Question"></span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </div>
+          <div class="faq-a" hidden><div data-text="a" data-ph="Answer"></div></div>
+        </div>
+      </template>
+    </div>
+  </section>
+</template>
+
+<!-- 12. FINAL CALL TO ACTION (+ IMAGE PLACEHOLDER 10 — FINAL CTA VISUAL) -->
+<template id="sec-banner">
+  <section class="container banner-wrap">
+    <div class="banner banner--split">
+      <div class="banner-copy">
+        <h2 data-text="title" data-ph="Big message"></h2>
+        <p data-text="text" data-ph="Supporting line"></p>
+        <a class="btn btn-pop btn-lg" data-text="buttonLabel" data-href="buttonLink" data-ph="Button"></a>
+        <p class="banner-subnote" data-show-if="supportingLine" data-text="supportingLine" data-ph="Supporting line"></p>
+      </div>
+      <div class="banner-visual" data-show-if="bannerImage">
+        <div class="banner-visual-media">
+          <div data-img="bannerImage"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- Additional reusable templates for visual editor -->
+<template id="sec-benefits-grid">
+  <section class="band band--surface benefits-grid-section" data-requires="items">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-text="eyebrow" data-ph="Eyebrow"></div>
+        <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+        <p class="section-intro" data-show-if="intro" data-text="intro" data-ph="Intro"></p>
+      </div>
+      <div class="benefits-cards-grid" data-list="items" data-add-label="benefit">
+        <template data-default='{"title":"Benefit title","text":"Describe the benefit."}'>
+          <div class="benefit-card">
+            <div class="benefit-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </div>
+            <h3 data-text="title" data-ph="Benefit title"></h3>
+            <p data-text="text" data-ph="Benefit description"></p>
+          </div>
         </template>
       </div>
     </div>
+  </section>
+</template>
+
+<template id="sec-marquee">
+  <div class="marquee" data-requires="items">
+    <div class="marquee-track" data-list="items" data-add-label="ticker phrase">
+      <template data-default='"New phrase"'><span class="marquee-item" data-text="."></span></template>
+    </div>
   </div>
+</template>
+
+<template id="sec-text">
+  <section class="container split">
+    <div class="split-head">
+      <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
+      <h2 data-text="title" data-ph="Title"></h2>
+    </div>
+    <div class="split-body about-text" data-list="items" data-add-label="paragraph">
+      <template data-default='"New paragraph."'><p data-text="."></p></template>
+    </div>
+  </section>
 </template>
 
 <template id="sec-testimonials">
@@ -281,6 +703,7 @@
     <div class="center-head">
       <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
       <h2 class="section-title" data-text="title" data-ph="Title"></h2>
+      <p class="section-intro" data-show-if="intro" data-text="intro" data-ph="Intro"></p>
     </div>
     <div class="quotes" data-list="items" data-layout="center" data-min="280" data-max="3" data-add-label="testimonial">
       <template data-default='{"quote":"Write the customer&apos;s words here.","name":"Customer name","role":"Shop name","avatar":"","rating":5}'>
@@ -301,50 +724,23 @@
   </section>
 </template>
 
-<template id="sec-faq">
-  <section class="faq-wrap" data-requires="items">
-    <div class="eyebrow" data-text="eyebrow" data-ph="Small label"></div>
-    <h2 class="section-title" data-text="title" data-ph="Title"></h2>
-    <div class="faq" data-list="items" data-add-label="question">
-      <template data-default='{"q":"New question?","a":"Your answer."}'>
-        <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-            <span data-text="q" data-ph="Question"></span>
-            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
-          </div>
-          <div class="faq-a" hidden><div data-text="a" data-ph="Answer"></div></div>
-        </div>
-      </template>
-    </div>
-  </section>
-</template>
 
-<template id="sec-banner">
-  <section class="container banner-wrap">
-    <div class="banner">
-      <h2 data-text="title" data-ph="Big message"></h2>
-      <p data-text="text" data-ph="Supporting line"></p>
-      <a class="btn btn-pop btn-lg" data-text="buttonLabel" data-href="buttonLink" data-ph="Button"></a>
-    </div>
-  </section>
-</template>
-
-
-<!-- Before/after slider layout (used by the hero and the drag-to-compare examples) -->
+<!-- Before/after slider layout (used by Section 3 and Section 6B) -->
 <template id="tpl-compare">
   <div class="cmp-layer cmp-after">
     <div data-img="after"></div>
-    <span class="chip chip--dark cmp-chip cmp-chip-right" data-text="afterLabel" data-fallback="After"></span>
+    <span class="chip chip--dark cmp-chip cmp-chip-right" data-text="afterLabel" data-fallback="Designed presentation"></span>
   </div>
   <div class="cmp-layer cmp-before">
     <div data-img="before"></div>
-    <span class="chip cmp-chip cmp-chip-left" data-text="beforeLabel" data-fallback="Before"></span>
+    <span class="chip cmp-chip cmp-chip-left" data-text="beforeLabel" data-fallback="Original photo"></span>
   </div>
   <input class="cmp-range" type="range" min="0" max="100" step="0.5" value="50">
   <div class="cmp-handle" aria-hidden="true">
     <div class="cmp-knob">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/></svg>
     </div>
+    <span class="cmp-handle-pill" data-text="handleLabel" data-fallback="Drag to compare"></span>
   </div>
 </template>
 
