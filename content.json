@@ -373,8 +373,8 @@
       "services": [
         {
           "id": "copy",
-          "name": "Facebook &amp; Instagram Ad Package",
-          "unit": "ad copy",
+          "name": "Facebook & Instagram Ad Package",
+          "unit": "ad package",
           "description": "One advertising caption + one advertising image.",
           "price": 49.99,
           "extraDiscount": 34,
@@ -383,8 +383,8 @@
         },
         {
           "id": "new-service-r4oo6",
-          "name": "Facebook &amp; Instagram Ad Caption",
-          "unit": "new service",
+          "name": "Facebook & Instagram Ad Caption",
+          "unit": "ad caption",
           "description": "Give potential customers a reason to stop scrolling and take a closer look. <br>Get an advertising caption built around your product's benefits, customer needs, and a clear reason to consider buying.",
           "price": 34.99,
           "extraDiscount": 9,
@@ -583,8 +583,8 @@
       },
       {
         "label": "Email",
-        "value": "jacksonvinh.busines@gmail.com",
-        "link": "mailto:jacksonvinh.busines@gmail.com"
+        "value": "jacksonvinh.business@gmail.com",
+        "link": "mailto:jacksonvinh.business@gmail.com"
       },
       {
         "label": "Facebook",
@@ -597,7 +597,7 @@
         "link": "https://linktr.ee/jacksonvinh?utm_source=linktree_profile_share&ltsid=004486ec-de8c-414a-997f-4b2363a975ce"
       }
     ],
-    "copyright": "� 2026. All rights reserved."
+    "copyright": "© 2026. All rights reserved."
   },
   "checkout": {
     "_help": "The page customers see after pressing Checkout.",
