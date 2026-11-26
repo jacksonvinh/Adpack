@@ -7,8 +7,8 @@
     "Anything starting with an underscore (like this note) is a comment and is ignored."
   ],
   "site": {
-    "title": "Product Ad Studio | Product Images & Copy",
-    "description": "Product advertising images, Facebook and Instagram ad copy, and product descriptions for online sellers. Choose the services you need and build a package that fits your products.",
+    "title": "Product Advertising Images and Copy | Product Ad Studio",
+    "description": "Product advertising images, ad captions, and product descriptions shaped around what you want customers to notice. Choose the creative services you need and build a package that fits.",
     "logo": "images/jv-1.png",
     "favicon": "images/jv-1.png",
     "extraFonts": [
@@ -29,30 +29,30 @@
   "theme": {
     "_help": "Colors are hex codes. Palette: Electric Studio (+ one yellow 'pop' color for deal stickers).",
     "colors": {
-      "background": "#F4F6FC",
+      "background": "#F6F7F9",
       "surface": "#FFFFFF",
-      "text": "#17213A",
-      "mutedText": "#55607A",
-      "accent": "#5267F5",
-      "accentText": "#3F52E0",
-      "accentSoft": "#A9B8FF",
-      "navy": "#17213A",
+      "text": "#182238",
+      "mutedText": "#596579",
+      "accent": "#3659D9",
+      "accentText": "#2F4DB8",
+      "accentSoft": "#E5EAFA",
+      "navy": "#182238",
       "onNavy": "#FFFFFF",
-      "mutedOnNavy": "#B6BFDA",
+      "mutedOnNavy": "#CAD1DD",
       "onAccent": "#FFFFFF",
-      "pop": "#7abaff",
-      "border": "#DDE2F2",
-      "placeholderBeforeBg": "#D9DEEE",
-      "placeholderBeforeShape": "#B4BBD3",
-      "placeholderBeforeText": "#3F4A66",
-      "placeholderAfterBg": "#A9B8FF",
+      "pop": "#F3CF72",
+      "border": "#E1E5EC",
+      "placeholderBeforeBg": "#E7E9EF",
+      "placeholderBeforeShape": "#C4CAD4",
+      "placeholderBeforeText": "#465064",
+      "placeholderAfterBg": "#DDE6FB",
       "placeholderAfterShape": "#FFFFFF"
     },
     "placeholderColors": [
-      "#C9D3FF",
-      "#A9B8FF",
-      "#DCE3FF",
-      "#B9C5FF"
+      "#DDE6FB",
+      "#C9D7F5",
+      "#E8ECF5",
+      "#D4DDEA"
     ],
     "fonts": {
       "heading": "'Space Grotesk', system-ui, sans-serif",
@@ -63,252 +63,292 @@
     },
     "shape": {
       "cardRadius": "20px",
-      "tileRadius": "16px",
-      "buttonRadius": "999px",
-      "pageWidth": "1200px"
+      "tileRadius": "14px",
+      "buttonRadius": "10px",
+      "pageWidth": "1240px"
     }
   },
   "nav": {
-    "ctaLabel": "",
-    "ctaLink": ""
+    "ctaLabel": "Build your package",
+    "ctaLink": "#pricing"
   },
   "sections": [
+    {
+      "type": "headline",
+      "name": "Main headline",
+      "enabled": true,
+      "eyebrow": "Product advertising images and copy",
+      "title": "Turn your product photo into ready-to-use ad creative.",
+      "subtitle": "Choose an image, caption, or product description. Tell us what shoppers should notice; we shape the creative around your brief.",
+      "buttonLabel": "Choose your services",
+      "buttonLink": "#pricing"
+    },
     {
       "type": "hero",
       "name": "Top before/after slider",
       "enabled": true,
       "before": {
         "image": "images/Modern-White-Standing-Desk-in-Sunlit-Office.png",
-        "alt": "Product photo before",
+        "alt": "Original product photo of a white standing desk in a bright room",
         "placeholder": "Your original photo"
       },
       "after": {
         "image": "images/Work-Smarter-Ergonomic-Workspace.jpg",
-        "alt": "Product ad after",
+        "alt": "Illustrative ad concept showing the same standing desk in a styled workspace",
         "placeholder": "Your styled ad image"
       },
-      "beforeLabel": "Before",
-      "afterLabel": "After",
+      "beforeLabel": "Source photo",
+      "afterLabel": "Ad concept",
       "startPosition": 50,
       "sticker": "",
       "handleLabel": "Drag to compare before and after"
     },
     {
-      "type": "headline",
-      "name": "Main headline",
+      "type": "transformations",
+      "name": "Portfolio — premium presentation",
       "enabled": true,
-      "eyebrow": "Product Advertising &amp; Copywriting",
-      "title": "<span style=\"color: rgb(86, 97, 123); font-family: Montserrat\"><span style=\"font-weight: normal\">Turn </span><span style=\"font-weight: normal\">ordinary product shots&nbsp;into <i>Ads</i><br>that look actually <br></span><span style=\"font-style: italic\">WORTH BUYING</span></span>",
-      "subtitle": "Send us your product photo. Get a professionally designed, ready-to-use advertising image.",
-      "buttonLabel": "Build my package",
-      "buttonLink": "#pricing"
-    },
-    {
-      "type": "marquee",
-      "name": "Moving ticker strip",
-      "enabled": true,
+      "title": "A more polished product presentation",
+      "subtitle": "Illustrative concept: a styled setting and a clear product focal point.",
       "items": [
-        "Mix &amp; match services",
-        "Add more, % off more",
-        "professional product ads",
-        "ready-to-use product image",
-        "Save more on big orders"
+        {
+          "before": {
+            "image": "images/Olive-Green-Tumbler-Snapshot.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Peak-Performance-in-Alpine-Ice.jpg",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After image"
+          },
+          "caption": "Tumbler · styled scene and product focus",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/PureFresh-Citrus-Foaming-Hand-Soap.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/PureFresh-Citrus-Foam-Soap-Ad.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Hand soap · clean palette and centered product",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        }
       ]
     },
     {
-      "type": "text",
-      "name": "About the service",
+      "type": "transformations",
+      "name": "Portfolio — product benefits and use",
       "enabled": true,
-      "eyebrow": "About the service",
-      "title": "<span style=\"font-family: Montserrat\">Your Product Photo Is More Than Just a Picture</span>",
+      "title": "Show what makes a product valuable",
+      "subtitle": "Illustrative concepts: confirmed product details shown in a relevant setting.",
       "items": [
-        "",
-        "Before customers read your product description, they see your product image. Give them more to look at than a bottle against a plain background.<br><br>Send us the product photo you already have. We'll build the scene, lighting, and composition around your product to create a complete advertising image"
+        {
+          "before": {
+            "image": "images/PawFeast-Chicken-Salmon-Cat-Food.jpg",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/PawFeast-Nutritious-Meals-for-Happier-Cats.jpg",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Cat food · product details and use context",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/AirLite-Mini-Fan-Desk-Setup.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Your-Breeze-Your-Way.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Mini fan · everyday use and benefit message",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/Neon-Green-Gel-Odor-Eliminator-on-Kitchen-Counter.jpg",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Fresh-Air-Happy-Home.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Home care · product shown in a home setting",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/A-Better-Morning-Routine-Alarm-Clock.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Modern-Blue-Alarm-Clock-Poster.jpg",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Alarm clock · a morning routine context",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        }
+      ]
+    },
+    {
+      "type": "transformations",
+      "name": "Portfolio — distinctive directions",
+      "enabled": true,
+      "title": "Explore a more distinctive visual direction",
+      "subtitle": "Illustrative concepts: explore another visual route and composition.",
+      "items": [
+        {
+          "before": {
+            "image": "images/Glowing-Ring-Light-Workspace.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/LUMISET-Ring-Light-Tripod-Ad.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Ring light · features and visual hierarchy",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/Teal-Bolterra-Cordless-Drill-Product-Portrait.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Bolterra-20V-Cordless-Drill-Advertisement.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Cordless drill · contrast and product prominence",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        },
+        {
+          "before": {
+            "image": "images/Courtline-Basketball-Product-Advertisement.png",
+            "alt": "Source product photo used for an illustrative advertising concept",
+            "placeholder": "Before photo"
+          },
+          "after": {
+            "image": "images/Own-the-Court-at-Sunset.png",
+            "alt": "Illustrative advertising concept for the same product",
+            "placeholder": "After ad image"
+          },
+          "caption": "Basketball · sports setting and energetic mood",
+          "beforeLabel": "Source photo",
+          "afterLabel": "Ad concept"
+        }
+      ]
+    },
+    {
+      "type": "checklist",
+      "name": "Choose your goal",
+      "enabled": true,
+      "eyebrow": "What would help most?",
+      "title": "Start with what you want customers to notice.",
+      "items": [
+        {
+          "title": "A more polished presentation.",
+          "text": "Use setting, lighting, and composition to give the product a considered look."
+        },
+        {
+          "title": "Clearer product benefits.",
+          "text": "Bring confirmed features or product use into the image or copy."
+        },
+        {
+          "title": "A fresh direction to compare.",
+          "text": "Order creative options and test them with your own audience."
+        },
+        {
+          "title": "Less production work.",
+          "text": "Send your photo and brief; we create the image or copy for you."
+        }
       ]
     },
     {
       "type": "steps",
       "name": "How delivery works",
       "enabled": true,
-      "eyebrow": "How delivery works",
-      "title": "<span style=\"font-family: Montserrat\">From your photos to finished work</span>",
+      "eyebrow": "Simple process",
+      "title": "From your brief to finished files.",
       "items": [
         {
-          "title": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Choose your services</span>",
-          "text": "Upload your product photos and tell us where you plan to use them."
+          "title": "Choose your services",
+          "text": "Pick an ad image, caption, product description, or a combination."
         },
         {
-          "title": "Send your product details",
-          "text": "Upload your product photos and tell us where you plan to use them."
+          "title": "Share your brief",
+          "text": "The request includes your selected services and current total. Add an optional note about your product or goal; you can share photos after I reply."
         },
         {
-          "title": "We create your content",
-          "text": "We create your order within 1-3 working days."
-        },
-        {
-          "title": "Receive your finished files",
-          "text": "Get your images and copy through a download link, ready to use."
+          "title": "Receive your creative",
+          "text": "After we confirm the details and payment arrangement, I create your files in 1–3 working days, with four revision rounds."
         }
       ]
     },
     {
-      "type": "gallery",
-      "name": "Showcase gallery",
+      "type": "faq",
+      "name": "Questions",
       "enabled": true,
-      "eyebrow": "Gallery",
-      "title": "<span style=\"font-family: Montserrat\">See What a Better Product Presentation Can Look Like</span>",
-      "intro": "",
-      "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
+      "eyebrow": "Before you order",
+      "title": "A few things you may want to know.",
       "items": [
         {
-          "image": "images/Pore-Refining-Serum-Glow.jpg",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Puremère</span>",
-          "alt": "Product image 1",
-          "placeholder": "Product image 1"
+          "q": "What should I include in my request?",
+          "a": "Your selected services and current total are included automatically. Use the optional note to share your product, intended use, or any questions. You can send product photos after I reply."
         },
         {
-          "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">ROSE &amp; BERRY</span>",
-          "alt": "Product image 2",
-          "placeholder": "Product image 2"
+          "q": "Which service should I choose?",
+          "a": "Choose an image for visual presentation, a caption or description for written messaging, or combine them. If you are unsure, describe your goal in the brief."
         },
         {
-          "image": "images/Strawberry-Matcha-Latte-Delight.jpg",
-          "caption": "Brew Leaf",
-          "alt": "Product image 3",
-          "placeholder": "Product image 3"
+          "q": "Do better-looking images guarantee more sales?",
+          "a": "No. Creative is one part of an advertising result. The product, offer, audience, placement, and testing also matter. The examples here demonstrate visual directions, not sales or ad-performance outcomes."
         },
         {
-          "image": "images/Cozy-Headphones-and-Coffee-Workspace.png",
-          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Yin Store</span>",
-          "alt": "Product image 4",
-          "placeholder": "Product image 4"
-        }
-      ]
-    },
-    {
-      "type": "transformations",
-      "name": "Before/after sliders",
-      "enabled": true,
-      "title": "<span style=\"font-family: Montserrat\">Same product — A completely different presentation.</span>",
-      "subtitle": "",
-      "items": [
-        {
-          "before": {
-            "image": "images/Olive-Green-Tumbler-Snapshot.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Peak-Performance-in-Alpine-Ice.jpg",
-            "alt": "After",
-            "placeholder": "After image"
-          },
-          "caption": "",
-          "afterLabel": "After",
-          "beforeLabel": "Before"
+          "q": "Are the portfolio examples client results?",
+          "a": "The examples shown here are illustrative concepts. They are not customer endorsements or measured campaign results."
         },
         {
-          "before": {
-            "image": "images/Glowing-Ring-Light-Workspace.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/LUMISET-Ring-Light-Tripod-Ad.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "",
-          "afterLabel": "",
-          "beforeLabel": ""
+          "q": "How long does delivery take?",
+          "a": "After we confirm the details and payment arrangement, delivery takes about 1–3 working days, depending on the number of items."
         },
         {
-          "before": {
-            "image": "images/PawFeast-Chicken-Salmon-Cat-Food.jpg",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/PawFeast-Nutritious-Meals-for-Happier-Cats.jpg",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "",
-          "afterLabel": "",
-          "beforeLabel": ""
+          "q": "Can I ask for changes?",
+          "a": "You receive 4 rounds of free revisions."
         },
         {
-          "before": {
-            "image": "images/AirLite-Mini-Fan-Desk-Setup.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Your-Breeze-Your-Way.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "Example"
+          "q": "Do I pay when I send the request?",
+          "a": "No. Your request goes to me first. I will review the package and reply to confirm the scope, total, and payment next steps."
         },
         {
-          "before": {
-            "image": "images/Teal-Bolterra-Cordless-Drill-Product-Portrait.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Bolterra-20V-Cordless-Drill-Advertisement.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "Example"
-        },
-        {
-          "before": {
-            "image": "images/Courtline-Basketball-Product-Advertisement.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Own-the-Court-at-Sunset.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "Example"
-        }
-      ]
-    },
-    {
-      "type": "checklist",
-      "name": "Benefits",
-      "enabled": true,
-      "eyebrow": "What you get",
-      "title": "<span style=\"font-family: Montserrat\">More Than Just Better-Looking Product Photos</span>",
-      "items": [
-        {
-          "title": "Consistent look.",
-          "text": "Keep your product images visually consistent across your shop."
-        },
-        {
-          "title": "Ready-to-Use Image.",
-          "text": "Get images sized for your intended platforms, without having to edit them yourself."
-        },
-        {
-          "title": "Product Copy Included.",
-          "text": "Get descriptions and advertising captions you can use in your listings and ads."
-        },
-        {
-          "title": "One Place for Your Content.",
-          "text": "Get product images and copy without coordinating separate designers and copywriters."
-        },
-        {
-          "title": "Lower Prices on Bigger Orders.",
-          "text": "Add more items to unlock bigger order-wide discounts."
-        },
-        {
-          "title": "Flexible Payment.",
-          "text": "Choose PayPal or bank transfer."
+          "q": "What file formats will I receive?",
+          "a": "Images as JPG or PNG and text as DOC or TXT."
         }
       ]
     },
@@ -317,9 +357,9 @@
       "name": "Package builder (prices)",
       "id": "pricing",
       "enabled": true,
-      "eyebrow": "Build your package",
-      "title": "Pick what you need. Add more, pay less.",
-      "intro": "The more you order, the more you save across your entire package",
+      "eyebrow": "Choose services and see your total",
+      "title": "Choose the services you need.",
+      "intro": "Add an image, caption, or description. Your total updates as you build.",
       "currency": "USD",
       "currencySymbol": "$",
       "checkoutLink": "checkout.html",
@@ -421,7 +461,7 @@
         "badge": "Celebration!",
         "title": "Extra 15% off your total",
         "text": "Get 15% off if you let us know what you think once the order arrives :)",
-        "endsAt": "2026-12-04T04:59:00.000Z",
+        "endsAt": "2026-12-04T04:59:00Z",
         "showSeconds": false,
         "timeText": "Ends in",
         "slotsTotal": 10,
@@ -436,62 +476,24 @@
         "regularLabel": "Regular price",
         "savingsLabel": "You save",
         "totalLabel": "Total",
-        "checkoutLabel": "Checkout",
         "each": "each",
         "off": "OFF",
         "extraTag": "+{pct}% off your order per extra",
         "nextHint": "Add 1 more {service} to save {gain}% more!",
-        "maxHint": "You've reached the maximum discount."
+        "maxHint": "You've reached the maximum discount.",
+        "requestLabel": "Request this package",
+        "requestTitle": "Send your package request",
+        "requestNote": "No payment now. I will review your request and reply to confirm the brief, final details, and next steps."
       }
     },
     {
-      "type": "transformations",
-      "name": "Drag-to-compare examples",
-      "enabled": true,
-      "title": "See more of the Difference for Yourself.",
-      "subtitle": "Same product. A completely new advertising look.",
-      "_help": "One { } block = one before/after slider.",
-      "items": [
-        {
-          "before": {
-            "image": "images/PureFresh-Citrus-Foaming-Hand-Soap.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/PureFresh-Citrus-Foam-Soap-Ad.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "VELORA - Purifying Shampoo"
-        },
-        {
-          "before": {
-            "image": "images/A-Better-Morning-Routine-Alarm-Clock.png",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Modern-Blue-Alarm-Clock-Poster.jpg",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "Robert - Modern Alarm Clock"
-        },
-        {
-          "before": {
-            "image": "images/Neon-Green-Gel-Odor-Eliminator-on-Kitchen-Counter.jpg",
-            "alt": "Before",
-            "placeholder": "Before photo"
-          },
-          "after": {
-            "image": "images/Fresh-Air-Happy-Home.png",
-            "alt": "After",
-            "placeholder": "After ad image"
-          },
-          "caption": "FreshHome - Odor Eliminator"
-        }
-      ]
+      "type": "banner",
+      "name": "Final call to action",
+      "enabled": false,
+      "title": "Start with the creative your product needs.",
+      "text": "Choose an image, caption, description, or combination. Review your total before checkout.",
+      "buttonLabel": "Build your package",
+      "buttonLink": "#pricing"
     },
     {
       "type": "testimonials",
@@ -510,50 +512,66 @@
       "items": []
     },
     {
-      "type": "faq",
-      "name": "Questions",
-      "enabled": true,
-      "eyebrow": "FAQ",
-      "title": "Questions, answered.",
+      "type": "text",
+      "name": "Optional service introduction",
+      "enabled": false,
+      "eyebrow": "Start with your brief",
+      "title": "Choose the creative goal that fits your product.",
       "items": [
-        {
-          "q": "What do I need to send you?",
-          "a": "Your product photos and a short note about what you need. \n<i>e.g., where the image will be used, image dimensions, etc.</i>"
-        },
-        {
-          "q": "How does the discount work?",
-          "a": "Each extra item you add takes a bigger percentage off your whole order. The maximum is 50% off."
-        },
-        {
-          "q": "How long does delivery take?",
-          "a": "About 1-3 working days, depending on the number of items you order."
-        },
-        {
-          "q": "Can I ask for changes?",
-          "a": "You receive 2 rounds of free revisions."
-        },
-        {
-          "q": "How can I pay?",
-          "a": "PayPal or Bank Transfer. We recommend PayPal."
-        },
-        {
-          "q": "What file formats will I receive?",
-          "a": "Images as JPG / PNG and text as DOC / TXT."
-        }
+        "Different projects call for different creative choices. You may want a more polished presentation, clearer benefit messaging, a distinctive visual direction, or multiple versions to compare. You may simply want to hand off image and copy production.",
+        "Tell us what you want the creative to show and where you plan to use it. We build around the confirmed product details you provide. The examples below are illustrative concepts; sales and ad performance depend on factors beyond the creative."
       ]
     },
     {
-      "type": "banner",
-      "name": "Final call to action",
-      "enabled": true,
-      "title": "Give Your Products a Better First Impression",
-      "text": "Choose the images and copy you need. Build your package in minutes.",
-      "buttonLabel": "Build my package",
-      "buttonLink": "#pricing"
+      "type": "marquee",
+      "name": "Moving ticker strip",
+      "enabled": false,
+      "items": [
+        "Product presentation",
+        "Clearer benefit-led creative",
+        "Distinct visual directions",
+        "Image and copy options",
+        "Ready-to-use deliverables"
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "Showcase gallery",
+      "enabled": false,
+      "eyebrow": "Creative examples",
+      "title": "Different ways to present a product.",
+      "intro": "These are illustrative concepts showing possible visual directions. They are not customer endorsements or evidence of campaign results.",
+      "_help": "One { } block = one picture. Add a block and a new picture appears; the grid re-arranges itself. 'caption' is optional.",
+      "items": [
+        {
+          "image": "images/Pore-Refining-Serum-Glow.jpg",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Puremère</span>",
+          "alt": "Illustrative skincare serum advertising image",
+          "placeholder": "Product image 1"
+        },
+        {
+          "image": "images/Rose-Berry-Splash-Beverage-Ad.png",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">ROSE &amp; BERRY</span>",
+          "alt": "Illustrative berry beverage advertising image",
+          "placeholder": "Product image 2"
+        },
+        {
+          "image": "images/Strawberry-Matcha-Latte-Delight.jpg",
+          "caption": "Brew Leaf",
+          "alt": "Illustrative strawberry matcha drink image",
+          "placeholder": "Product image 3"
+        },
+        {
+          "image": "images/Cozy-Headphones-and-Coffee-Workspace.png",
+          "caption": "<span style=\"font-family: &quot;Space Grotesk&quot;\">Yin Store</span>",
+          "alt": "Illustrative headphones lifestyle image",
+          "placeholder": "Product image 4"
+        }
+      ]
     }
   ],
   "footer": {
-    "description": "<span style=\"font-weight: bold; font-family: Lora; font-size: large\">Same Product- New Value</span>",
+    "description": "Creative built around your product.",
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "_help": "contacts: 'label' is shown before the value. 'link' is optional (e.g. https://zalo.me/..., mailto:you@mail.com). The services list is created automatically from the package builder.",
@@ -566,7 +584,7 @@
       {
         "label": "Email",
         "value": "jacksonvinh.busines@gmail.com",
-        "link": ""
+        "link": "mailto:jacksonvinh.busines@gmail.com"
       },
       {
         "label": "Facebook",
@@ -598,25 +616,24 @@
     "emailLabel": "Email (we'll contact you and send your files here)",
     "errorName": "Please enter your name.",
     "errorEmail": "Please enter a valid email address.",
-    "payTitle": "Choose how to pay",
+    "payTitle": "Payment is arranged after we confirm your request.",
     "orderForm": {
       "_help": [
-        "Where each order is emailed to you. Free option: create a form at formspree.io (or web3forms.com), then paste the address here.",
-        "Formspree: endpoint = https://formspree.io/f/xxxxxxxx   (leave accessKey empty).",
-        "Web3Forms: endpoint = https://api.web3forms.com/submit and accessKey = the key they email you.",
-        "subject: the email subject. {order} is replaced by the order code."
+        "This form sends a package inquiry to your inbox. The email includes the selected services, current prices, total, customer name and reply email, and any optional note. No payment is collected at this step.",
+        "Web3Forms endpoint and access key are already configured. If you replace them, keep the endpoint and access key from your Web3Forms project.",
+        "subject: the email subject. The request reference is included automatically."
       ],
       "endpoint": "https://api.web3forms.com/submit",
       "accessKey": "6077cdfe-4bf3-4cb0-a945-f659a69cef9a",
       "subject": "New order {order}"
     },
     "thanks": {
-      "title": "Thank you! Your order is in.",
-      "text": "We received order {order}. Once your transfer arrives, we'll email {email} to get started.\nWe'll check and get back to you within 5 hours, or sooner!"
+      "title": "Your package request was sent.",
+      "text": "Your request has been sent. No payment was taken. I will review the package details and reply to the email you provided."
     },
     "paypal": {
       "_help": "linkTemplate is where the customer is sent. {amount} {currency} {order} are filled in automatically. For PayPal.Me use: https://www.paypal.me/YOURNAME/{amount}{currency}",
-      "enabled": true,
+      "enabled": false,
       "title": "Pay with PayPal",
       "text": "Fast and secure. Cards accepted. You'll be taken to PayPal to finish.",
       "buttonLabel": "Pay with PayPal",
@@ -624,7 +641,7 @@
     },
     "bank": {
       "_help": "US bank transfer (ACH / wire), amounts in USD. routingNumber is optional: leave it empty to hide that line. Set \"enabled\": false to hide bank transfer.",
-      "enabled": true,
+      "enabled": false,
       "title": "Bank transfer",
       "text": "Prefer a bank transfer? Use the details below and include your order code.",
       "confirmLabel": "I've made the transfer",
@@ -637,11 +654,11 @@
     },
     "after": {
       "title": "After you pay",
-      "text": "Send your product photos and your order code to \nhttps://forms.gle/hhFpvR7pRXVvMQs17"
+      "text": "The package request form now collects your selected services and contact details together."
     },
     "video": {
       "_help": "YouTube video at the bottom of the checkout page. url = any YouTube link. Set enabled to false to hide it. Leave a text empty to hide that line.",
-      "enabled": true,
+      "enabled": false,
       "url": "https://www.youtube.com/watch?v=XEtuwTEdUAo",
       "tag": "Watch",
       "title": "See how it works",
