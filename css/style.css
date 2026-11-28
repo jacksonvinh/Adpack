@@ -1159,12 +1159,22 @@ section[id], div[id] { scroll-margin-top: 84px; }
 .process-visual-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 7;
-  min-height: 190px;
+  aspect-ratio: 3 / 1;
   border: 1px solid var(--c-border);
   border-radius: var(--radius-tile);
   overflow: hidden;
   background: var(--c-placeholder-after-bg);
+}
+.process-visual-media .media:not(:has(.ph)) {
+  position: static;
+}
+.process-visual-media .media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.process-visual-media:has(.media img) {
+  aspect-ratio: auto;
 }
 
 /* ==========================================================================
